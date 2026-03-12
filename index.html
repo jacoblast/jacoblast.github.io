@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whole Tone Piano Works — Piano Tuning &amp; Full-Spectrum Care</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:   '#FBFBF9',
+            ink:     '#2F2F2F',
+            mid:     '#4A4A4A',
+            muted:   '#6F6F6F',
+            rule:    '#E6E6E4',
+            accent:  '#8A7A55',
+          },
+          fontFamily: {
+            display: ['"Goudy Bookletter 1911"', 'serif'],
+            serif:   ['"Source Serif 4"', 'serif'],
+            ui:      ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────── -->
+  <header id="site-header">
+    <div class="wrap-wide">
+      <div class="header-inner">
+        <a href="#" class="logo-mark" aria-label="Whole Tone Piano Works — home">
+          <img src="brand_assets/logo_curves_no_text.png" alt="">
+          <span class="logo-text">Whole Tone Piano Works</span>
+        </a>
+        <nav id="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#schedule" class="btn btn-primary" style="padding:9px 20px;">Book Now</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const header = document.getElementById('site-header');
+    toggle.addEventListener('click', () => {
+      const open = header.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        header.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', false);
+        toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  </script>
+
+  <!-- ── HERO ───────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="wrap">
+      <!-- <img src="images/logo_3d_engraved_large.png" alt="Whole Tone Piano Works" class="hero-logo"> -->
+      <img src="images/logo_curves_no_text.png" alt="Whole Tone Piano Works" class="hero-logo">
+      <span class="eyebrow">Fine Piano Tuning &amp; Service With Heart</span>
+      <h1 id="hero-heading">Whole Tone Piano Works</h1>
+      <p class="hero-subtitle">Full-spectrum care for your piano</p>
+      <p class="hero-statement">Blending attentive listening, thoughtful craftsmanship, and a genuine love of the instrument.</p>
+      <div class="hero-actions">
+        <a href="#schedule" class="btn btn-primary">Schedule Service</a>
+        <a href="#services" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST STRIP ───────────────────────────────── -->
+  <div class="trust-strip" aria-label="Service overview">
+    <span>Serving the Vancouver–Portland area</span>
+    <span class="trust-dot" aria-hidden="true"></span>
+    <span>For families, teachers, churches, studios and venues</span>
+    <span class="trust-dot" aria-hidden="true"></span>
+    <span>Convenient scheduling available</span>
+  </div>
+
+  <hr class="rule">
+
+  <!-- ── SECTION 1: A Holistic Approach ────────────── -->
+  <section class="about-section" aria-labelledby="holistic-heading">
+    <div class="wrap">
+      <span class="eyebrow">A Holistic Approach</span>
+      <h2 id="holistic-heading">Full-Spectrum Care</h2>
+      <div class="about-body">
+        <p>A piano is an interconnected system. Tuning, action, tone, and mechanical health all influence one another.</p>
+        <p>Full-spectrum care means that I pay attention to more than just tuning. During each visit, I assess:</p>
+        <ul class="content-list">
+          <li>Pitch (tuning)</li>
+          <li>Action calibration and touch consistency</li>
+          <li>Voicing (tonal quality and evenness)</li>
+          <li>Any mechanical issues that affect performance</li>
+        </ul>
+        <p>The goal is to make the most meaningful overall improvement to your instrument within the time and budget available.</p>
+        <p class="closing-statement">Not isolated perfection — but integrated refinement.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── SECTION 2: High-Tech Analog ───────────────── -->
+  <section class="about-section" aria-labelledby="craft-heading">
+    <div class="wrap">
+      <span class="eyebrow">High-Tech Analog</span>
+      <h2 id="craft-heading">Traditional Craft,<br>Modern Insight</h2>
+      <div class="about-body">
+        <p>My work is primarily aural. Listening is central.</p>
+        <p>At the same time, I bring a deep understanding of beat rates, harmonic structure, and string behavior. When appropriate, I use modern tools to enhance precision and efficiency.</p>
+        <p class="closing-statement">Technology supports the ear — it does not replace it.</p>
+        <p>This balance allows for work that is both musically sensitive and structurally sound.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── SECTION 3: Working Together ───────────────── -->
+  <section class="about-section" id="about" aria-labelledby="together-heading">
+    <div class="wrap">
+      <span class="eyebrow">What It's Like to Work Together</span>
+      <h2 id="together-heading">A calm, respectful<br>presence.</h2>
+      <div class="about-body">
+        <p>Inviting someone into your home to work on your piano requires trust.</p>
+        <p>I bring a calm, respectful presence to each visit. I care about the instrument — and about the people who play it.</p>
+        <p>I enjoy explaining what I'm doing and why. If you (or your kids) are curious, I'm always happy to share my excitement and knowledge!</p>
+        <p>My goal is that you feel:</p>
+        <ul class="content-list">
+          <li>Confident in the work</li>
+          <li>Informed about your instrument</li>
+          <li>Comfortable throughout the process</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── SECTION 4: Services ────────────────────────── -->
+  <section class="services-section" id="services" aria-labelledby="services-heading">
+    <div class="wrap">
+      <span class="eyebrow">Services</span>
+      <h2 id="services-heading">What I offer.</h2>
+      <div class="service-list" role="list">
+
+        <div role="listitem">
+          <div class="service-row">
+            <h4>Piano Tuning</h4>
+          </div>
+        </div>
+
+        <div role="listitem">
+          <div class="service-row">
+            <h4>Action Calibration &amp; Regulation</h4>
+          </div>
+        </div>
+
+        <div role="listitem">
+          <div class="service-row">
+            <h4>Voicing</h4>
+          </div>
+        </div>
+
+        <div role="listitem">
+          <div class="service-row">
+            <h4>Minor Repairs</h4>
+          </div>
+        </div>
+
+        <div role="listitem">
+          <div class="service-row" style="border-bottom: none;">
+            <h4>Evaluations &amp; Consultation</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── CTA ────────────────────────────────────────── -->
+  <section class="cta-section" id="schedule" aria-labelledby="cta-heading">
+    <div class="wrap">
+      <h2 id="cta-heading">Your piano is capable of more<br>than you may realize.</h2>
+      <p>Let's help it sound and feel its best.</p>
+      <a href="mailto:hello@wholetonepiano.com" class="btn btn-primary">Schedule Service</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer>
+    <div class="wrap-wide">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="brand_assets/logo_curves_no_text.png" alt="">
+            <span>Whole Tone Piano Works</span>
+          </div>
+          <p class="footer-tagline">Piano tuning and full-spectrum care</p>
+        </div>
+        <div class="footer-contact">
+          <a href="mailto:hello@wholetonepiano.com">hello@wholetonepiano.com</a><br>
+          Serving the greater metro area
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 Whole Tone Piano Works</p>
+    </div>
+  </footer>
+
+</body>
+</html>
