@@ -731,10 +731,55 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
 }
 .nav-link:hover { background-size: 100% 1px; }
 
-/* ── CTA section reveal ───────────────────────────── */
-.cta-section { text-align: center; padding: 88px 0; }
-.cta-section h2 { font-size: 1.9rem; letter-spacing: -0.025em; margin-bottom: 14px; line-height: 1.18; }
-.cta-section p { color: #6F6F6F; margin-bottom: 40px; font-size: 1rem; }
+/* ── CTA section ──────────────────────────────────── */
+.cta-section {
+  text-align: center;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/piano_prism.png');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: 0;
+}
+.cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 12, 6, 0.58);
+  z-index: 1;
+}
+.cta-section .wrap {
+  position: relative;
+  z-index: 2;
+}
+.cta-section h2 {
+  font-size: 1.9rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+  line-height: 1.18;
+  color: #FBFBF9;
+  text-shadow: 0 1px 16px rgba(0,0,0,0.4);
+}
+.cta-section p {
+  color: rgba(251,251,249,0.72);
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+.cta-section .btn-primary {
+  background: #FBFBF9;
+  color: #2F2F2F;
+  border-color: #FBFBF9;
+}
+.cta-section .btn-primary:hover {
+  background: #fff;
+  border-color: #fff;
+}
 
 /* ── Mobile section padding ───────────────────────── */
 @media (max-width: 540px) {
