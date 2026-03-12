@@ -568,6 +568,9 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .section-parchment { background: #F4F2EC; }
 .section-cream { background: #FBFBF9; }
 
+#approach .section-bg { background-image: url('images/grand_action.png'); }
+#services .section-bg { background-image: url('images/chladni_bg.png'); }
+
 .page-section h2 {
   font-size: 1.9rem;
   letter-spacing: -0.025em;
@@ -591,8 +594,9 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
 }
 .about-photo img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   object-fit: cover;
+  object-position: center top;
   display: block;
   filter: grayscale(15%);
 }
