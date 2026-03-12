@@ -585,13 +585,9 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 header.scrolled .header-inner { height: 54px; }
 header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
 
-/* ── About: photo-first layout ────────────────────── */
-#about { padding-top: 0; }
-
+/* ── About layout ─────────────────────────────────── */
 .about-photo-full {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 56px;
+  margin-bottom: 44px;
 }
 .about-photo-full img {
   width: 100%;
@@ -612,6 +608,9 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   line-height: 1.75;
   font-size: 0.97rem;
   margin: 0;
+}
+.about-closing {
+  text-align: center;
 }
 @media (max-width: 640px) {
   .about-photo-full img { aspect-ratio: 4/3; }
