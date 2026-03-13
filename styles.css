@@ -751,7 +751,7 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(18, 12, 6, 0.58);
+  background: rgba(18, 12, 6, 0.38);
   z-index: 1;
 }
 .cta-section .wrap {
