@@ -659,12 +659,13 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   border-top: 2px solid #E6E6E4;
   box-shadow: 0 2px 8px rgba(47,47,47,0.06), 0 8px 24px rgba(47,47,47,0.04);
   overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, border-color 0.25s ease, background 0.35s ease;
 }
 .package:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(47,47,47,0.10), 0 20px 48px rgba(47,47,47,0.08);
   border-color: #8A7A55;
+  background: #F8F6F0;
 }
 .package-featured {
   border-top-color: #8A7A55;
@@ -680,7 +681,9 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   line-height: 1;
   pointer-events: none;
   user-select: none;
+  transition: opacity 0.35s ease;
 }
+.package:hover .package-ordinal { opacity: 0.13; }
 .package-header {
   display: flex;
   justify-content: space-between;
@@ -743,22 +746,6 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   background: #8A7A55;
 }
 
-/* ── Package card background image on hover ───────── */
-.package-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  pointer-events: none;
-  z-index: 0;
-}
-.package > *:not(.package-bg) { position: relative; z-index: 1; }
-.package-deep-dive .package-bg {
-  background-image: url('images/regulation.jpeg');
-}
-.package:hover .package-bg { opacity: 0.07; }
 
 @media (max-width: 640px) {
   .package-grid { grid-template-columns: 1fr; gap: 16px; }
