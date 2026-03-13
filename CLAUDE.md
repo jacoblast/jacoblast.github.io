@@ -59,7 +59,7 @@ Never introduce new colors. All tints should be derived from the above.
 | Role | Font | Notes |
 |------|------|-------|
 | Display / headings | Goudy Bookletter 1911 | `font-family: 'Goudy Bookletter 1911', serif` |
-| Body / serif text | Source Serif 4 | `font-family: 'Source Serif 4', serif` — italic for eyebrows, trust strip |
+| Body / serif text | Source Serif 4 | `font-family: 'Source Serif 4', serif` — italic for eyebrows, trust strip, footer tagline |
 | UI / labels / nav | Inter | `font-family: 'Inter', sans-serif` — buttons, badges, prices, nav |
 
 - Large headings: `letter-spacing: -0.025em`, `line-height: 1.18–1.22`
@@ -153,7 +153,14 @@ To add a card hover background image (future — when strings/hammers photos are
 Three horizontal hairlines that animate in with staggered `scaleX`. Always placed before eyebrow label at the top of each section. Requires three `<span>` children and both `string-divider` and `reveal` classes.
 
 ### CTA Section
-Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 12, 6, 0.38)`). Text is cream (`#FBFBF9`). Button is inverted (cream bg, dark text). Background position `center 70%` to show keyboard and rainbow in `piano_prism.png`.
+Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 12, 6, 0.38)`). Text is cream (`#FBFBF9`). Background position `center 70%` to show keyboard and rainbow in `piano_prism.png`.
+
+Contact layout (top to bottom):
+- Two equal cream buttons: "Text to Book" (`sms:`) and "Call (971) 202-0538" (`tel:`) — class `.cta-direct`
+- "or send a message" hairline divider — class `.cta-or`
+- Formspree contact form (name, phone/email, message, submit) — class `.cta-form`
+
+Form inputs use semi-transparent cream borders/backgrounds over the dark overlay. Formspree action URL: `https://formspree.io/f/YOUR_FORM_ID` — replace with real ID from Formspree dashboard.
 
 ### Images
 - Photos: `filter: grayscale(15%)` for tonal consistency
