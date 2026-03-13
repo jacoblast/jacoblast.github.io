@@ -253,20 +253,20 @@
       <span class="eyebrow reveal">Services</span>
       <h2 id="services-heading" class="reveal">What I offer.</h2>
       <div class="package-grid">
-        <div class="package reveal">
+        <div class="package card-wave">
           <span class="package-ordinal" aria-hidden="true">01</span>
           <h3 class="package-name">Tune &amp; Maintain</h3>
           <div class="package-price">$175</div>
           <p class="package-desc">The essential visit for pianos already on a regular schedule. Tuning, minor pitch correction, a few touch and tone tweaks. The foundation of a healthy instrument.</p>
         </div>
-        <div class="package package-featured reveal" data-delay="120">
+        <div class="package package-featured card-wave">
           <span class="package-ordinal" aria-hidden="true">02</span>
           <h3 class="package-name">Full Service</h3>
           <div class="package-price">$250</div>
           <p class="package-desc">For most pianos — including first visits and catch-up appointments — this is the right choice. Deeper attention to action, touch, and tone than a standard tune, with any minor repairs addressed where they'll make the most difference.</p>
           <span class="package-badge">Recommended</span>
         </div>
-        <div class="package package-deep-dive reveal" data-delay="240">
+        <div class="package package-deep-dive card-wave">
           <span class="package-ordinal" aria-hidden="true">03</span>
           <h3 class="package-name">Deep Dive</h3>
           <div class="package-price">From $500</div>
@@ -349,6 +349,23 @@
   document.querySelectorAll('.hero-seq').forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 200 + i * 220);
   });
+
+  // ── Service card wave ───────────────────────────────
+  const packageGrid = document.querySelector('.package-grid');
+  if (packageGrid) {
+    const cardWaveObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = packageGrid.querySelectorAll('.card-wave');
+          cards.forEach((card, i) => {
+            setTimeout(() => card.classList.add('in-view'), i * 160);
+          });
+          cardWaveObs.unobserve(packageGrid);
+        }
+      });
+    }, { threshold: 0.15 });
+    cardWaveObs.observe(packageGrid);
+  }
 
   // ── Scroll reveals ─────────────────────────────────
   const revealObs = new IntersectionObserver((entries) => {
