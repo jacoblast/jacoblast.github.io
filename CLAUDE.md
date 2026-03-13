@@ -176,6 +176,19 @@ Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 1
 - **Interactive states:** Every clickable element needs hover, focus-visible, and active states.
 - **Spacing:** Use the spacing scale defined above — not arbitrary values.
 
+## Internal Docs
+Non-website reference content (marketing copy, instructions, etc.) lives as standalone HTML files in the project root, styled to match the site. All such files are linked from `internal.html`, which serves as the index.
+
+When creating a new internal doc:
+1. Create the HTML file in the project root
+2. Add a link entry to `internal.html`
+3. Include a `← Internal docs` back-link to `internal.html` at the top of the new file
+
+Current internal docs:
+- `internal.html` — index
+- `blog-instructions.html` — blog post authoring procedure
+- `google-business-description.html` — Google Business profile description + Google Ads copy
+
 ## Hard Rules
 - Do not add sections, features, or content not requested
 - Do not use `transition-all`
