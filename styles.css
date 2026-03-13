@@ -76,7 +76,7 @@ hr.rule {
 .btn-secondary {
   background: transparent;
   color: #2F2F2F;
-  border: 1px solid #D4D4D2;
+  border: 1px solid #898987;
 }
 .btn-secondary:hover { border-color: #2F2F2F; }
 
@@ -128,7 +128,11 @@ header {
   opacity: 0.78;
   background-color: #FBFBF9;
   border-radius: 50%;
-  transition: opacity 0.18s ease;
+  transition: opacity 0.18s ease, height 0.3s ease, width 0.3s ease;
+}
+header.scrolled .logo-mark img {
+  height: 36px;
+  width: 36px;
 }
 .logo-mark:hover img { opacity: 1; }
 .logo-mark:focus-visible {
