@@ -654,11 +654,14 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
 }
 .package {
   position: relative;
-  padding: 36px 28px 32px;
+  padding: 80px 28px 32px;
   background: #FBFBF9;
   border-top: 2px solid #E6E6E4;
   box-shadow: 0 2px 8px rgba(47,47,47,0.06), 0 8px 24px rgba(47,47,47,0.04);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, border-color 0.25s ease, background 0.35s ease;
 }
 .package:hover {
@@ -684,12 +687,6 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   transition: opacity 0.35s ease;
 }
 .package:hover .package-ordinal { opacity: 0.13; }
-.package-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 12px;
-}
 .package-name {
   font-family: 'Goudy Bookletter 1911', serif;
   font-size: 1.15rem;
@@ -702,9 +699,17 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   font-weight: 500;
   color: #8A7A55;
   letter-spacing: 0.02em;
+  margin-top: 6px;
+}
+.package-desc {
+  font-size: 0.88rem;
+  color: #6F6F6F;
+  line-height: 1.65;
+  margin-top: 20px;
 }
 .package-badge {
   display: inline-block;
+  margin-top: 20px;
   font-family: 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 500;
@@ -713,37 +718,6 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   color: #8A7A55;
   border: 1px solid #C8BA9A;
   padding: 3px 8px;
-  margin-bottom: 14px;
-}
-.package-desc {
-  font-size: 0.88rem;
-  color: #6F6F6F;
-  line-height: 1.65;
-  margin-bottom: 20px;
-}
-.package-includes {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid #E6E6E4;
-  padding-top: 16px;
-}
-.package-includes li {
-  font-size: 0.85rem;
-  color: #4A4A4A;
-  padding: 5px 0 5px 14px;
-  position: relative;
-}
-.package-includes li::before {
-  content: '';
-  position: absolute;
-  left: 1px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #8A7A55;
 }
 
 
