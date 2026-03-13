@@ -85,6 +85,7 @@
 
   <!-- ── HERO ───────────────────────────────────────── -->
   <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap">
       <!-- <img src="images/logo_3d_engraved_large.png" alt="Whole Tone Piano Works" class="hero-logo"> -->
       <img src="images/logo_curves_no_text.png" alt="Whole Tone Piano Works" class="hero-logo hero-seq">
@@ -120,7 +121,7 @@
         <p class="reveal">I see each visit as an opportunity to improve your instrument as a whole — tuning, touch, and tone — with attention to both musical detail and mechanical integrity.</p>
         <p class="reveal">When I arrive, I'll remove the outer case and do a quick evaluation, noting any repairs needed and what improvements can be made. Then I'll do a light clean, make sure your bench legs are tight, and tune. With any time remaining, I'll work on improving touch and tone.</p>
         <p class="reveal">I also love to interact with the humans who play the piano — both large and small — and I'm always eager to share my knowledge and excitement.</p>
-        <p class="closing-statement reveal">Not isolated perfection — but integrated refinement.</p>
+        <!-- <p class="closing-statement reveal">Not isolated perfection — but integrated refinement.</p> -->
       </div>
     </div>
   </section>
@@ -150,8 +151,9 @@
       <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
       <span class="eyebrow reveal">Services</span>
       <h2 id="services-heading" class="reveal">What I offer.</h2>
-      <div class="package-grid reveal">
-        <div class="package">
+      <div class="package-grid">
+        <div class="package reveal">
+          <div class="package-bg" aria-hidden="true"></div>
           <span class="package-ordinal" aria-hidden="true">01</span>
           <div class="package-header">
             <div class="package-name">Tune &amp; Maintain</div>
@@ -166,7 +168,8 @@
             <li>Basic condition notes</li>
           </ul>
         </div>
-        <div class="package package-featured">
+        <div class="package package-featured reveal" data-delay="120">
+          <div class="package-bg" aria-hidden="true"></div>
           <span class="package-ordinal" aria-hidden="true">02</span>
           <div class="package-header">
             <div class="package-name">Full Service</div>
@@ -182,7 +185,8 @@
             <li>Written service notes</li>
           </ul>
         </div>
-        <div class="package">
+        <div class="package package-deep-dive reveal" data-delay="240">
+          <div class="package-bg" aria-hidden="true"></div>
           <span class="package-ordinal" aria-hidden="true">03</span>
           <div class="package-header">
             <div class="package-name">Deep Dive</div>
@@ -273,7 +277,7 @@
   <script>
   // ── Hero sequence ──────────────────────────────────
   document.querySelectorAll('.hero-seq').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 150 + i * 150);
+    setTimeout(() => el.classList.add('visible'), 200 + i * 220);
   });
 
   // ── Scroll reveals ─────────────────────────────────
@@ -286,14 +290,19 @@
         revealObs.unobserve(el);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.10 });
 
   document.querySelectorAll('.reveal, .string-divider').forEach(el => revealObs.observe(el));
 
   // ── Header shrink on scroll ─────────────────────────
   const siteHeader = document.getElementById('site-header');
+
+  // ── Hero parallax ───────────────────────────────────
+  const heroBg = document.querySelector('.hero-bg');
   window.addEventListener('scroll', () => {
-    siteHeader.classList.toggle('scrolled', window.scrollY > 60);
+    const y = window.scrollY;
+    siteHeader.classList.toggle('scrolled', y > 60);
+    if (heroBg) heroBg.style.transform = `translateY(${y * 0.28}px)`;
   }, { passive: true });
 
   // ── FAQ accordion ───────────────────────────────────
