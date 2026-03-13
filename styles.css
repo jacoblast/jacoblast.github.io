@@ -692,6 +692,7 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   font-size: 1.15rem;
   color: #2F2F2F;
   font-weight: 400;
+  margin: 0;
 }
 .package-price {
   font-family: 'Inter', sans-serif;
