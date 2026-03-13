@@ -395,7 +395,8 @@ footer {
   color: #2F2F2F;
 }
 .footer-tagline {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
   font-size: 15px;
   color: #6F6F6F;
 }
@@ -510,6 +511,10 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 @media (max-width: 540px) {
   .hero { padding: 72px 0 68px; }
   .benefits, .services-section, .about-section, .cta-section { padding: 60px 0; }
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+  .footer-brand { justify-content: center; }
+  .footer-contact { text-align: center; }
+  .footer-serving { text-align: center; }
 }
 
 /* ── Hero background (parallax target) ────────────── */
