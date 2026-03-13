@@ -23,32 +23,162 @@
 - After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
+- The screenshot script does not scroll. Use a custom Puppeteer script to scroll the page before capturing if scroll-reveal animations need to be visible.
 
 ## Output Defaults
-- Single `index.html` file, all styles inline, unless user says otherwise
-- Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>`
+- Styles live in `styles.css` (external file). Do not write inline styles or `<style>` blocks.
+- Tailwind CSS via CDN: `<script src="https://cdn.tailwindcss.com"></script>` — used for utilities only; component styles go in `styles.css`.
 - Placeholder images: `https://placehold.co/WIDTHxHEIGHT`
 - Mobile-first responsive
+
+---
+
+## Whole Tone Piano Works — Design System
+
+### File Structure
+- `index.html` — single-page site
+- `styles.css` — all component and layout styles
+- `images/` — photos and background textures
+- `brand_assets/` — logo files (`logo_curves_no_text.png` is primary)
+
+### Color Palette
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `cream` | `#FBFBF9` | Page base, card backgrounds |
+| `parchment` | `#F4F2EC` | Hero bg, alternate sections, card hover tint (`#F8F6F0`) |
+| `ink` | `#2F2F2F` | Headings, primary text, buttons |
+| `mid` | `#4A4A4A` | Body text |
+| `muted` | `#6F6F6F` | Secondary text, captions |
+| `rule` | `#E6E6E4` | Borders, dividers |
+| `accent` | `#8A7A55` | Gold — eyebrows, prices, bullets, active borders, badges |
+| `accent-light` | `#C8BA9A` | Badge borders, light accent use |
+
+Never introduce new colors. All tints should be derived from the above.
+
+### Typography
+| Role | Font | Notes |
+|------|------|-------|
+| Display / headings | Goudy Bookletter 1911 | `font-family: 'Goudy Bookletter 1911', serif` |
+| Body / serif text | Source Serif 4 | `font-family: 'Source Serif 4', serif` — italic for eyebrows, trust strip |
+| UI / labels / nav | Inter | `font-family: 'Inter', sans-serif` — buttons, badges, prices, nav |
+
+- Large headings: `letter-spacing: -0.025em`, `line-height: 1.18–1.22`
+- Body: `line-height: 1.75`, `font-size: 0.95–1rem`
+- Eyebrows: Inter, `11px`, `letter-spacing: 0.13em`, uppercase, accent color
+
+### Spacing Scale
+Sections use `padding: 88px 0` (mobile: `60px 0`). Internal section spacing:
+- Between eyebrow → heading: `18px` (via eyebrow `margin-bottom`)
+- Between heading → content: `28px`
+- Paragraph gap: `18–20px`
+- Card padding: `36px 28px`
+- Card grid gap: `20px`
+
+Content widths: `.wrap` = `700px` max, `.wrap-wide` = `960px` max, both centered with `padding: 0 28–32px`.
+
+### Section System
+Sections alternate between `.section-parchment` (`#F4F2EC`) and `.section-cream` (`#FBFBF9`).
+
+```html
+<section class="page-section section-parchment" id="my-section" aria-labelledby="my-heading">
+  <div class="section-bg" aria-hidden="true"></div>  <!-- optional background image -->
+  <div class="wrap">
+    <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+    <span class="eyebrow reveal">Label</span>
+    <h2 id="my-heading" class="reveal">Heading.</h2>
+    <!-- content -->
+  </div>
+</section>
+```
+
+To add a background illustration to any section, add a CSS rule:
+```css
+#my-section .section-bg { background-image: url('images/filename.png'); }
+```
+The `.section-bg` div renders at `opacity: 0.07` — this works best with high-contrast line drawings or schematic images. Photographs at this opacity lose too much detail.
+
+**Current section backgrounds:**
+- Hero: `images/string_scale.png` (parallax via `.hero-bg` div + JS)
+- My Approach (`#approach`): `images/grand_action.png` (patent line drawing)
+- Services (`#services`): `images/chladni_bg.png` (scientific pattern)
+- About and FAQ: flat backgrounds (intentional rest points)
+- CTA: `images/piano_prism.png` as full-bleed with dark overlay (different system — uses `::before`/`::after`)
+
+### Animation System
+All scroll-triggered elements get class `reveal`. They animate in via IntersectionObserver (JS in `index.html`).
+
+```css
+/* Timings */
+--reveal-duration: 0.75s
+--reveal-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94)  /* ease-out quart — slow tail */
+--hero-duration: 1.0s
+--hero-stagger: 220ms per element
+--string-divider-stagger: 200ms per line
+```
+
+- **Reveal:** `opacity 0 → 1`, `translateY(14px) → 0`, `blur(2px) → 0`
+- **Hero sequence:** `.hero-seq` elements, staggered by JS: `200 + i * 220ms`
+- **String dividers:** `.string-divider` with three `<span>` children, `scaleX` stagger
+- **Hero parallax:** `.hero-bg` div translated via scroll handler at `scrollY * 0.28`
+- **Header shrink:** `.scrolled` class added at `scrollY > 60` — height `70px → 54px`, logo `50px → 36px`
+- Stagger delay via `data-delay="120"` attribute on `.reveal` elements
+
+Rules:
+- Only animate `transform`, `opacity`, `filter`. Never `transition-all`.
+- Use `cubic-bezier(0.34, 1.56, 0.64, 1)` for spring/bounce entrances (buttons, card lift).
+- Use `cubic-bezier(0.25, 0.46, 0.45, 0.94)` for graceful settle (reveals, section transitions).
+
+### Interactive States
+Every clickable element must have hover, `focus-visible`, and active states.
+- Buttons: hover darkens bg, active `scale(0.97)`
+- Nav links: animated underline via `background-size` transition
+- Service cards: `translateY(-5px)` lift + deeper shadow + gold border + `#F8F6F0` bg tint + ordinal opacity `0.045 → 0.13`
+- About photo: `scale(1.03)` on hover (0.9s ease)
+- Logo: opacity `0.78 → 1` on hover
+
+### Service Cards
+Three-column grid (`repeat(3, 1fr)`, `gap: 20px`). Each card:
+- White bg (`#FBFBF9`), 2px top border (grey default, gold for `.package-featured`)
+- Layered shadow, `overflow: hidden`
+- Faint ordinal number (`.package-ordinal`) absolutely positioned top-right
+- `.package-featured` = Full Service (middle card) — always has gold top border + "Recommended" badge
+
+To add a card hover background image (future — when strings/hammers photos are available):
+```css
+.package-tune-maintain .package-bg { background-image: url('images/strings.jpeg'); }
+/* restore the .package-bg system from git history if needed */
+```
+
+### String Divider
+Three horizontal hairlines that animate in with staggered `scaleX`. Always placed before eyebrow label at the top of each section. Requires three `<span>` children and both `string-divider` and `reveal` classes.
+
+### CTA Section
+Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 12, 6, 0.38)`). Text is cream (`#FBFBF9`). Button is inverted (cream bg, dark text). Background position `center 70%` to show keyboard and rainbow in `piano_prism.png`.
+
+### Images
+- Photos: `filter: grayscale(15%)` for tonal consistency
+- Background illustrations: work best as line drawings / high-contrast schematics at `opacity: 0.07`
+- Full-bleed section images (CTA): require dark overlay for text legibility — start at `rgba(18,12,6, 0.38)`, adjust as needed
+- HEIF images must be converted to JPEG before web use: `sips -s format jpeg -s formatOptions 85 input.heif --out output.jpeg`
+
+---
 
 ## Brand Assets
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
-- If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
+- Logo: `brand_assets/logo_curves_no_text.png` — transparent PNG, circular mark. Use `background-color: #FBFBF9; border-radius: 50%` when placing on dark or textured backgrounds to fill the transparent interior.
 
 ## Anti-Generic Guardrails
-- **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
-- **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
-- **Typography:** Never use the same font for headings and body. Pair a display/serif with a clean sans. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
-- **Gradients:** Layer multiple radial gradients. Add grain/texture via SVG noise filter for depth.
-- **Animations:** Only animate `transform` and `opacity`. Never `transition-all`. Use spring-style easing.
-- **Interactive states:** Every clickable element needs hover, focus-visible, and active states. No exceptions.
-- **Images:** Add a gradient overlay (`bg-gradient-to-t from-black/60`) and a color treatment layer with `mix-blend-multiply`.
-- **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
-- **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
+- **Colors:** Never use default Tailwind palette. Use the design system palette above.
+- **Shadows:** Layered, color-tinted. Never flat `shadow-md` alone.
+- **Typography:** Never same font for headings and body. See typography table above.
+- **Animations:** Only animate `transform`, `opacity`, `filter`. Never `transition-all`.
+- **Interactive states:** Every clickable element needs hover, focus-visible, and active states.
+- **Spacing:** Use the spacing scale defined above — not arbitrary values.
 
 ## Hard Rules
-- Do not add sections, features, or content not in the reference
-- Do not "improve" a reference design — match it
-- Do not stop after one screenshot pass
+- Do not add sections, features, or content not requested
 - Do not use `transition-all`
 - Do not use default Tailwind blue/indigo as primary color
+- Do not introduce colors outside the defined palette
+- Do not add inline styles — all styles go in `styles.css`
