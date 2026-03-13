@@ -744,7 +744,7 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   inset: 0;
   background-image: url('images/piano_prism.png');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 70%;
   z-index: 0;
 }
 .cta-section::after {
