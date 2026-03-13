@@ -591,6 +591,11 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .section-parchment { background: #F4F2EC; }
 .section-cream { background: #FBFBF9; }
 
+/* ── Section vignettes ─────────────────────────────── */
+.hero        { background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #F0ECE4 75%, #EDE6DA 100%) !important; }
+#approach    { background: radial-gradient(ellipse 110% 75% at 45% 55%, #F4F2EC 45%, #F2EEE2 75%, #EFE9D6 100%) !important; }
+#services    { background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #EFF2EC 75%, #EAF0E6 100%) !important; }
+
 #approach .section-bg { background-image: url('images/grand_action.png'); }
 #services .section-bg { background-image: url('images/chladni_bg.png'); }
 
@@ -619,30 +624,48 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   object-fit: cover;
   object-position: center 35%;
   display: block;
-  filter: grayscale(15%);
+  /* filter: grayscale(15%); */
   transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .about-photo-full:hover img {
   transform: scale(1.03);
 }
-.about-2col-text {
+.about-portrait-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 48px;
   margin-bottom: 28px;
+  align-items: stretch;
 }
-.about-2col-text p {
+.about-portrait {
+  overflow: hidden;
+  align-self: stretch;
+}
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  filter: grayscale(15%);
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+}
+.about-portrait:hover img {
+  transform: scale(1.03);
+}
+.about-portrait-text p {
   color: #4A4A4A;
   line-height: 1.75;
   font-size: 0.97rem;
-  margin: 0;
+  margin-bottom: 20px;
 }
+.about-portrait-text p:last-child { margin-bottom: 0; }
 .about-closing {
   text-align: center;
 }
 @media (max-width: 640px) {
   .about-photo-full img { aspect-ratio: 4/3; }
-  .about-2col-text { grid-template-columns: 1fr; gap: 20px; }
+  .about-portrait-row { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* ── Service packages ─────────────────────────────── */
@@ -668,7 +691,7 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(47,47,47,0.10), 0 20px 48px rgba(47,47,47,0.08);
   border-color: #8A7A55;
-  background: #F8F6F0;
+  background: radial-gradient(ellipse 120% 80% at 60% 30%, #F4F2EC 15%, #EAE0D2 60%, #DFD0BC 100%);
 }
 .package-featured {
   border-top-color: #8A7A55;

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Instructions — Whole Tone Piano Works</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FBFBF9;
+      color: #2F2F2F;
+      font-family: 'Source Serif 4', serif;
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+    }
+
+    h1 {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #8A7A55;
+      margin-bottom: 48px;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #4A4A4A;
+    }
+
+    ol, ul {
+      padding-left: 24px;
+      margin-bottom: 24px;
+      color: #4A4A4A;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    li strong {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #2F2F2F;
+    }
+
+    pre {
+      background: #F4F2EC;
+      border-left: 3px solid #8A7A55;
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+      margin: 20px 0 28px;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    code {
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-size: 0.85em;
+      background: #F0EDE5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #5A4A2F;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: #3A3020;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 36px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 1.5rem;
+      color: #C8B898;
+      line-height: 1.3;
+      min-width: 28px;
+    }
+
+    .step-body { flex: 1; }
+
+    .step-body h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2F2F2F;
+      letter-spacing: 0.01em;
+      margin-bottom: 8px;
+    }
+
+    .step-body p { margin-bottom: 8px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #E6E6E4;
+      margin: 48px 0;
+    }
+
+    .note {
+      background: #F4F2EC;
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: #5A5040;
+      margin: 24px 0;
+    }
+
+    .note strong {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8A7A55;
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <span class="subtitle">Whole Tone Piano Works — Internal Reference</span>
+  <h1>Adding a Blog Post</h1>
+
+  <p>Follow these steps each time you want to publish a new post. The only files you need to touch are a new <code>.md</code> file and any media assets. The build script handles the rest.</p>
+
+  <hr>
+
+  <h2>Step by step</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Create a new markdown file</h3>
+      <p>Add a file to <code>blog/posts/</code> named with the post slug. Use lowercase with hyphens, no spaces.</p>
+      <pre><code>blog/posts/why-regulation-matters.md</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Add frontmatter at the top</h3>
+      <p>This block tells the build script the post's metadata. All fields are required.</p>
+      <pre><code>---
+title: Why Regulation Matters
+date: 2026-03-15
+slug: why-regulation-matters
+excerpt: Most pianists only think about tuning, but regulation is what makes a piano feel alive under your fingers.
+tags: [regulation, technique]
+---</code></pre>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Write the post body in markdown</h3>
+      <p>Standard markdown below the frontmatter block. You can embed audio, video, or any HTML directly inline.</p>
+      <pre><code>Most pianists only think about tuning...
+
+## The action explained
+
+Each key triggers a chain of parts called the action...
+
+&lt;!-- Embed an audio clip --&gt;
+&lt;audio controls src="../media/before-after.mp3"&gt;&lt;/audio&gt;
+
+&lt;!-- Embed a video --&gt;
+&lt;video controls src="../media/action-demo.mp4" style="width:100%"&gt;&lt;/video&gt;
+
+&lt;!-- Embed a YouTube video --&gt;
+&lt;iframe width="100%" height="400"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+      <div class="note">
+        <strong>Media files</strong>
+        Place audio and video files in a <code>blog/media/</code> folder and reference them with a relative path from the post template: <code>../media/filename.mp3</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>Run the build script</h3>
+      <p>From the project root in Terminal:</p>
+      <pre><code>node build.mjs</code></pre>
+      <p>This will regenerate <code>blog/posts.json</code> and write the post's HTML output file.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h3>Preview locally</h3>
+      <p>Start the local server if it isn't running:</p>
+      <pre><code>node serve.mjs</code></pre>
+      <p>Then open <a href="http://localhost:3000/blog.html">http://localhost:3000/blog.html</a> to see the listing, and click through to the new post.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <h3>Commit and push</h3>
+      <p>When the post looks right, commit everything and push to publish.</p>
+      <pre><code>git add .
+git commit -m "Add post: why-regulation-matters"
+git push</code></pre>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Frontmatter reference</h2>
+
+  <ul>
+    <li><strong>title</strong> — The post heading as it appears on the listing and post pages.</li>
+    <li><strong>date</strong> — Publication date in <code>YYYY-MM-DD</code> format. Used for sorting.</li>
+    <li><strong>slug</strong> — URL-safe identifier. Must match the filename (without <code>.md</code>).</li>
+    <li><strong>excerpt</strong> — One or two sentences shown on the listing page. Write this yourself — don't let it auto-generate.</li>
+    <li><strong>tags</strong> — Optional list for future filtering. Use lowercase, e.g. <code>[tuning, regulation]</code>.</li>
+  </ul>
+
+  <hr>
+
+  <h2>File structure</h2>
+
+  <pre><code>blog/
+  posts/
+    why-regulation-matters.md   ← you write this
+    another-post.md
+  media/
+    before-after.mp3            ← audio/video assets go here
+  posts.json                    ← auto-generated by build.mjs
+blog.html                       ← listing page
+blog/post.html                  ← post template (single file, reads slug from URL)</code></pre>
+
+</body>
+</html>
