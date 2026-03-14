@@ -910,13 +910,13 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   font-size: 1rem;
 }
 .cta-section .btn-primary {
-  background: #FBFBF9;
+  background: rgba(251,251,249,0.85);
   color: #2F2F2F;
-  border-color: #FBFBF9;
+  border-color: rgba(251,251,249,0.9);
 }
 .cta-section .btn-primary:hover {
-  background: #fff;
-  border-color: #fff;
+  background: #F4EFE6;
+  border-color: #F4EFE6;
 }
 
 /* ── Nav phone ────────────────────────────────────── */
@@ -1023,18 +1023,18 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: transparent;
-  color: #FBFBF9;
-  border: 1px solid rgba(251,251,249,0.65);
+  background: rgba(251,251,249,0.85);
+  color: #2F2F2F;
+  border: 1px solid rgba(251,251,249,0.9);
   padding: 13px 28px;
   border-radius: 3px;
   cursor: pointer;
   width: 100%;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 .cta-form button:hover {
-  border-color: rgba(251,251,249,0.7);
-  color: #FBFBF9;
+  background: #F4EFE6;
+  border-color: #F4EFE6;
 }
 .cta-form button:active { transform: scale(0.97); }
 
