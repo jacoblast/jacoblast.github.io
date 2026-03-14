@@ -910,9 +910,9 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   font-size: 1rem;
 }
 .cta-section .btn-primary {
-  background: rgba(251,251,249,0.85);
+  background: rgba(251,251,249,0.7);
   color: #2F2F2F;
-  border-color: rgba(251,251,249,0.9);
+  border-color: rgba(251,251,249,0.85);
 }
 .cta-section .btn-primary:hover {
   background: #F4EFE6;
@@ -1023,9 +1023,9 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgba(251,251,249,0.85);
+  background: rgba(251,251,249,0.7);
   color: #2F2F2F;
-  border: 1px solid rgba(251,251,249,0.9);
+  border: 1px solid rgba(251,251,249,0.85);
   padding: 13px 28px;
   border-radius: 3px;
   cursor: pointer;
