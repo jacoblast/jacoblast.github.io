@@ -2,6 +2,7 @@
 
 ## Always Do First
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
+- **Never automatically commit or push.** Always use the `/commit` skill to commit and the `/push` skill to push. Never run `git commit` or `git push` on your own without being explicitly asked via these skills.
 
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
