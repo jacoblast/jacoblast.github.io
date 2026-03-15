@@ -2,6 +2,10 @@ title: Whole Tone Piano Works
 url: https://www.wholetonepiano.com
 baseurl: ""
 
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 exclude:
   - node_modules/
   - "temporary screenshots/"
