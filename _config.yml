@@ -1,0 +1,19 @@
+title: Whole Tone Piano Works
+url: https://www.wholetonepiano.com
+baseurl: ""
+
+exclude:
+  - node_modules/
+  - "temporary screenshots/"
+  - serve.mjs
+  - screenshot.mjs
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - internal.html
+  - blog-instructions.html
+  - google-business-description.html
+  - "*.rtf"
+  - "*.bak"
+  - CLAUDE.md

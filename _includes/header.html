@@ -1,0 +1,40 @@
+  <!-- ── HEADER ─────────────────────────────────────── -->
+  <header id="site-header">
+    <div class="wrap-wide">
+      <div class="header-inner">
+        <a href="/" class="logo-mark" aria-label="Whole Tone Piano Works — home">
+          <img src="/brand_assets/logo_curves_no_text.png" alt="">
+          <span class="logo-text">Whole Tone Piano Works</span>
+        </a>
+        <nav id="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="/" class="nav-link"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="/#services" class="nav-link">Services</a></li>
+            <li><a href="/about.html" class="nav-link"{% if page.url == '/about.html' %} aria-current="page"{% endif %}>About</a></li>
+            <li><a href="/#faq" class="nav-link">FAQ</a></li>
+            <li><a href="/#schedule" class="btn btn-primary" style="padding:9px 20px;">Book Now</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const header = document.getElementById('site-header');
+    toggle.addEventListener('click', () => {
+      const open = header.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        header.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', false);
+        toggle.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  </script>

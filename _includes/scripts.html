@@ -1,0 +1,67 @@
+  <script>
+  // ── Hero sequence ──────────────────────────────────
+  document.querySelectorAll('.hero-seq').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 200 + i * 220);
+  });
+
+  // ── Service card wave ───────────────────────────────
+  const packageGrid = document.querySelector('.package-grid');
+  if (packageGrid) {
+    const cardWaveObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = packageGrid.querySelectorAll('.card-wave');
+          cards.forEach((card, i) => {
+            setTimeout(() => card.classList.add('in-view'), i * 160);
+          });
+          cardWaveObs.unobserve(packageGrid);
+        }
+      });
+    }, { threshold: 0.15 });
+    cardWaveObs.observe(packageGrid);
+  }
+
+  // ── Scroll reveals ─────────────────────────────────
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = el.dataset.delay || 0;
+        setTimeout(() => el.classList.add('in-view'), delay);
+        revealObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.10 });
+
+  document.querySelectorAll('.reveal, .string-divider').forEach(el => revealObs.observe(el));
+
+  // ── Header shrink on scroll ─────────────────────────
+  const siteHeader = document.getElementById('site-header');
+
+  // ── Hero parallax ───────────────────────────────────
+  const heroBg = document.querySelector('.hero-bg');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    siteHeader.classList.toggle('scrolled', y > 60);
+    if (heroBg) heroBg.style.transform = `translateY(${y * 0.28}px)`;
+  }, { passive: true });
+
+  // ── FAQ accordion ───────────────────────────────────
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(open => {
+        open.classList.remove('open');
+        open.querySelector('.faq-body').style.maxHeight = '';
+        open.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  </script>

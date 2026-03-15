@@ -11,15 +11,16 @@
 
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
-- `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
+- Start the dev server: `bundle exec jekyll serve` (serves at `http://localhost:4000`)
+- Run in background: `bundle exec jekyll serve --detach` — stop with `pkill -f jekyll`
+- Requires Ruby 3.3 in PATH: `export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"` (already added to `~/.zprofile`)
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow
 - Puppeteer is installed at `./node_modules/puppeteer/`. Chrome (Chromium) cache is at `~/.cache/puppeteer/chrome/`.
-- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
+- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:4000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
-- Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
+- Optional label suffix: `node screenshot.mjs http://localhost:4000 label` → saves as `screenshot-N-label.png`
 - `screenshot.mjs` lives in the project root. Use it as-is.
 - After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
@@ -37,10 +38,18 @@
 ## Whole Tone Piano Works — Design System
 
 ### File Structure
-- `index.html` — single-page site
+- `index.html` — home page (Jekyll page with frontmatter)
+- `about.html` — About page (Jekyll page with frontmatter)
 - `styles.css` — all component and layout styles
+- `_layouts/default.html` — shared page wrapper
+- `_includes/head.html` — shared `<head>` (fonts, meta, CSS)
+- `_includes/header.html` — shared header + nav
+- `_includes/footer.html` — shared footer
+- `_includes/scripts.html` — shared JS (reveals, parallax, FAQ, header shrink)
+- `_config.yml` — Jekyll config
 - `images/` — photos and background textures
 - `brand_assets/` — logo files (`logo_curves_no_text.png` is primary)
+- `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow
 
 ### Color Palette
 | Token | Hex | Usage |
@@ -106,7 +115,7 @@ The `.section-bg` div renders at `opacity: 0.07` — this works best with high-c
 - CTA: `images/piano_prism.png` as full-bleed with dark overlay (different system — uses `::before`/`::after`)
 
 ### Animation System
-All scroll-triggered elements get class `reveal`. They animate in via IntersectionObserver (JS in `index.html`).
+All scroll-triggered elements get class `reveal`. They animate in via IntersectionObserver (JS in `_includes/scripts.html`).
 
 ```css
 /* Timings */

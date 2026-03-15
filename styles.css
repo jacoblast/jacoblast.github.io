@@ -244,6 +244,14 @@ nav ul {
   border-color: #F4EFE6;
 }
 
+/* ── Section spacer ──────────────────────────────── */
+.section-spacer {
+  background: #FBFBF9;
+  border-top: 1px solid #E6E6E4;
+  border-bottom: 1px solid #E6E6E4;
+  height: 48px;
+}
+
 /* ── Trust strip ──────────────────────────────────── */
 .trust-strip {
   display: flex;
