@@ -48,7 +48,8 @@
 - `_includes/footer.html` — shared footer
 - `_includes/scripts.html` — shared JS (reveals, parallax, FAQ, header shrink)
 - `_config.yml` — Jekyll config
-- `images/` — photos and background textures
+- `images/` — photos and background textures (unused images archived in `images/old/`)
+- `_data/testimonials.yml` — testimonial content (name, text, date)
 - `brand_assets/` — logo files (`logo_curves_no_text.png` is primary)
 - `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow
 
@@ -109,11 +110,13 @@ To add a background illustration to any section, add a CSS rule:
 The `.section-bg` div renders at `opacity: 0.07` — this works best with high-contrast line drawings or schematic images. Photographs at this opacity lose too much detail.
 
 **Current section backgrounds:**
-- Hero: `images/string_scale.png` (parallax via `.hero-bg` div + JS)
-- My Approach (`#approach`): `images/grand_action.png` (patent line drawing)
-- Services (`#services`): `images/chladni_bg.png` (scientific pattern)
-- About and FAQ: flat backgrounds (intentional rest points)
-- CTA: `images/piano_prism.png` as full-bleed with dark overlay (different system — uses `::before`/`::after`)
+- Hero: `images/bg-hero-string-scale.png` (parallax via `.hero-bg` div + JS)
+- My Approach (`#approach`): `images/bg-approach-grand-action.png` (patent line drawing)
+- Services (`#services`): `images/bg-services-chladni.png` (scientific pattern)
+- FAQ (`#faq`): `images/bg-faq-grand-strings.jpg` (photo, opacity `0.10`, `saturate(0.3)`)
+- Testimonials (`#testimonials`): `images/bg-testimonials-hammers.jpeg` (photo, opacity `0.08`, `saturate(0.2)`)
+- About: flat background (intentional rest point)
+- CTA: `images/bg-cta-piano-prism.png` as full-bleed with dark overlay (different system — uses `::before`/`::after`)
 
 ### Animation System
 All scroll-triggered elements get class `reveal`. They animate in via IntersectionObserver (JS in `_includes/scripts.html`).
@@ -154,17 +157,21 @@ Three-column grid (`repeat(3, 1fr)`, `gap: 20px`). Each card:
 - Faint ordinal number (`.package-ordinal`) absolutely positioned top-right
 - `.package-featured` = Full Service (middle card) — always has gold top border + "Recommended" badge
 
-To add a card hover background image (future — when strings/hammers photos are available):
-```css
-.package-tune-maintain .package-bg { background-image: url('images/strings.jpeg'); }
-/* restore the .package-bg system from git history if needed */
-```
-
 ### String Divider
 Three horizontal hairlines that animate in with staggered `scaleX`. Always placed before eyebrow label at the top of each section. Requires three `<span>` children and both `string-divider` and `reveal` classes.
 
+### Testimonials Section
+Reviews stored in `_data/testimonials.yml` (fields: `name`, `text`, `date`), rendered via Liquid. Section uses a split layout: `.wrap` for the heading/eyebrow, `.wrap-wide` for the card grid. Three-column grid on desktop, one column on mobile. Each card has a decorative `&ldquo;` in Goudy at top-left (`.testimonial-mark`), italic Source Serif 4 quote, and Inter uppercase name + muted date in the meta row.
+
+To add a review, append an entry to `_data/testimonials.yml`:
+```yaml
+- name: "Reviewer Name"
+  text: "Review text."
+  date: "Month YYYY"
+```
+
 ### CTA Section
-Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 12, 6, 0.38)`). Text is cream (`#FBFBF9`). Background position `center 70%` to show keyboard and rainbow in `piano_prism.png`.
+Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 12, 6, 0.38)`). Text is cream (`#FBFBF9`). Background position `center 70%` to show keyboard and rainbow in `bg-cta-piano-prism.png`.
 
 Contact layout (top to bottom):
 - Two equal cream buttons: "Text to Book" (`sms:`) and "Call (971) 202-0538" (`tel:`) — class `.cta-direct`

@@ -20,3 +20,4 @@ exclude:
   - "*.rtf"
   - "*.bak"
   - CLAUDE.md
+  - "images/old"
