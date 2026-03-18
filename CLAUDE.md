@@ -11,10 +11,11 @@
 
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server: `bundle exec jekyll serve` (serves at `http://localhost:4000`)
-- Run in background: `bundle exec jekyll serve --detach` — stop with `pkill -f jekyll`
+- Start the dev server with watch mode: `bundle exec jekyll serve --watch > /tmp/jekyll.log 2>&1 &` (serves at `http://localhost:4000`, auto-rebuilds on file changes)
+- Stop with `pkill -f jekyll`
 - Requires Ruby 3.3 in PATH: `export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"` (already added to `~/.zprofile`)
 - If the server is already running, do not start a second instance.
+- Note: `--watch` is incompatible with `--detach` — use the shell `&` approach above instead.
 
 ## Screenshot Workflow
 - Puppeteer is installed at `./node_modules/puppeteer/`. Chrome (Chromium) cache is at `~/.cache/puppeteer/chrome/`.

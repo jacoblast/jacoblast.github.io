@@ -105,7 +105,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(251,251,249,0.96);
+  background: rgba(251,251,249,0.90);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #E6E6E4;
   box-shadow: 0 1px 0 rgba(47,47,47,0.04);
@@ -115,6 +115,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  padding: 0 32px;
 }
 .logo-mark {
   display: flex;
@@ -158,7 +159,7 @@ nav ul {
 .hero {
   position: relative;
   background-color: #F4F2EC;
-  padding: 60px 0 96px;
+  padding: 60px 0 60px;
   text-align: center;
   overflow: hidden;
 }
@@ -175,7 +176,7 @@ nav ul {
 .hero-logo {
   width: 192px;
   height: 192px;
-  margin: 0 auto 28px;
+  margin: 0 auto 36px;
   display: block;
 /*   background-color: #FBFBF9;
   border-radius: 50%; */
@@ -197,14 +198,17 @@ nav ul {
   font-style: italic;
   font-size: 1.4rem;
   color: #4A4A4A;
-  margin-bottom: 18px;
+  margin-bottom: 52px;
 }
 .hero-statement {
-  max-width: 500px;
-  margin: 0 auto 52px;
-  font-size: 1.05rem;
-  color: #4A4A4A;
+  /* max-width: 480px; */
+  margin: 52px auto 0px;
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #6F6F6F;
   line-height: 1.72;
+  text-align: center;
 }
 .hero-actions {
   display: flex;
@@ -247,9 +251,23 @@ nav ul {
 /* ── Section spacer ──────────────────────────────── */
 .section-spacer {
   background: #FBFBF9;
-  border-top: 1px solid #E6E6E4;
-  border-bottom: 1px solid #E6E6E4;
-  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 48px;
+  gap: 24px;
+}
+.spacer-rule {
+  flex: 1;
+  height: 1px;
+  background: #E6E6E4;
+  max-width: 220px;
+}
+.spacer-logo {
+  width: 28px;
+  height: 28px;
+  opacity: 0.35;
+  flex-shrink: 0;
 }
 
 /* ── Trust strip ──────────────────────────────────── */
@@ -662,9 +680,11 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .hero        { background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #F0ECE4 75%, #EDE6DA 100%) !important; }
 #approach    { background: radial-gradient(ellipse 110% 75% at 45% 55%, #F4F2EC 45%, #F2EEE2 75%, #EFE9D6 100%) !important; }
 #services    { background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #EFF2EC 75%, #EAF0E6 100%) !important; }
+#faq         { background: radial-gradient(ellipse 110% 75% at 45% 50%, #FBFBF9 45%, #F3F2F0 75%, #ECEAE6 100%) !important; }
 
 #approach .section-bg { background-image: url('images/grand_action.png'); }
 #services .section-bg { background-image: url('images/chladni_bg.png'); }
+#faq      .section-bg { background-image: url('images/grand_strings.jpg'); background-position: center 55%; opacity: 0.10; filter: saturate(0.3); }
 
 .page-section h2 {
   font-size: 1.9rem;
@@ -851,8 +871,8 @@ header.scrolled { box-shadow: 0 2px 16px rgba(47,47,47,0.09); }
 }
 
 /* ── FAQ accordion ────────────────────────────────── */
-.faq-list { border-top: 1px solid #E6E6E4; margin-top: 40px; }
-.faq-item { border-bottom: 1px solid #E6E6E4; }
+.faq-list { border-top: 1px solid #C8C8C5; margin-top: 40px; }
+.faq-item { border-bottom: 1px solid #C8C8C5; }
 .faq-trigger {
   width: 100%;
   background: none;

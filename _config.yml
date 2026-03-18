@@ -3,7 +3,6 @@ url: https://www.wholetonepiano.com
 baseurl: ""
 
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
 
 exclude:
