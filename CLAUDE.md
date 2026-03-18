@@ -11,7 +11,7 @@
 
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server with watch mode: `bundle exec jekyll serve --watch > /tmp/jekyll.log 2>&1 &` (serves at `http://localhost:4000`, auto-rebuilds on file changes)
+- Start the dev server with watch mode: `bundle exec jekyll serve --watch --host 0.0.0.0 > /tmp/jekyll.log 2>&1 &` (serves at `http://localhost:4000`, also accessible on local network via machine IP, auto-rebuilds on file changes)
 - Stop with `pkill -f jekyll`
 - Requires Ruby 3.3 in PATH: `export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"` (already added to `~/.zprofile`)
 - If the server is already running, do not start a second instance.

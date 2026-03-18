@@ -217,6 +217,37 @@ canonical: "https://www.wholetonepiano.com/"
     <span class="spacer-rule"></span>
   </div>
 
+  <!-- ── SECTION: Testimonials ──────────────────────────── -->
+  <section class="page-section section-parchment" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+      <span class="eyebrow reveal">What clients say</span>
+      <h2 id="testimonials-heading" class="reveal">In their words.</h2>
+    </div>
+    <div class="wrap-wide">
+      <div class="testimonial-grid">
+        {% for t in site.data.testimonials %}
+        <div class="testimonial reveal">
+          <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+          <p class="testimonial-quote">{{ t.text }}</p>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">{{ t.name }}</span>
+            {% if t.date %}<span class="testimonial-date">{{ t.date }}</span>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION SPACER ───────────────────────────────── -->
+  <div class="section-spacer" aria-hidden="true">
+    <span class="spacer-rule"></span>
+    <img src="/brand_assets/logo_curves_no_text.png" alt="" class="spacer-logo">
+    <span class="spacer-rule"></span>
+  </div>
+
   <!-- ── CTA ────────────────────────────────────────── -->
   <section class="cta-section" id="schedule" aria-labelledby="cta-heading">
     <div class="wrap">
