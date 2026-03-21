@@ -320,13 +320,14 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   flex-wrap: wrap;
   gap: 10px 20px;
   padding: 18px 28px;
+  background: #F4F2EC;
   border-top: 1px solid #E6E6E4;
   border-bottom: 1px solid #E6E6E4;
   font-family: 'Source Serif 4', serif;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   letter-spacing: 0.02em;
-  color: #8A8A88;
+  color: #4A4A4A;
   text-align: center;
 }
 .trust-dot {
@@ -556,10 +557,13 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 .services-contact {
   font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  color: #6F6F6F;
+  font-size: 1rem;
+  color: #4A4A4A;
   text-align: center;
-  margin-top: 36px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #C8C8C5;
+  font-weight: 500;
 }
 .services-contact a {
   color: #8A7A55;
