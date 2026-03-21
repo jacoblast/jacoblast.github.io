@@ -6,7 +6,7 @@ html { scroll-behavior: smooth; }
 body {
   background: #FBFBF9;
   color: #2F2F2F;
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Spectral', serif;
   font-size: 19px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -267,7 +267,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 .hero-subtitle {
   display: block;
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Spectral', serif;
   /* font-style: bold; */
   font-size: 1.4rem;
   color: #4A4A4A;
@@ -275,7 +275,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 .hero-statement {
   margin: 52px auto 0;
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Spectral', serif;
   font-style: italic;
   font-size: 1.4rem;
   color: #6F6F6F;
@@ -323,7 +323,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   background: #F4F2EC;
   border-top: 1px solid #E6E6E4;
   border-bottom: 1px solid #E6E6E4;
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Spectral', serif;
   font-size: 17px;
   /* font-style: italic; */
   font-weight: bold;
@@ -659,7 +659,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   user-select: none;
 }
 .testimonial-quote {
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Spectral', serif;
   font-style: italic;
   font-size: 1rem;
   color: #4A4A4A;
@@ -888,7 +888,7 @@ footer {
   color: #2F2F2F;
 }
 .footer-tagline {
-  font-family: 'Source Serif 4', serif;
+  font-family: 'Spectral', serif;
   font-style: italic;
   font-size: 15px;
   color: #6F6F6F;
