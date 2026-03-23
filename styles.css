@@ -262,7 +262,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   font-size: clamp(2.4rem, 6vw, 3.8rem);
   font-variant: small-caps;
   line-height: 1.12;
-  letter-spacing: -0.025em;
+  letter-spacing: -0em;
   margin-bottom: 18px;
 }
 .hero-subtitle {
