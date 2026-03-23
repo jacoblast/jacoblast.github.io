@@ -462,6 +462,21 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .string-divider.in-view span:nth-child(3) { transform: scaleX(1); transition-delay: 400ms; }
 
 /* ── Approach section ─────────────────────────────── */
+.approach-photo {
+  margin-top: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.approach-photo img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/7;
+  filter: grayscale(15%);
+  transition: transform 0.9s ease;
+}
+.approach-photo:hover img { transform: scale(1.03); }
+
 .about-body p {
   color: #4A4A4A;
   line-height: 1.75;
@@ -658,13 +673,21 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   pointer-events: none;
   user-select: none;
 }
+.testimonial-stars {
+  color: #8A7A55;
+  font-size: 1.05rem;
+  letter-spacing: 0.2em;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
 .testimonial-quote {
   font-family: 'Spectral', serif;
   font-style: italic;
   font-size: 1rem;
   color: #4A4A4A;
   line-height: 1.75;
-  margin-top: 20px;
+  margin-top: 32px;
   margin-bottom: 20px;
   flex: 1;
 }
@@ -686,6 +709,25 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   font-size: 0.72rem;
   color: #6F6F6F;
 }
+
+.testimonial-google-link {
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.testimonial-google-link a {
+  color: #8A7A55;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: color 0.18s ease, background-size 0.25s ease;
+}
+.testimonial-google-link a:hover { color: #2F2F2F; background-size: 100% 1px; }
 
 @media (max-width: 900px) {
   .testimonial-grid { grid-template-columns: 1fr; gap: 16px; }

@@ -123,8 +123,11 @@ canonical: "https://www.wholetonepiano.com/"
         <p class="reveal">There are a thousand small adjustments that can make a piano sing. I see each visit as an opportunity to improve the instrument as a whole: tuning, touch, and tone.</p>
         <p class="reveal">Equally important is the chance to connect with the people behind the piano — young and old — and share some of the knowledge and excitement I bring to every visit.</p>
       </div>
-      <div class="reveal" style="margin-top: 32px;">
+      <div class="reveal" style="margin-top: 32px; text-align: center;">
         <a href="/about.html" class="btn btn-secondary">More about me</a>
+      </div>
+      <div class="approach-photo reveal">
+        <img src="images/suki-keys.jpg" alt="Piano keys" loading="lazy">
       </div>
     </div>
   </section>
@@ -236,6 +239,7 @@ canonical: "https://www.wholetonepiano.com/"
         {% for t in site.data.testimonials %}
         <div class="testimonial reveal">
           <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
           <p class="testimonial-quote">{{ t.text }}</p>
           <div class="testimonial-meta">
             <span class="testimonial-name">{{ t.name }}</span>
@@ -244,6 +248,7 @@ canonical: "https://www.wholetonepiano.com/"
         </div>
         {% endfor %}
       </div>
+      <p class="testimonial-google-link reveal"><a href="https://maps.app.goo.gl/fvygv8ZUsNpw4kKD9" target="_blank" rel="noopener">Check out more reviews on Google</a></p>
     </div>
   </section>
 
