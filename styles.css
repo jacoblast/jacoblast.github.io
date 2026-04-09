@@ -282,6 +282,21 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   line-height: 1.72;
   text-align: center;
 }
+.hero-reviews {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #4A4A4A;
+  transition: color 0.18s ease;
+}
+.hero-reviews:hover { color: #2F2F2F; }
+.hero-reviews-top { display: flex; align-items: center; gap: 8px; }
+.hero-reviews-stars { display: block; }
 .hero-banner {
   position: relative;
   background-image: url('images/hero-keys-rainbow.jpg');
@@ -338,6 +353,13 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   background: #C8C8C6;
   flex-shrink: 0;
 }
+.trust-reviews {
+  color: #8A7A55;
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+  transition: color 0.18s ease;
+}
+.trust-reviews:hover { color: #2F2F2F; }
 @media (max-width: 640px) {
   .trust-dot { display: none; }
   .trust-strip { flex-direction: column; gap: 6px; padding: 16px 28px; }
