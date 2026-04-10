@@ -4,6 +4,20 @@
     setTimeout(() => el.classList.add('visible'), 200 + i * 220);
   });
 
+  // ── Star rating animation ───────────────────────────
+  const heroReviews = document.querySelector('.hero-reviews');
+  if (heroReviews) {
+    const starObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => heroReviews.classList.add('stars-animate'), 300);
+          starObs.unobserve(heroReviews);
+        }
+      });
+    }, { threshold: 0.8 });
+    starObs.observe(heroReviews);
+  }
+
   // ── Service card wave ───────────────────────────────
   const packageGrid = document.querySelector('.package-grid');
   if (packageGrid) {

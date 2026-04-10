@@ -290,13 +290,24 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   margin-top: 40px;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: #4A4A4A;
   transition: color 0.18s ease;
 }
 .hero-reviews:hover { color: #2F2F2F; }
 .hero-reviews-top { display: flex; align-items: center; gap: 8px; }
-.hero-reviews-stars { display: block; }
+.hero-star-row { display: flex; align-items: center; gap: 3px; }
+.hero-star path {
+  fill: #C8C8C5;
+  animation: star-gold 0.45s ease forwards;
+  animation-delay: calc(var(--i) * 160ms);
+  animation-play-state: paused;
+}
+.hero-reviews.stars-animate .hero-star path { animation-play-state: running; }
+@keyframes star-gold {
+  0%   { fill: #C8C8C5; }
+  100% { fill: #8A7A55; }
+}
 .hero-banner {
   position: relative;
   background-image: url('images/hero-keys-rainbow.jpg');
