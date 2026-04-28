@@ -1,0 +1,32 @@
+---
+layout: default
+title: "From the Bench — Whole Tone Piano Works"
+description: "Articles on piano tuning, maintenance, and care from Jacob Last, Portland piano technician."
+permalink: /blog/
+---
+
+<div class="blog-header">
+  <div class="wrap">
+    <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+    <span class="eyebrow reveal">Piano Care &amp; Craft</span>
+    <h1 id="blog-heading" class="blog-heading reveal">From the bench.</h1>
+    <p class="blog-intro reveal">Notes on tuning, maintenance, and the craft of piano care.</p>
+  </div>
+</div>
+
+<section class="page-section section-cream" id="blog-listing" aria-labelledby="blog-heading">
+  <div class="wrap">
+    <div class="blog-list" aria-label="Blog posts">
+      {% for post in site.posts %}
+      <article class="blog-card reveal">
+        <a href="{{ post.url }}" class="blog-card-link">
+          <time class="blog-card-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
+          <h2>{{ post.title }}</h2>
+          {% if post.excerpt %}<p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncate: 240 }}</p>{% endif %}
+          <span class="blog-read-more">Read →</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

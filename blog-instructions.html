@@ -6,14 +6,14 @@
   <title>Blog Post Instructions — Whole Tone Piano Works</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Spectral:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: #FBFBF9;
       color: #2F2F2F;
-      font-family: 'Source Serif 4', serif;
+      font-family: 'Spectral', serif;
       font-size: 18px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -157,7 +157,7 @@
   <span class="subtitle">Whole Tone Piano Works — Internal Reference</span>
   <h1>Adding a Blog Post</h1>
 
-  <p>Follow these steps each time you want to publish a new post. The only files you need to touch are a new <code>.md</code> file and any media assets. The build script handles the rest.</p>
+  <p>The blog runs on Jekyll, the same system that builds the rest of the site. Adding a post means creating one markdown file and committing it — Jekyll handles the rendering automatically.</p>
 
   <hr>
 
@@ -166,24 +166,31 @@
   <div class="step">
     <div class="step-num">1</div>
     <div class="step-body">
-      <h3>Create a new markdown file</h3>
-      <p>Add a file to <code>blog/posts/</code> named with the post slug. Use lowercase with hyphens, no spaces.</p>
-      <pre><code>blog/posts/why-regulation-matters.md</code></pre>
+      <h3>Create a new markdown file in <code>_posts/</code></h3>
+      <p>File names must follow Jekyll's date-slug format exactly. Use lowercase with hyphens, no spaces.</p>
+      <pre><code>_posts/2026-05-10-why-regulation-matters.md</code></pre>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">2</div>
     <div class="step-body">
-      <h3>Add frontmatter at the top</h3>
-      <p>This block tells the build script the post's metadata. All fields are required.</p>
+      <h3>Add front matter at the top</h3>
+      <p>This block tells Jekyll how to render the post. All fields are required.</p>
       <pre><code>---
-title: Why Regulation Matters
-date: 2026-03-15
-slug: why-regulation-matters
-excerpt: Most pianists only think about tuning, but regulation is what makes a piano feel alive under your fingers.
+layout: post
+title: "Why Regulation Matters"
+date: 2026-05-10
+description: "Most pianists only think about tuning, but regulation is what makes a piano feel alive under your fingers."
+excerpt: "Most pianists only think about tuning, but regulation is what makes a piano feel alive under your fingers. Here's what it is and why it matters."
 tags: [regulation, technique]
+permalink: /blog/why-regulation-matters/
 ---</code></pre>
+      <div class="note">
+        <strong>description vs. excerpt</strong>
+        <strong>description</strong> goes in the <code>&lt;meta&gt;</code> tag — keep it under 160 characters, no trailing punctuation.<br><br>
+        <strong>excerpt</strong> appears on the /blog listing page. Can be one or two sentences — write it yourself rather than letting it auto-generate from the first paragraph.
+      </div>
     </div>
   </div>
 
@@ -191,86 +198,73 @@ tags: [regulation, technique]
     <div class="step-num">3</div>
     <div class="step-body">
       <h3>Write the post body in markdown</h3>
-      <p>Standard markdown below the frontmatter block. You can embed audio, video, or any HTML directly inline.</p>
+      <p>Standard markdown below the front matter block. Use <code>##</code> for section headings (they render as <code>&lt;h2&gt;</code> in the post layout). You can embed HTML inline if needed.</p>
       <pre><code>Most pianists only think about tuning...
 
 ## The action explained
 
 Each key triggers a chain of parts called the action...
 
-&lt;!-- Embed an audio clip --&gt;
-&lt;audio controls src="../media/before-after.mp3"&gt;&lt;/audio&gt;
-
-&lt;!-- Embed a video --&gt;
-&lt;video controls src="../media/action-demo.mp4" style="width:100%"&gt;&lt;/video&gt;
-
 &lt;!-- Embed a YouTube video --&gt;
-&lt;iframe width="100%" height="400"
+&lt;iframe width="100%" height="360"
   src="https://www.youtube.com/embed/VIDEO_ID"
-  frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
-      <div class="note">
-        <strong>Media files</strong>
-        Place audio and video files in a <code>blog/media/</code> folder and reference them with a relative path from the post template: <code>../media/filename.mp3</code>
-      </div>
+  frameborder="0" allowfullscreen style="margin:32px 0"&gt;&lt;/iframe&gt;</code></pre>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">4</div>
     <div class="step-body">
-      <h3>Run the build script</h3>
-      <p>From the project root in Terminal:</p>
-      <pre><code>node build.mjs</code></pre>
-      <p>This will regenerate <code>blog/posts.json</code> and write the post's HTML output file.</p>
+      <h3>Preview locally</h3>
+      <p>If Jekyll isn't already running, start it from the project root in Terminal:</p>
+      <pre><code>export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+bundle exec jekyll serve --watch --host 0.0.0.0 > /tmp/jekyll.log 2>&1 &</code></pre>
+      <p>Then open <a href="http://localhost:4000/blog/" style="color:#8A7A55">http://localhost:4000/blog/</a> to see the listing, and click through to the post.</p>
+      <div class="note">
+        <strong>Already running?</strong>
+        Jekyll rebuilds automatically on file changes when started with <code>--watch</code>. No need to restart. Allow a couple of seconds after saving.
+      </div>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">5</div>
     <div class="step-body">
-      <h3>Preview locally</h3>
-      <p>Start the local server if it isn't running:</p>
-      <pre><code>node serve.mjs</code></pre>
-      <p>Then open <a href="http://localhost:3000/blog.html">http://localhost:3000/blog.html</a> to see the listing, and click through to the new post.</p>
-    </div>
-  </div>
-
-  <div class="step">
-    <div class="step-num">6</div>
-    <div class="step-body">
-      <h3>Commit and push</h3>
-      <p>When the post looks right, commit everything and push to publish.</p>
-      <pre><code>git add .
-git commit -m "Add post: why-regulation-matters"
-git push</code></pre>
+      <h3>Commit and push to publish</h3>
+      <p>When the post looks right, use the Claude Code skills to commit and push:</p>
+      <pre><code>/commit
+/push</code></pre>
+      <p>GitHub Actions will rebuild the site automatically. The post will be live within a minute or two.</p>
     </div>
   </div>
 
   <hr>
 
-  <h2>Frontmatter reference</h2>
+  <h2>Front matter reference</h2>
 
   <ul>
-    <li><strong>title</strong> — The post heading as it appears on the listing and post pages.</li>
-    <li><strong>date</strong> — Publication date in <code>YYYY-MM-DD</code> format. Used for sorting.</li>
-    <li><strong>slug</strong> — URL-safe identifier. Must match the filename (without <code>.md</code>).</li>
-    <li><strong>excerpt</strong> — One or two sentences shown on the listing page. Write this yourself — don't let it auto-generate.</li>
-    <li><strong>tags</strong> — Optional list for future filtering. Use lowercase, e.g. <code>[tuning, regulation]</code>.</li>
+    <li><strong>layout</strong> — Always <code>post</code>. This uses <code>_layouts/post.html</code>.</li>
+    <li><strong>title</strong> — The post heading. Used on the listing page, post page, and in <code>&lt;title&gt;</code> / Open Graph tags.</li>
+    <li><strong>date</strong> — Publication date in <code>YYYY-MM-DD</code> format. Must match the filename prefix. Used for sorting on the listing page.</li>
+    <li><strong>description</strong> — One sentence for the meta description tag. Under 160 characters.</li>
+    <li><strong>excerpt</strong> — One or two sentences shown on the listing page. Write this yourself.</li>
+    <li><strong>tags</strong> — Optional list, e.g. <code>[tuning, regulation]</code>. Lowercase.</li>
+    <li><strong>permalink</strong> — The URL path for the post. Use <code>/blog/the-post-slug/</code>.</li>
   </ul>
 
   <hr>
 
   <h2>File structure</h2>
 
-  <pre><code>blog/
-  posts/
-    why-regulation-matters.md   ← you write this
-    another-post.md
-  media/
-    before-after.mp3            ← audio/video assets go here
-  posts.json                    ← auto-generated by build.mjs
-blog.html                       ← listing page
-blog/post.html                  ← post template (single file, reads slug from URL)</code></pre>
+  <pre><code>_posts/
+  2026-04-28-how-often-should-you-tune-your-piano.md   ← posts go here
+  2026-05-10-why-regulation-matters.md
+
+_layouts/
+  default.html     ← site shell (header, footer, scripts)
+  post.html        ← post page layout (extends default)
+
+blog.html          ← /blog listing page (auto-reads site.posts)</code></pre>
 
 </body>
 </html>

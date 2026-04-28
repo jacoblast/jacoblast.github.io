@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "datePublished": "{{ page.date | date: '%Y-%m-%dT00:00:00+00:00' }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" },
+  "author": {
+    "@type": "Person",
+    "name": "Jacob Last",
+    "url": "{{ site.url }}/about"
+  },
+  "publisher": {
+    "@type": "LocalBusiness",
+    "@id": "{{ site.url }}/#business",
+    "name": "Whole Tone Piano Works",
+    "logo": { "@type": "ImageObject", "url": "{{ site.url }}/images/logo-1200.png" }
+  }
+}
+</script>
+
+<article>
+
+  <div class="post-header">
+    <div class="wrap">
+      <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+      <a href="/blog" class="post-back reveal">← All posts</a>
+      <span class="eyebrow reveal">Piano Care &amp; Craft</span>
+      <h1 class="post-title reveal">{{ page.title }}</h1>
+      <time class="post-date reveal" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time>
+    </div>
+  </div>
+
+  <div class="post-body-wrap">
+    <div class="wrap post-body">
+      {{ content }}
+    </div>
+  </div>
+
+  <div class="post-cta-strip">
+    <div class="wrap">
+      <p>Questions about your piano?</p>
+      <a href="/#schedule" class="btn btn-primary post-cta-btn">Contact us</a>
+    </div>
+  </div>
+
+</article>

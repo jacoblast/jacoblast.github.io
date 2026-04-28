@@ -4,6 +4,7 @@ baseurl: ""
 
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
 
 exclude:
   - node_modules/
@@ -21,3 +22,5 @@ exclude:
   - "*.bak"
   - CLAUDE.md
   - "images/old"
+  - flyer-spring-2026.html
+  - pianoatlas.html
