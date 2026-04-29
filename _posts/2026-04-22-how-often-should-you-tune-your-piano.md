@@ -18,7 +18,7 @@ A piano has about 230 strings, each under enormous tension — roughly 160 to 20
 
 The problem is that tension isn't stable. It's responsive to its environment, always shifting in response to changes in humidity and temperature. Of the two, humidity is the main culprit. The piano's soundboard — the large spruce panel that amplifies the strings' vibration into the room — absorbs moisture in damp conditions, and releases it when the air is dry. As it does this, it swells and shrinks. The strings move with it, which changes their tension. And any change in tension means a change in pitch.
 
-This is why a piano goes out of tune — even when nobody plays it. It isn't about wear and tear — it's physics. The changing air around the piano is constantly nudging it away from where the tuner left it. A piano tuning is a bit like an ice sculpture; it very subtly starts to melt before it's even finished.
+This is why a piano goes out of tune — regardless of how much it's been played. It isn't about wear and tear — it's physics. The changing air around the piano is constantly nudging it away from where the tuner left it. A piano tuning is a bit like an ice sculpture; it very subtly starts to melt before it's even finished.
 
 ## So how often, really?
 
@@ -26,7 +26,7 @@ Twice a year is a reasonable baseline, since it loosely tracks the two major sea
 
 The single biggest factor is the climate of the room your piano lives in. In the Pacific Northwest, we're fortunate to have relatively moderate seasonal swings compared to somewhere like the Midwest or the Northeast — but that doesn't tell the whole story. What matters more is what's happening inside your home: whether you're running forced-air heat, how well your house holds humidity through the winter, whether the piano sits near a heating/cooling vent, an exterior wall, or a door. Two pianos in the same local area can have very different climate experiences. A piano in a humidity-controlled space will drift far less than one sitting next to a drafty window. Without control, twice a year may not be enough. With it, once a year often is.
 
-One of the most effective things you can do, regardless of your local climate, is install a humidity control system directly in the piano. Systems like the Piano Life Saver — made by Dampp-Chaser — mount inside the cabinet and work to keep the relative humidity around the soundboard steady year-round, typically near 45%. A piano with one of these installed drifts far less between tunings. The wood and glue joints that hold the instrument together benefit too. It's an investment that pays for itself in reduced tuning frequency, increased musical enjoyment, and the long-term health of the instrument.
+One of the most effective things you can do, regardless of your local climate, is install a humidity control system directly in the piano. Systems like the Piano Life Saver mount inside the cabinet and work to keep the relative humidity around the soundboard steady year-round. A piano with one of these installed drifts far less between tunings. The wood and glue joints that hold the instrument together benefit too. It's an investment that pays for itself in reduced tuning frequency, increased musical enjoyment, and the long-term health of the instrument.
 
 ## New pianos need special treatment
 
@@ -34,7 +34,7 @@ New pianos are a special case. In the first two or three years of a piano's life
 
 Moving also disrupts a piano. Even a short move introduces jostling and, almost inevitably, a climate change. Always tune after a move, regardless of when it was last done.
 
-## How bad does it sound to you?
+## How does it sound to _you_?
 
 There's another variable that doesn't get enough attention: musical tolerance. How much does it bother you when your piano isn't perfectly in tune?
 

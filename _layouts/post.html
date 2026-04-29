@@ -8,12 +8,14 @@ layout: default
   "headline": {{ page.title | jsonify }},
   "description": {{ page.description | jsonify }},
   "datePublished": "{{ page.date | date: '%Y-%m-%dT00:00:00+00:00' }}",
+  "dateModified": "{{ page.date | date: '%Y-%m-%dT00:00:00+00:00' }}",
+  "image": "{{ site.url }}/images/bg-cta-piano-prism.jpg",
   "url": "{{ site.url }}{{ page.url }}",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" },
   "author": {
     "@type": "Person",
     "name": "Jacob Last",
-    "url": "{{ site.url }}/about"
+    "url": "{{ site.url }}/about/"
   },
   "publisher": {
     "@type": "LocalBusiness",

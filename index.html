@@ -10,14 +10,20 @@ canonical: "https://www.wholetonepiano.com/"
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://www.wholetonepiano.com/#business",
       "name": "Whole Tone Piano Works",
       "description": "Piano tuning and full-service care serving Portland, OR and Vancouver, WA. Specializing in tuning, regulation, voicing, and piano maintenance.",
       "url": "https://www.wholetonepiano.com",
       "email": "jacob@wholetonepiano.com",
       "telephone": "+19712020538",
-      "image": "https://www.wholetonepiano.com/images/bg-cta-piano-prism.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Portland",
+        "addressRegion": "OR",
+        "addressCountry": "US"
+      },
+      "image": "https://www.wholetonepiano.com/images/bg-cta-piano-prism.jpg",
       "logo": "https://www.wholetonepiano.com/images/logo-1200.png",
       "sameAs": ["https://maps.app.goo.gl/RaRqPgLUwWnym84c7"],
       "founder": {
