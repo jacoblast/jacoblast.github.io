@@ -20,7 +20,7 @@ Being "in tune" is fundamentally _relational_. A note can't be in tune all by it
 
 ## The Problem With Fixed Pitch
 
-But on a piano, we have to crystallize this fluid, living system into something fixed. Every note of the scale must be assigned a singular pitch. A _C_ tuned on the piano to sound perfectly pure in a C major chord will sound noticeably out of tune when played in an Ab major chord — but we can't retune it mid-performance like we can on a violin. It's clear that we will have to make a compromise.
+As we just saw, a violinist can retune a note a fraction of a second later for the next chord. Piano notes don't have that freedom—their pitch is frozen, expected to serve every musical context at once. We have to crystallize this fluid, relational system of harmony into something fixed. Clearly we will have to make a compromise.
 
 <!-- [audio examples] -->
 
@@ -34,20 +34,36 @@ Of course, with leap years we just add one day in one place. Musical temperament
 
 There are two options: (1) **unequal temperaments,** where we spread the tempering of the intervals unevenly to create more pure harmony in certain keys and more tension in others (and there are many possible variations on this), or (2) **equal temperament,** where we spread the tempering uniformly across all the intervals, making every key sound exactly the same.
 
+
 ## Unequal Temperament: Color and Character by Key
 
 Unequal temperaments were the norm from the 14th century through the 19th century. Early versions distributed the tempering drastically — eight keys were nearly pure, while the remaining four were unusably harsh. Over time, refinements led to the so-called well temperaments, which made all keys usable while still preserving subtle differences in color and personality.
 
 ## Equal Temperament: The Modern Compromise
 
-Toward the end of the 19th century, the practice of **equal temperament** emerged. In this system, every interval is tempered equally so that all the keys are identical — none very pure, but none very edgy either. **This is the temperament used almost exclusively today.** Equal temperament has some major advantages: it makes it possible to play freely in any key, compose modulating harmonies, and explore music across all tonalities without ever hitting a "sour" key. It's a clever compromise that gives us maximum flexibility. Our modern ears have become thoroughly accustomed to this system, and the intervals in equal temperament are "in tune enough" for us to hear them as correct.
+Toward the end of the 19th century, the practice of **equal temperament** emerged. In this system, every interval is tempered equally so that all the keys are identical — none very pure, but none very edgy either. This became the dominant standard from the late 19th century onward, and it is what most pianists hear on modern recordings and concert stages. However, as we'll see later, there has been a significant recent revival of unequal temperaments.
+
+Equal temperament has some major advantages: it makes it possible to play freely in any key, compose modulating harmonies, and explore music across all tonalities without ever hitting a "sour" key. It's a clever compromise that gives us maximum flexibility. Our modern ears have become thoroughly accustomed to this system, and the intervals in equal temperament are "in tune enough" for us to hear them as correct.
 
 ## What Gets Lost?
 
-But equal temperament comes with sacrifices too. In well temperaments, as we mentioned, the keys with fewer sharps or flats (like C, G, D, F, and Bb major) have close to pure intervals, making these keys feel calm, stable, and peaceful — a quality lost in equal temperament. Similarly, the keys with more sharps and flats are more "colorful" than their equivalents in equal temperament. The German composer Christian Friedrich Daniel Schubart published an essay in 1806 in which he described the characteristics of the keys. C major is described as "Completely pure. Its character is: innocence, simplicity, naïvety, children's talk." Db major, in contrast, is "A leering key, degenerating into grief and rapture. It cannot laugh, but it can smile; it cannot howl, but it can at least grimace its crying." Composers of the 18th and 19th centuries chose keys carefully, utilizing each one's emotional color to convey a specific emotional landscape. Modulating from one key to another was a journey. These effects are lost when we play music of these composers in modern equal temperament.
+But equal temperament comes with sacrifices too. In well temperaments, as we mentioned, the keys with fewer sharps or flats (like C, G, D, F, and Bb major) have close to pure intervals, making these keys feel calm, stable, and peaceful — a quality lost in equal temperament. Similarly, the keys with more sharps and flats are more "colorful" than their equivalents in equal temperament. The German composer Christian Friedrich Daniel Schubart published an essay in 1806 in which he described the characteristics of the keys. C major is described as "Completely pure. Its character is: innocence, simplicity, naïvety, children's talk." Db major, in contrast, is "A leering key, degenerating into grief and rapture." Composers of the 18th and 19th centuries chose keys carefully, utilizing each one's emotional color to convey a specific emotional landscape. Modulating from one key to another was a journey. These effects are lost when we play music of these composers in modern equal temperament.
+
+So what does this actually sound like? Pianist and technician <a href="https://www.radfordpiano.com/well-temperament" target="_blank" rel="noopener">Carl Radford, RPT</a>, has created a series of wonderful videos in which he plays the same piece on the same piano, first tuned in a historical well temperament, then in modern equal temperament. Check out this example of the Intermezzo in Eb Major by Johannes Brahms. After playing the excerpt in both tunings, he does a comparison of select passages, pointing out the differences he notices.
+
+<div class="video-embed">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/M1diKq-Avk0?si=dENS1Nu1PDmGMkXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+</div>
+
+And another, this one is Chopin's Funeral March:
+
+<div class="video-embed">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rOFlvUJHreg?si=HEHpLBxP2gYEh21p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## Which Temperament Is Right for Your Piano?
 
-In recent decades, there has been a resurgence of interest in unequal temperaments, as well as the development of many new ones. These temperaments range from 18th-century-style well temperaments, with stark differences in character between keys, to versions that are nearly equal temperament but still preserve subtle color variations. And with modern computer technology, we can precisely design and tune unequal temperaments, shaping the character of each key, in ways that weren't possible in previous times. A skilled tuner can tailor the temperament to bring out the best in each piano.
+In recent decades, there has been a resurgence of interest in unequal temperaments, as well as the development of many new ones. These temperaments range from 18th-century-style well temperaments, with stark differences in character between keys, to versions that are nearly equal temperament but still preserve subtle color variations. And with modern digital technology, we can precisely design and tune unequal temperaments, shaping the character of each key, in ways that weren't possible in previous times. A skilled tuner can tailor the temperament to bring out the best in each piano.
 
-Understanding temperament is more than just a historical curiosity — it affects how a piano sounds and feels today. When you tune your piano, you have options: you can stick with standard equal temperament for maximum flexibility, or explore an unequal temperament to bring out the distinctive character of different keys. Your choice of temperament affects the personality of your instrument. Most piano owners have never been asked which they'd prefer — but it's a real choice, and yours to make. By working together, we can decide what approach best fits your music and your ears, giving you a piano that's not only in tune, but alive with the relationships between its notes.
+Understanding temperament is more than just a historical curiosity — it affects how a piano sounds and feels today. When you tune your piano, you have options: you can stick with standard equal temperament for maximum flexibility, or explore an unequal temperament to bring out the distinctive character of different keys. Your choice of temperament affects the personality of your instrument. Most piano owners have never been asked which they'd prefer — but it's a real choice, and yours to make.
