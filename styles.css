@@ -310,7 +310,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 .hero-banner {
   position: relative;
-  background-image: url('images/hero-keys-rainbow.jpg');
+  background-image: url('images/hero-keys-rainbow.webp');
   background-size: 100%;
   background-position: 50% 0%;
   border-radius: 4px;

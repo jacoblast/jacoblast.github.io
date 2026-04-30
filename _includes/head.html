@@ -2,6 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F4F2EC">
+  {% if page.url == '/' %}<link rel="preload" as="image" href="/images/hero-keys-rainbow.webp" fetchpriority="high">{% endif %}
   {% if page.url == '/' %}<link rel="preload" as="image" href="/images/bg-hero-string-scale.png">{% endif %}
   <title>{% if page.layout == 'post' %}{{ page.title }} — Whole Tone Piano Works{% else %}{{ page.title }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
@@ -35,7 +36,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="/styles.css">
 
