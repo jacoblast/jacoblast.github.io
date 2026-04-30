@@ -427,9 +427,11 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 #services     { background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #EFF2EC 75%, #EAF0E6 100%) !important; }
 #faq          { background: radial-gradient(ellipse 110% 75% at 45% 50%, #FBFBF9 45%, #F3F2F0 75%, #ECEAE6 100%) !important; }
 #testimonials { background: radial-gradient(ellipse 110% 75% at 55% 50%, #F4F2EC 45%, #F0ECE2 75%, #EBE3D5 100%) !important; }
+#writing      { background: radial-gradient(ellipse 110% 75% at 55% 55%, #FBFBF9 45%, #F2F0EC 75%, #E9E5DE 100%) !important; }
 
 /* Section background images */
 #approach     .section-bg { background-image: url('images/bg-approach-grand-action.png'); }
+#writing      .section-bg { background-image: url('images/bach-manuscript.jpg'); background-position: center 30%; opacity: 0.07; }
 #services     .section-bg { background-image: url('images/bg-services-chladni.jpg'); }
 #faq          .section-bg { background-image: url('images/bg-faq-grand-strings.jpg'); background-position: center 55%; opacity: 0.10; filter: saturate(0.3); }
 #testimonials .section-bg { background-image: url('images/bg-testimonials-hammers.jpeg'); opacity: 0.08; filter: saturate(0.2); }
