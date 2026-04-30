@@ -18,7 +18,11 @@ A piano has about 230 strings, each under enormous tension — roughly 160 to 20
 
 The problem is that tension isn't stable. It's responsive to its environment, always shifting in response to changes in humidity and temperature. Of the two, humidity is the main culprit. The piano's soundboard — the large spruce panel that amplifies the strings' vibration into the room — absorbs moisture in damp conditions, and releases it when the air is dry. As it does this, it swells and shrinks. The strings move with it, which changes their tension. And any change in tension means a change in pitch.
 
-This is why a piano goes out of tune — regardless of how much it's been played. It isn't about wear and tear — it's physics. The changing air around the piano is constantly nudging it away from where the tuner left it. A piano tuning is a bit like an ice sculpture; it very subtly starts to melt before it's even finished.
+This is why a piano goes out of tune — regardless of how much it's been played. It isn't about wear and tear — it's physics. The changing air around the piano is constantly nudging it away from where the tuner left it. 
+
+There are actually two ways a piano goes out of tune, and they sound different. The first is overall pitch drift: the piano settles into a generally flatter or sharper state. It's rarely uniform — some sections move more than others — but the instrument as a whole trends one direction. The second, more immediately annoying one is _unison drift_. Each note on a piano (except the lowest bass) has two or three strings tuned to exactly the same pitch. When humidity changes, those strings don't shift identically – one might catch on a friction point, another slides more freely. Suddenly, that single note sounds unfocused and wavering. Your ear objects to this sound much more than overall pitch drift. You can tolerate a piano that's generally flat. You can't easily tolerate a note where the three strings are out of tune with each other. And because unisons are the most delicate, finely balanced part of the tuning, they're often the first thing to go – sometimes within weeks of a tuning, even if the piano's overall pitch is still fine.
+
+A piano tuning is a bit like an ice sculpture; it very subtly starts to melt before it's even finished.
 
 ## So how often, really?
 
@@ -38,11 +42,13 @@ Moving also disrupts a piano. Even a short move introduces jostling and, almost 
 
 There's another variable that doesn't get enough attention: musical tolerance. How much does it bother you when your piano isn't perfectly in tune?
 
-This varies enormously from person to person — and neither end of the spectrum is wrong. A professional musician or serious student might feel the drift within a few months and find it distracting. A casual player who sits down on Sunday afternoons might not notice until the piano is quite significantly out of tune. Some people even prefer a slightly out of tune piano! All of them have different valid answers to "how often should I tune my piano?"
+This varies enormously from person to person — and neither end of the spectrum is wrong. A professional musician or serious student might feel the drift within a few months and find it distracting. A casual player who sits down on Sunday afternoons might not notice until the piano is quite significantly out of tune. Both of them have different valid answers to "how often should I tune my piano?"
 
 It's best to think of tuning as a service to your _musical experience_, not an obligation to the piano itself.
 
-One exception worth noting: young students benefit immensely from a well-tuned instrument, since their ears are still developing a sense of pitch. They might not be able to tell you that the piano sounds off — they just quietly absorb whatever they're hearing.
+One important point: young students benefit immensely from a well-tuned instrument, since their ears are still developing a sense of pitch. They might not be able to tell you that the piano sounds off — they just quietly absorb whatever they're hearing.
+
+A quick listening test: Play a single note in the middle register. Do you hear a pure, singing tone – or a wavering, "shimmering" or "beating" sound? That wavering is a drifted unison. If you hear it on many notes, don't wait for the whole piano to sound like a saloon upright.
 
 ## Why regular tuning pays off
 
