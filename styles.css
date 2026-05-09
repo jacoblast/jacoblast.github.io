@@ -322,16 +322,10 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 /* Hero sequence animation */
 .hero-seq {
   opacity: 0;
-  transform: translateY(18px);
-  filter: blur(3px);
-  transition: opacity 1.0s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 1.0s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              filter 1.0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.3s ease;
 }
 .hero-seq.visible {
   opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
 }
 
 @media (max-width: 540px) {
