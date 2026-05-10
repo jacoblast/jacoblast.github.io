@@ -49,8 +49,10 @@
 
   document.querySelectorAll('.reveal, .string-divider').forEach(el => revealObs.observe(el));
 
-  // ── Header shrink on scroll ─────────────────────────
+  // ── Header shrink + smart hide on scroll ───────────
   const siteHeader = document.getElementById('site-header');
+  let navHidden = false;
+  let lastScrollY = 0;
 
   // ── Hero parallax ───────────────────────────────────
   const heroBg = document.querySelector('.hero-bg');
@@ -58,7 +60,55 @@
     const y = window.scrollY;
     siteHeader.classList.toggle('scrolled', y > 60);
     if (heroBg) heroBg.style.transform = `translateY(${y * 0.28}px)`;
+
+    if (!siteHeader.classList.contains('nav-open')) {
+      if (y < 150) {
+        if (navHidden) {
+          navHidden = false;
+          siteHeader.classList.remove('nav-hidden');
+        }
+      } else if (!navHidden && y > lastScrollY + 5) {
+        navHidden = true;
+        siteHeader.classList.add('nav-hidden');
+      } else if (navHidden && y < lastScrollY - 5) {
+        navHidden = false;
+        siteHeader.classList.remove('nav-hidden');
+      }
+    }
+    lastScrollY = y;
   }, { passive: true });
+
+  // ── Contact form ────────────────────────────────────
+  const contactForm = document.getElementById('contact-form');
+  const contactModal = document.getElementById('contact-modal');
+  const contactModalClose = document.getElementById('contact-modal-close');
+
+  if (contactForm && contactModal) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        });
+        if (res.ok) {
+          contactForm.reset();
+          contactModal.removeAttribute('hidden');
+        }
+      } catch (_) {}
+    });
+
+    contactModalClose.addEventListener('click', () => contactModal.setAttribute('hidden', ''));
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) contactModal.setAttribute('hidden', '');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !contactModal.hasAttribute('hidden')) {
+        contactModal.setAttribute('hidden', '');
+      }
+    });
+  }
 
   // ── FAQ accordion ───────────────────────────────────
   document.querySelectorAll('.faq-trigger').forEach(trigger => {
