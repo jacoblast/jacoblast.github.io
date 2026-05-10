@@ -49,6 +49,7 @@
 - `_includes/header.html` — shared header + nav
 - `_includes/footer.html` — shared footer
 - `_includes/scripts.html` — shared JS (reveals, parallax, FAQ, header shrink)
+- `_includes/string-divider.html` — section divider SVG (edit here to update all instances)
 - `_config.yml` — Jekyll config
 - `images/` — photos and background textures (unused images archived in `images/old/`)
 - `_data/testimonials.yml` — testimonial content (name, text, date)
@@ -97,7 +98,7 @@ Sections alternate between `.section-parchment` (`#F4F2EC`) and `.section-cream`
 <section class="page-section section-parchment" id="my-section" aria-labelledby="my-heading">
   <div class="section-bg" aria-hidden="true"></div>  <!-- optional background image -->
   <div class="wrap">
-    <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+    {% include string-divider.html %}
     <span class="eyebrow reveal">Label</span>
     <h2 id="my-heading" class="reveal">Heading.</h2>
     <!-- content -->
@@ -160,7 +161,7 @@ Three-column grid (`repeat(3, 1fr)`, `gap: 20px`). Each card:
 - `.package-featured` = Full Service (middle card) — always has gold top border + "Recommended" badge
 
 ### String Divider
-Three horizontal hairlines that animate in with staggered `scaleX`. Always placed before eyebrow label at the top of each section. Requires three `<span>` children and both `string-divider` and `reveal` classes.
+Three sine wave curves (mathematically derived from the logo — three 120°-phase-shifted sine waves) that animate in via `stroke-dashoffset` draw-in, staggered 150ms per path. Always placed before the eyebrow label at the top of each section. Use the Jekyll include: `{% include string-divider.html %}`. The SVG lives in `_includes/string-divider.html` — edit it there to update all instances at once.
 
 ### Testimonials Section
 Reviews stored in `_data/testimonials.yml` (fields: `name`, `text`, `date`), rendered via Liquid. Section uses a split layout: `.wrap` for the heading/eyebrow, `.wrap-wide` for the card grid. Three-column grid on desktop, one column on mobile. Each card has a decorative `&ldquo;` in Goudy at top-left (`.testimonial-mark`), italic Spectral quote, and Inter uppercase name + muted date in the meta row.
