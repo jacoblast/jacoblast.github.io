@@ -104,26 +104,6 @@ canonical: "https://www.wholetonepiano.com/"
     <a href="https://maps.app.goo.gl/fvygv8ZUsNpw4kKD9" target="_blank" rel="noopener" class="trust-reviews">★★★★★ 9 reviews on Google</a> -->
   </div>
 
-  <!-- ── SECTION: My Approach ───────────────────────── -->
-  <section class="page-section section-parchment" id="approach" aria-labelledby="approach-heading">
-    <div class="section-bg" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="eyebrow reveal">My Approach</span>
-      <h2 id="approach-heading" class="reveal">A piano is an interconnected system.</h2>
-      <div class="about-body">
-        <p class="reveal">There are a thousand small adjustments that can make a piano sing. I see each visit as an opportunity to improve the instrument as a whole: tuning, touch, and tone.</p>
-        <p class="reveal">Equally important is the chance to connect with the people behind the piano — young and old — and share some of the knowledge and excitement I bring to every visit.</p>
-      </div>
-      <div class="reveal" style="margin-top: 32px; text-align: center;">
-        <a href="/about.html" class="btn btn-secondary">More about me</a>
-      </div>
-      <div class="approach-photo reveal">
-        <img src="images/suki-keys.webp" alt="Piano keys" loading="lazy">
-      </div>
-    </div>
-  </section>
-
   <!-- ── SECTION SPACER ───────────────────────────────── -->
   <div class="section-spacer" aria-hidden="true">
     <span class="spacer-rule"></span>
@@ -143,7 +123,7 @@ canonical: "https://www.wholetonepiano.com/"
           <span class="package-ordinal" aria-hidden="true">01</span>
           <h3 class="package-name">Basic Tune</h3>
           <div class="package-price">$175</div>
-          <p class="package-desc">The essential visit for pianos already on a regular schedule. Tuning, with time for quick repairs or a few touch and tone tweaks. The foundation of a healthy instrument.</p>
+          <p class="package-desc">The essential visit for pianos already on a regular schedule. Tuning, plus quick repairs or a few touch and tone tweaks as time allows.</p>
         </div>
         <div class="package package-featured card-wave">
           <span class="package-ordinal" aria-hidden="true">02</span>
@@ -159,10 +139,46 @@ canonical: "https://www.wholetonepiano.com/"
           <p class="package-desc">An extended customized appointment  — this is a spa day for your piano. We'll do in-depth mechanical calibration for beautiful touch, voicing the hammers for tone, and/or more involved repairs. Recommended when I identify work that goes beyond what a standard visit can address.</p>
         </div>
       </div>
-      <div class="services-contact reveal">
-        <p>Questions? I'd be happy to chat!</p>
-        <p>Feel free to call or text at <a href="tel:+19712020538">(971) 202-0538</a> or email <a href="mailto:jacob@wholetonepiano.com">jacob@wholetonepiano.com</a></p>
+      <div class="services-footer reveal">
+        <p class="services-guarantee"><strong>Satisfaction guaranteed</strong> — if you're not happy with any aspect of the visit, I'll return within 30 days at no charge.</p>
+        <hr class="services-footer-rule">
+        <div class="services-contact">
+          <p>Questions about what I offer? Feel free to <a href="/#schedule">contact me</a>.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+    <!-- ── SECTION SPACER ───────────────────────────────── -->
+  <div class="section-spacer" aria-hidden="true">
+    <span class="spacer-rule"></span>
+    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
+    <span class="spacer-rule"></span>
+  </div>
+
+  <!-- ── SECTION: Testimonials ──────────────────────────── -->
+  <section class="page-section section-cream" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
+      <span class="eyebrow reveal">What clients say</span>
+      <h2 id="testimonials-heading" class="reveal">In their words.</h2>
+    </div>
+    <div class="wrap-wide">
+      <div class="testimonial-grid">
+        {% for t in site.data.testimonials %}
+        <div class="testimonial reveal">
+          <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-quote">{{ t.text }}</p>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">{{ t.name }}</span>
+            {% if t.date %}<span class="testimonial-date">{{ t.date }}</span>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="testimonial-google-link reveal"><a href="https://maps.app.goo.gl/fvygv8ZUsNpw4kKD9" target="_blank" rel="noopener">Check out more reviews on Google</a></p>
     </div>
   </section>
 
@@ -205,34 +221,10 @@ canonical: "https://www.wholetonepiano.com/"
       },
       {
         "@type": "Question",
-        "name": "My piano has a sticky key or buzzing sound — can you fix that?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Often, yes. Minor issues — a sticking key, a buzzing string — I'll address on the spot as part of the visit. If it's something more involved, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my piano go out of tune if it hasn't been played much?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It's not the playing itself that causes a piano to go out of tune, but rather changes in temperature and humidity, and the settling of the instrument over time. How much a piano is played rarely has a significant impact on its tuning stability."
-        }
-      },
-      {
-        "@type": "Question",
         "name": "How long is an appointment?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Between 1½ and 2 hours, typically. I like to take my time to make sure everything is just right."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to be home for the appointment?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For a first visit, yes — I like to meet you and learn a bit about the piano before we dive in. Once we've worked together, we can often arrange access when you're not home."
         }
       },
       {
@@ -247,7 +239,7 @@ canonical: "https://www.wholetonepiano.com/"
   }
   </script>
 
-  <section class="page-section section-cream" id="faq" aria-labelledby="faq-heading">
+  <section class="page-section section-parchment" id="faq" aria-labelledby="faq-heading">
     <div class="section-bg" aria-hidden="true"></div>
     <div class="wrap">
       <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -282,38 +274,11 @@ canonical: "https://www.wholetonepiano.com/"
         </div>
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">My piano has a sticky key or buzzing sound — can you fix that?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>Often, yes. Minor issues — a sticking key, a buzzing string — I'll address on the spot as part of the visit. If it's something more involved, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">Will my piano go out of tune if it hasn't been played much?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>It's not the playing itself that causes a piano to go out of tune, but rather changes in temperature and humidity, and the settling of the instrument over time. How much a piano is played rarely has a significant impact on its tuning stability.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">How long is an appointment?</span>
             <span class="faq-arrow" aria-hidden="true"></span>
           </button>
           <div class="faq-body" role="region">
             <p>Between 1½ and 2 hours, typically. I like to take my time to make sure everything is just right.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">Do I need to be home for the appointment?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>For a first visit, yes — I like to meet you and learn a bit about the piano before we dive in. Once we've worked together, we can often arrange access when you're not home.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -326,67 +291,6 @@ canonical: "https://www.wholetonepiano.com/"
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-    <!-- ── SECTION SPACER ───────────────────────────────── -->
-  <div class="section-spacer" aria-hidden="true">
-    <span class="spacer-rule"></span>
-    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
-    <span class="spacer-rule"></span>
-  </div>
-
-  <!-- ── SECTION: Testimonials ──────────────────────────── -->
-  <section class="page-section section-parchment" id="testimonials" aria-labelledby="testimonials-heading">
-    <div class="section-bg" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="eyebrow reveal">What clients say</span>
-      <h2 id="testimonials-heading" class="reveal">In their words.</h2>
-    </div>
-    <div class="wrap-wide">
-      <div class="testimonial-grid">
-        {% for t in site.data.testimonials %}
-        <div class="testimonial reveal">
-          <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
-          <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-          <p class="testimonial-quote">{{ t.text }}</p>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">{{ t.name }}</span>
-            {% if t.date %}<span class="testimonial-date">{{ t.date }}</span>{% endif %}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <p class="testimonial-google-link reveal"><a href="https://maps.app.goo.gl/fvygv8ZUsNpw4kKD9" target="_blank" rel="noopener">Check out more reviews on Google</a></p>
-    </div>
-  </section>
-
-  <!-- ── SECTION SPACER ───────────────────────────────── -->
-  <div class="section-spacer" aria-hidden="true">
-    <span class="spacer-rule"></span>
-    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
-    <span class="spacer-rule"></span>
-  </div>
-
-  <!-- ── SECTION: From the Bench ──────────────────────── -->
-  <section class="page-section section-cream" id="writing" aria-labelledby="writing-heading">
-    <div class="section-bg" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="string-divider reveal" aria-hidden="true"><span></span><span></span><span></span></div>
-      <span class="eyebrow reveal">From the bench</span>
-      <h2 id="writing-heading" class="reveal">Recent writing.</h2>
-      <ul class="home-post-list reveal" aria-label="Recent posts">
-        {% for post in site.posts limit:3 %}
-        <li>
-          <a href="{{ post.url }}" class="home-post-link">
-            <span class="home-post-title">{{ post.title }}</span>
-            <time class="home-post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      <a href="/blog" class="home-post-all reveal">All posts →</a>
     </div>
   </section>
 

@@ -629,17 +629,35 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   border: 1px solid #C8BA9A;
   padding: 3px 8px;
 }
-.services-contact {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: #4A4A4A;
-  text-align: center;
-  margin-top: 48px;
-  padding-top: 28px;
-  border-top: 1px solid #C8C8C5;
-  font-weight: 500;
+.services-footer {
+  margin-top: 44px;
+  border: 1px solid #E6E6E4;
+  border-top: 2px solid #8A7A55;
+  background: #FBFBF9;
+  box-shadow: 0 2px 12px rgba(47,47,47,0.05);
 }
-.services-contact p + p { margin-top: 8px; }
+.services-guarantee,
+.services-contact {
+  text-align: center;
+  font-family: 'Spectral', serif;
+  font-size: 0.92rem;
+  color: #6F6F6F;
+  padding: 20px 48px;
+  margin: 0;
+  font-weight: 400;
+}
+.services-guarantee::before {
+  content: '✓\00a0';
+  color: #8A7A55;
+}
+.services-footer-rule {
+  border: none;
+  border-top: 1px solid #E6E6E4;
+  margin: 0 48px;
+}
+.services-contact p + p { margin-top: 6px; }
+.services-contact a { color: #8A7A55; }
+.services-contact a:hover { color: #2F2F2F; }
 .services-contact a {
   color: #8A7A55;
   text-decoration: none;

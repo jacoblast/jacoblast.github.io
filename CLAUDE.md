@@ -71,7 +71,7 @@ Never introduce new colors. All tints should be derived from the above.
 | Role | Font | Notes |
 |------|------|-------|
 | Display / headings | Goudy Bookletter 1911 | `font-family: 'Goudy Bookletter 1911', serif` |
-| Body / serif text | Source Serif 4 | `font-family: 'Source Serif 4', serif` — italic for eyebrows, trust strip, footer tagline |
+| Body / serif text | Spectral | `font-family: 'Spectral', serif` — italic for eyebrows, trust strip, footer tagline |
 | UI / labels / nav | Inter | `font-family: 'Inter', sans-serif` — buttons, badges, prices, nav |
 
 - Large headings: `letter-spacing: -0.025em`, `line-height: 1.18–1.22`
@@ -161,7 +161,7 @@ Three-column grid (`repeat(3, 1fr)`, `gap: 20px`). Each card:
 Three horizontal hairlines that animate in with staggered `scaleX`. Always placed before eyebrow label at the top of each section. Requires three `<span>` children and both `string-divider` and `reveal` classes.
 
 ### Testimonials Section
-Reviews stored in `_data/testimonials.yml` (fields: `name`, `text`, `date`), rendered via Liquid. Section uses a split layout: `.wrap` for the heading/eyebrow, `.wrap-wide` for the card grid. Three-column grid on desktop, one column on mobile. Each card has a decorative `&ldquo;` in Goudy at top-left (`.testimonial-mark`), italic Source Serif 4 quote, and Inter uppercase name + muted date in the meta row.
+Reviews stored in `_data/testimonials.yml` (fields: `name`, `text`, `date`), rendered via Liquid. Section uses a split layout: `.wrap` for the heading/eyebrow, `.wrap-wide` for the card grid. Three-column grid on desktop, one column on mobile. Each card has a decorative `&ldquo;` in Goudy at top-left (`.testimonial-mark`), italic Spectral quote, and Inter uppercase name + muted date in the meta row.
 
 To add a review, append an entry to `_data/testimonials.yml`:
 ```yaml
