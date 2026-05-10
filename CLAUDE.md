@@ -7,11 +7,11 @@
 ## Reference Images
 - If a reference image is provided: match layout, spacing, typography, and color exactly. Swap in placeholder content (images via `https://placehold.co/`, generic copy). Do not improve or add to the design.
 - If no reference image: design from scratch with high craft (see guardrails below).
-- Screenshot your output, compare against reference, fix mismatches, re-screenshot. Do at least 2 comparison rounds. Stop only when no visible differences remain or user says so.
+- **Do not automatically screenshot after making changes.** Only screenshot when the user explicitly asks. Let the user give feedback first.
 
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server with watch mode: `bundle exec jekyll serve --watch --host 0.0.0.0 > /tmp/jekyll.log 2>&1 &` (serves at `http://localhost:4000`, also accessible on local network via machine IP, auto-rebuilds on file changes)
+- Start the dev server with watch mode and livereload: `bundle exec jekyll serve --watch --livereload --host 0.0.0.0 > /tmp/jekyll.log 2>&1 &` (serves at `http://localhost:4000`, livereload on port 35729, also accessible on local network via machine IP, auto-rebuilds and auto-refreshes browser on file changes)
 - Stop with `pkill -f jekyll`
 - Requires Ruby 3.3 in PATH: `export PATH="/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"` (already added to `~/.zprofile`)
 - If the server is already running, do not start a second instance.
@@ -21,12 +21,14 @@
 - Puppeteer is installed at `./node_modules/puppeteer/`. Chrome (Chromium) cache is at `~/.cache/puppeteer/chrome/`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:4000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
-- Optional label suffix: `node screenshot.mjs http://localhost:4000 label` → saves as `screenshot-N-label.png`
+- Optional label: `node screenshot.mjs http://localhost:4000 label` → saves as `screenshot-N-label.png`
+- Optional CSS selector crop: `node screenshot.mjs http://localhost:4000 label "header"` → crops to that element + 24px padding
+- Examples: `"header"` for nav, `"#services"` for a section, `".testimonial-grid"` for a component
 - `screenshot.mjs` lives in the project root. Use it as-is.
 - After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
-- The screenshot script does not scroll. Use a custom Puppeteer script to scroll the page before capturing if scroll-reveal animations need to be visible.
+- The script force-applies all animation classes (`in-view`, `visible`, `stars-animate`) immediately after load, so all scroll-reveal elements are fully visible in every screenshot without needing to scroll. The nav stays visible and stable.
 
 ## Output Defaults
 - Styles live in `styles.css` (external file). Do not write inline styles or `<style>` blocks.
