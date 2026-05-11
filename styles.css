@@ -876,6 +876,17 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   background-position: center 70%;
   opacity: 0.5;
 }
+#schedule::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(251, 251, 249, 0.72);
+  pointer-events: none;
+  z-index: 1;
+}
+#schedule > .wrap {
+  z-index: 2;
+}
 .cta-section h2 {
   font-size: 1.9rem;
   letter-spacing: -0.025em;
