@@ -1338,6 +1338,67 @@ footer {
   text-align: center;
   margin-top: 20px;
 }
+.footer-serving a {
+  color: #4A4A4A;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: #C8BA9A;
+}
+.footer-serving a:hover { color: #2F2F2F; }
+
+/* ── Service Area page ─────────────────────────────── */
+.service-area-intro {
+  color: #4A4A4A;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 52px;
+}
+.service-area-subhead {
+  font-size: 1.25rem;
+  color: #2F2F2F;
+  margin: 0 0 6px;
+}
+.service-area-sublabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #6F6F6F;
+  margin: 0 0 20px;
+  letter-spacing: 0.01em;
+}
+.service-area-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 52px;
+  gap: 0;
+}
+.service-area-list li {
+  font-family: 'Spectral', serif;
+  font-size: 0.95rem;
+  color: #2F2F2F;
+  white-space: nowrap;
+}
+.service-area-list li::after {
+  content: '·';
+  margin: 0 10px;
+  color: #8A7A55;
+}
+.service-area-list li:last-child::after { content: none; }
+.service-area-note {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #6F6F6F;
+  text-align: center;
+}
+.service-area-note a {
+  color: #8A7A55;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .footer-copy {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
