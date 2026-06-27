@@ -313,8 +313,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   pointer-events: none;
 }
 .hero-logo {
-  width: 192px;
-  height: 192px;
+  width: 144px;
+  height: 144px;
   margin: 0 auto 20px;
   display: block;
   filter: drop-shadow(0 0 30px rgba(255,255,255,1));
