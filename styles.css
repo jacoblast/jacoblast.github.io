@@ -350,7 +350,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   font-family: 'Spectral', serif;
   font-style: normal;
   font-size: 1.2rem;
-  color: #4A4A4A;
+  font-weight: 600;
+  color: #2F2F2F;
   line-height: 1.75;
   text-align: center;
   max-width: 650px;
@@ -389,8 +390,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 
 .hero-value-prop {
   padding: 20px 0;
-  margin-top: 25px;
-  margin-bottom: 0px;
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
 .hero-cta-buttons {
@@ -572,7 +573,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 #problem p:first-of-type { margin-bottom: 20px; }
 
 /* ── Hero value prop paragraphs ──────────────────── */
-.hero-value-prop p + p { margin-top: 8px; }
+.hero-value-prop p + p { margin-top: 18px; }
 
 /* ── Approach section ─────────────────────────────── */
 .approach-photo {
