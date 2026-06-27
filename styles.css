@@ -376,14 +376,16 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   overflow: hidden;
   aspect-ratio: 1430 / 626;
   margin-top: 12px;
+  margin-bottom: 24px;
   filter: saturate(0.72) contrast(0.75);
 }
-.hero-banner-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  filter: saturate(0.72) contrast(0.75);
+.hero-headline {
+  font-family: 'Spectral', serif;
+  font-size: 1.1rem;
+  color: #4A4A4A;
+  line-height: 1.75;
+  margin-bottom: 12px;
+  font-weight: 400;
 }
 
 /* Hero sequence animation */
