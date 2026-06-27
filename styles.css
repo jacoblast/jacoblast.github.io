@@ -901,6 +901,14 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   font-style: italic;
   font-size: 1rem;
 }
+.cta-reviews {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #6F6F6F;
+  margin-top: 16px;
+  margin-bottom: 0;
+  letter-spacing: 0.03em;
+}
 .cta-book-online {
   padding-left: 40px;
   padding-right: 40px;
