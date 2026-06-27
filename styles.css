@@ -378,6 +378,13 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   margin-top: 12px;
   filter: saturate(0.72) contrast(0.75);
 }
+.hero-banner-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(0.75);
+}
 
 /* Hero sequence animation */
 .hero-seq {
