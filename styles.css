@@ -336,12 +336,12 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 
 .hero-headline {
   font-family: 'Spectral', serif;
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   color: #2F2F2F;
   line-height: 1.4;
   margin-bottom: 16px;
   margin-top: 0;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -368,10 +368,11 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   background-position: 50% 100%;
   border-radius: 0;
   overflow: hidden;
-  aspect-ratio: 1430 / 460;
-  margin-top: 88px;
+  /* aspect-ratio: 1430 / 460; */
+  aspect-ratio: 1012 / 443;
+  margin-top: 150px;
   margin-bottom: 0;
-  filter: saturate(0.72) contrast(0.75);
+  filter: saturate(0.99) contrast(0.65);
 }
 
 .hero-banner::before {
@@ -456,7 +457,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 @media (max-width: 540px) {
   .hero-logo { width: 140px; height: 140px; }
   .hero-headline { font-size: 2rem; }
-  .hero-banner { aspect-ratio: 1430 / 626; }
+  /* .hero-banner { aspect-ratio: 1430 / 626; } */
 }
 
 /* ── Trust strip ──────────────────────────────────── */
