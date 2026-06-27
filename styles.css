@@ -368,7 +368,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   background-position: 50% 100%;
   border-radius: 0;
   overflow: hidden;
-  aspect-ratio: 1430 / 375;
+  aspect-ratio: 1430 / 460;
   margin-top: 88px;
   margin-bottom: 0;
   filter: saturate(0.72) contrast(0.75);
