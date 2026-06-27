@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Tuning Flyer — Whole Tone Piano Works</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Inter:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    body {
+      background: #F0EDE6;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 32px;
+      font-family: 'Inter', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      body { background: none; padding: 0; display: block; }
+      .print-btn { display: none !important; }
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #8A7A55;
+      color: #FBFBF9;
+      border: none;
+      padding: 10px 22px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 3px;
+      z-index: 100;
+    }
+
+    /* ── Poster shell ─────────────────────────────────── */
+    .poster {
+      width: 8.5in;
+      height: 11in;
+      background: #FBFBF9;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .poster-body {
+      flex: 1;
+      padding: 0.5in 0.9in 0.14in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Logo ─────────────────────────────────────────── */
+    .poster-logo {
+      margin-bottom: 0.18in;
+    }
+
+    .poster-logo img {
+      width: 72px;
+      height: 72px;
+      display: block;
+    }
+
+    /* ── String divider ───────────────────────────────── */
+    .string-div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+      margin-bottom: 0.18in;
+    }
+
+    .string-div span {
+      display: block;
+      height: 1px;
+      background: #C8BA9A;
+      width: 100%;
+    }
+
+    /* ── Eyebrow ──────────────────────────────────────── */
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #8A7A55;
+      margin-bottom: 0.3in;
+      text-align: center;
+    }
+
+    /* ── Headline ─────────────────────────────────────── */
+    h1 {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-weight: 400;
+      font-size: 62pt;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: #2F2F2F;
+      text-align: center;
+      margin-bottom: 0.38in;
+    }
+
+    /* ── Photo ────────────────────────────────────────── */
+    .poster-photo {
+      width: 70%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin-bottom: 0.36in;
+      flex-shrink: 0;
+      border-radius: 3px;
+    }
+
+    .poster-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 52%;
+      display: block;
+    }
+
+    /* ── Price / rating bar ───────────────────────────── */
+    .price-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.24in;
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #8A7A55;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .price-stars {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .price-stars svg {
+      display: block;
+    }
+
+    .price-sep {
+      color: #C8BA9A;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    /* ── Contact row ──────────────────────────────────── */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.28in;
+      margin-bottom: 0.12in;
+    }
+
+    #qrcode img,
+    #qrcode canvas {
+      display: block;
+      width: 72px !important;
+      height: 72px !important;
+      border: 4px solid #FBFBF9;
+      outline: 1px solid #E6E6E4;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .contact-cta {
+      font-family: 'Inter', sans-serif;
+      font-size: 8pt;
+      font-weight: 500;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: #8A7A55;
+    }
+
+    .contact-phone {
+      font-family: 'Inter', sans-serif;
+      font-size: 24pt;
+      color: #2F2F2F;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .contact-url {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5pt;
+      color: #6F6F6F;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Footer name ──────────────────────────────────── */
+    .poster-name {
+      margin-top: 0.16in;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .poster-name-business {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-size: 13pt;
+      color: #2F2F2F;
+      letter-spacing: 0.01em;
+    }
+
+    .poster-name-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #9A9A98;
+    }
+
+    /* ── Tear-off tabs ────────────────────────────────── */
+    .tabs-section {
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      padding: 0.28in 0 0;
+    }
+
+    .perforation {
+      border-top: 1.5px dashed #C8BA9A;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .scissors {
+      position: absolute;
+      left: 0.22in;
+      background: #FBFBF9;
+      padding: 0 5px;
+      line-height: 1;
+      font-size: 13px;
+      color: #C8BA9A;
+      transform: rotate(-90deg);
+      top: -0.5em;
+    }
+
+    .tabs {
+      display: flex;
+      height: 1.3in;
+    }
+
+    .tab {
+      flex: 1;
+      border-right: 1px dashed #E6E6E4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      gap: 7px;
+      padding: 0 4px;
+    }
+
+    .tab:last-child { border-right: none; }
+
+    .tab-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 500;
+      color: #8A7A55;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .tab-phone {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #2F2F2F;
+      letter-spacing: 0.02em;
+    }
+
+    .tab-url {
+      font-family: 'Inter', sans-serif;
+      font-size: 7pt;
+      font-weight: 400;
+      color: #8A8A88;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+  <div class="poster">
+    <div class="poster-body">
+
+      <div class="poster-logo">
+        <img src="images/logo-mark-new.svg" alt="Whole Tone Piano Works">
+      </div>
+
+      <div class="string-div" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <p class="eyebrow">Whole Tone Piano Works &middot; Portland, OR</p>
+
+      <h1>Time for your<br>spring tuning?</h1>
+      <!-- <h1>Is your piano <br> ready for spring?</h1> -->
+      <!-- <h1>Time for a <br>spring tuning.</h1> -->
+
+      <div class="poster-photo">
+        <img src="images/internal/piano-key-flowers2.JPG" alt="Piano keys with spring flowers">
+      </div>
+
+      <div class="price-line">
+        <span class="price-stars" aria-label="5 stars">
+          <!-- 5 gold stars -->
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="#8A7A55" xmlns="http://www.w3.org/2000/svg"><polygon points="10,1.5 12.4,7.2 18.6,7.7 14,11.6 15.5,17.7 10,14.4 4.5,17.7 6,11.6 1.4,7.7 7.6,7.2"/></svg>
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="#8A7A55" xmlns="http://www.w3.org/2000/svg"><polygon points="10,1.5 12.4,7.2 18.6,7.7 14,11.6 15.5,17.7 10,14.4 4.5,17.7 6,11.6 1.4,7.7 7.6,7.2"/></svg>
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="#8A7A55" xmlns="http://www.w3.org/2000/svg"><polygon points="10,1.5 12.4,7.2 18.6,7.7 14,11.6 15.5,17.7 10,14.4 4.5,17.7 6,11.6 1.4,7.7 7.6,7.2"/></svg>
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="#8A7A55" xmlns="http://www.w3.org/2000/svg"><polygon points="10,1.5 12.4,7.2 18.6,7.7 14,11.6 15.5,17.7 10,14.4 4.5,17.7 6,11.6 1.4,7.7 7.6,7.2"/></svg>
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="#8A7A55" xmlns="http://www.w3.org/2000/svg"><polygon points="10,1.5 12.4,7.2 18.6,7.7 14,11.6 15.5,17.7 10,14.4 4.5,17.7 6,11.6 1.4,7.7 7.6,7.2"/></svg>
+        </span>
+        Rated 5.0 on Google
+        <span class="price-sep">&middot;</span>
+        Starting at $175
+      </div>
+
+      <div class="contact-row">
+        <div id="qrcode"></div>
+        <div class="contact-details">
+          <span class="contact-cta">Text or call to book</span>
+          <span class="contact-phone">(971) 202-0538</span>
+          <span class="contact-url">wholetonepiano.com</span>
+        </div>
+      </div>
+
+      <div class="poster-name">
+        <span class="poster-name-business">Whole Tone Piano Works</span>
+        <span class="poster-name-sub">Jacob Last &middot; Piano Technician</span>
+      </div>
+
+    </div>
+
+    <div class="tabs-section">
+      <div class="perforation">
+        <span class="scissors">✂</span>
+      </div>
+      <div class="tabs" id="tabs-container"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://www.wholetonepiano.com",
+      width: 200,
+      height: 200,
+      colorDark: "#2F2F2F",
+      colorLight: "#FBFBF9",
+    });
+
+    const container = document.getElementById('tabs-container');
+    for (let i = 0; i < 10; i++) {
+      const tab = document.createElement('div');
+      tab.className = 'tab';
+      tab.innerHTML = `
+        <span class="tab-label">Piano Tuning</span>
+        <span class="tab-phone">(971) 202-0538</span>
+        <span class="tab-url">wholetonepiano.com</span>
+      `;
+      container.appendChild(tab);
+    }
+  </script>
+
+</body>
+</html>
