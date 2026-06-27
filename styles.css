@@ -1386,6 +1386,8 @@ footer {
   color: #8A7A55;
 }
 .service-area-list li:last-child::after { content: none; }
+.service-area-list a { color: #2F2F2F; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #C8BA9A; }
+.service-area-list a:hover { color: #8A7A55; }
 .service-area-note {
   font-family: 'Spectral', serif;
   font-style: italic;
@@ -1415,4 +1417,137 @@ footer {
   .footer-brand { justify-content: center; }
   .footer-contact { text-align: center; }
   .footer-serving { text-align: center; }
+}
+
+/* ── Location pages ──────────────────────────────────── */
+.page-section h1 {
+  font-family: 'Goudy Bookletter 1911', serif;
+  font-size: 1.9rem;
+  color: #2F2F2F;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.loc-intro {
+  font-size: 1rem;
+  color: #4A4A4A;
+  line-height: 1.75;
+  margin-bottom: 44px;
+}
+.loc-services-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #8A7A55;
+  margin: 0 0 18px;
+}
+.loc-services {
+  border-top: 1px solid #E6E6E4;
+  margin-bottom: 20px;
+}
+.loc-service {
+  padding: 18px 0;
+  border-bottom: 1px solid #E6E6E4;
+}
+.loc-service--featured {
+  background: #F3EFE4;
+  padding: 18px 20px;
+  margin: 0 -20px;
+  border-bottom: 1px solid #E6E6E4;
+}
+.loc-service-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.loc-service-name {
+  font-family: 'Goudy Bookletter 1911', serif;
+  font-size: 1.1rem;
+  color: #2F2F2F;
+}
+.loc-service-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8A7A55;
+  border: 1px solid #C8BA9A;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.loc-service-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #8A7A55;
+  margin-left: auto;
+}
+.loc-service-desc {
+  font-size: 0.9rem;
+  color: #6F6F6F;
+  line-height: 1.65;
+  margin: 0;
+}
+.loc-guarantee {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6F6F6F;
+  margin: 0 0 40px;
+}
+.loc-closing {
+  font-size: 1rem;
+  color: #4A4A4A;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+.loc-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 52px;
+  flex-wrap: wrap;
+}
+.loc-cta-phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  text-decoration: none;
+}
+.loc-cta-phone:hover { color: #2F2F2F; }
+.loc-neighbors {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #8A7A55;
+  border-top: 1px solid #E6E6E4;
+  padding-top: 20px;
+  letter-spacing: 0.03em;
+}
+.loc-neighbors a { color: #8A7A55; text-decoration: underline; text-underline-offset: 2px; }
+.loc-neighbors a:hover { color: #6A5A35; }
+.loc-trust-strip {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0;
+}
+.loc-trust-strip-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.loc-trust-strip-stars svg {
+  width: 16px;
+  height: 16px;
+}
+.loc-trust-strip-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #6F6F6F;
+  line-height: 1.5;
 }

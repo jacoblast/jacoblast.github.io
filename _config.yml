@@ -2,6 +2,11 @@ title: Whole Tone Piano Works
 url: https://www.wholetonepiano.com
 baseurl: ""
 
+collections:
+  locations:
+    output: true
+    permalink: /piano-tuning-:slug/
+
 plugins:
   - jekyll-sitemap
   - jekyll-feed

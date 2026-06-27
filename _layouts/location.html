@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Piano Tuning in {{ page.city }}, {{ page.state }}",
+  "serviceType": ["Piano Tuning", "Piano Repair", "Piano Regulation"],
+  "provider": { "@type": "LocalBusiness", "@id": "https://www.wholetonepiano.com/#business", "name": "Whole Tone Piano Works" },
+  "areaServed": { "@type": "City", "name": "{{ page.city }}", "containedInPlace": { "@type": "State", "name": "{{ page.state }}" } },
+  "url": "{{ page.url | absolute_url }}",
+  "offers": [
+    { "@type": "Offer", "name": "Basic Tune", "price": "175", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Full Service", "price": "250", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Deep Dive", "price": "450", "priceCurrency": "USD" }
+  ]
+}
+</script>
+
+{% assign slug = page.name | remove: '.md' %}
+
+<section class="page-section section-parchment" id="loc-{{ slug }}" aria-labelledby="loc-{{ slug }}-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <span class="eyebrow reveal">Piano Tuning · {{ page.city }}, {{ page.state }}</span>
+    <h1 id="loc-{{ slug }}-heading" class="reveal">Piano Tuning &amp; Service in {{ page.city }}, {{ page.state }}</h1>
+    <p class="loc-intro reveal">{{ page.intro }}</p>
+
+    <p class="loc-services-heading reveal">Services &amp; Pricing</p>
+    <div class="loc-services reveal">
+      <div class="loc-service">
+        <div class="loc-service-top">
+          <span class="loc-service-name">Basic Tune</span>
+          <span class="loc-service-price">$175</span>
+        </div>
+        <p class="loc-service-desc">The essential visit for pianos already on a regular maintenance schedule. Tuning, plus quick repairs or a few touch and tone tweaks as time allows.</p>
+      </div>
+      <div class="loc-service loc-service--featured">
+        <div class="loc-service-top">
+          <span class="loc-service-name">Full Service</span>
+          <span class="loc-service-badge">Recommended</span>
+          <span class="loc-service-price">$250</span>
+        </div>
+        <p class="loc-service-desc">For most pianos, this is the best choice. I'll spend extra time making improvements to the touch and tone, lubricating, making repairs — whatever your piano needs. Full service allows us to continue making incremental improvements on every visit.</p>
+      </div>
+      <div class="loc-service">
+        <div class="loc-service-top">
+          <span class="loc-service-name">Deep Dive</span>
+          <span class="loc-service-price">$450+</span>
+        </div>
+        <p class="loc-service-desc">An extended appointment for significant regulation work, voicing overhaul, or repairs that need dedicated time and attention beyond what a standard service visit allows.</p>
+      </div>
+    </div>
+    <p class="loc-guarantee reveal">Not satisfied with your tuning? I'll return within 30 days at no charge.</p>
+
+    <p class="loc-closing reveal">{{ page.closing }}
+    {%- if page.neighbors %}
+      {%- assign count = page.neighbors.size -%}
+      I also serve
+      {%- for neighbor in page.neighbors %}
+        <a href="/piano-tuning-{{ neighbor.slug }}/">{{ neighbor.name }}</a>
+        {%- if forloop.last %}.{%- elsif count == 2 %} and {%- else %}, {%- if forloop.rindex == 2 %} and {%- endif -%}{%- endif %}
+      {%- endfor %}
+    {%- endif %}
+    </p>
+
+    <div class="loc-trust-strip reveal">
+      <div class="loc-trust-strip-stars">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26H22L17.45 12.74L19.54 18.99L12 14.51L4.46 18.99L6.55 12.74L2 8.26H8.91L12 2Z" fill="#C8A040"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26H22L17.45 12.74L19.54 18.99L12 14.51L4.46 18.99L6.55 12.74L2 8.26H8.91L12 2Z" fill="#C8A040"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26H22L17.45 12.74L19.54 18.99L12 14.51L4.46 18.99L6.55 12.74L2 8.26H8.91L12 2Z" fill="#C8A040"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26H22L17.45 12.74L19.54 18.99L12 14.51L4.46 18.99L6.55 12.74L2 8.26H8.91L12 2Z" fill="#C8A040"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26H22L17.45 12.74L19.54 18.99L12 14.51L4.46 18.99L6.55 12.74L2 8.26H8.91L12 2Z" fill="#C8A040"/></svg>
+      </div>
+      <p class="loc-trust-strip-text reveal">Trusted by piano owners throughout the Portland–Vancouver metro. <a href="https://www.google.com/search?q=Whole+Tone+Piano+Works">See our reviews on Google</a>.</p>
+    </div>
+
+    <div class="loc-cta reveal">
+      <a href="https://gazelleapp.io/scheduling/PTzzQzkjY8c6nv3dxPmqThLn" class="btn btn-primary">Book Online</a>
+      <a href="tel:+19712020538" class="loc-cta-phone">(971) 202-0538</a>
+    </div>
+  </div>
+</section>
