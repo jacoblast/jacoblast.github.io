@@ -867,7 +867,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #2F2F2F;
-  text-align: right;
+  margin-left: auto;
 }
 .testimonial-name::before {
   content: '— ';
