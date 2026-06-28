@@ -476,8 +476,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 
 @media (max-width: 540px) {
-  .hero-logo { width: 140px; height: 140px; }
-  .hero-headline { font-size: 2rem; }
+  /* .hero-logo { width: 140px; height: 140px; } */
+  /* .hero-headline { font-size: 2rem; } */
   /* .hero-banner { aspect-ratio: 1430 / 626; } */
 }
 
@@ -574,7 +574,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 /* Section background images */
 #approach     .section-bg { background-image: url('images/bg-approach-grand-action.png'); }
 #writing      .section-bg { background-image: url('images/bach-manuscript.jpg'); background-position: center 30%; opacity: 0.07; }
-#services     .section-bg { background-image: url('images/bg-services-chladni.jpg'); }
+#services     .section-bg { background-image: url('images/bg-services-chladni.jpg'); background-size: 60%; background-position: center center; }
 #faq          .section-bg { background-image: url('images/bg-faq-grand-strings.jpg'); background-position: center 55%; opacity: 0.10; filter: saturate(0.3); }
 #testimonials .section-bg { background-image: url('images/bg-testimonials-hammers.jpeg'); opacity: 0.08; filter: saturate(0.2); }
 
