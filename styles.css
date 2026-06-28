@@ -575,7 +575,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 #approach     .section-bg { background-image: url('images/bg-approach-grand-action.png'); }
 #writing      .section-bg { background-image: url('images/bach-manuscript.jpg'); background-position: center 30%; opacity: 0.07; }
 #services     .section-bg { background-image: url('images/bg-services-chladni.jpg'); }
-#faq          .section-bg { background-image: url('images/bg-faq-grand-strings.jpg'); background-position: center 55%; opacity: 0.10; filter: saturate(0.3); }
+#faq          .section-bg { background-image: url('images/bg-faq-grand-strings.jpg'); background-position: center 55%; opacity: 0.05; filter: saturate(0.3); }
 #testimonials .section-bg { background-image: url('images/bg-testimonials-hammers.jpeg'); opacity: 0.08; filter: saturate(0.2); }
 
 .page-section h2 {
@@ -745,6 +745,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 /* ── FAQ accordion ────────────────────────────────── */
 .faq-list { border-top: 1px solid #C8C8C5; margin-top: 40px; }
 .faq-item { border-bottom: 1px solid #C8C8C5; }
+.faq-item:nth-child(odd) { background: #F8F6F0; }
+.faq-item:nth-child(even) { background: #FBFBF9; }
 .faq-trigger {
   width: 100%;
   background: none;
