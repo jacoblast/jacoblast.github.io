@@ -360,10 +360,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .hero-banner {
   width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  left: calc(-50vw + 50%);
+  margin: 0;
   background-image: url('images/hero-keys-rainbow.webp');
   background-size: 100%;
   background-position: 50% 100%;
@@ -371,8 +369,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   overflow: hidden;
   /* aspect-ratio: 1430 / 460; */
   aspect-ratio: 1012 / 443;
-  margin-top: 150px;
-  margin-bottom: 0;
+  margin: 0;
   filter: saturate(0.99) contrast(0.65);
 }
 
@@ -391,7 +388,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .hero-value-prop {
   padding: 20px 0;
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .hero-cta-buttons {
@@ -411,6 +408,30 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   padding-bottom: 14px;
   font-size: 13px;
   letter-spacing: 0.06em;
+}
+
+.hero-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.hero-logo-bottom {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
+}
+.hero-h1-bottom {
+  font-size: 1.4rem;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: #2F2F2F;
+  font-family: 'Goudy Bookletter 1911', serif;
 }
 
 .hero-reviews {
