@@ -1698,7 +1698,7 @@ p.reveal + p.reveal { margin-top: 20px; }
 }
 .string-divider svg path {
   fill: none;
-  stroke: #8A7A55;
+  stroke: #C8BA9A;
   stroke-width: 1;
   stroke-linecap: round;
   stroke-dasharray: 80;
