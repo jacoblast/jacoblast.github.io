@@ -922,12 +922,22 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 #schedule {
   position: relative;
   text-align: center;
-}
-#schedule .section-bg {
   background-image: url('images/bg-cta-keys-prism-new2.jpg');
-  background-position: center 70%;
+  background-size: 150%;
+  background-position: center 50%;
+  padding: 120px 0;
+  min-height: 80vh;
+}
+#schedule::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #6D5C52 0%, rgba(109, 92, 82, 0.6) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 #schedule > .wrap {
+  position: relative;
   z-index: 2;
 }
 
@@ -1034,6 +1044,32 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 
 @media (max-width: 540px) {
   .cta-form-row { grid-template-columns: 1fr; }
+}
+
+/* ── Dark CTA Section ──────────────────────────────– */
+.cta-section-dark h2 { color: #F5F5F3; }
+.cta-section-dark .eyebrow { color: #C8BA9A; }
+.cta-section-dark .cta-sub { color: #E8E4DF; }
+.cta-section-dark .cta-reviews { color: #E8E4DF; }
+.cta-section-dark .cta-or::before,
+.cta-section-dark .cta-or::after { border-top-color: #7A6A5A; }
+.cta-section-dark .cta-or span { color: #E8E4DF; }
+.cta-section-dark .cta-form input,
+.cta-section-dark .cta-form textarea {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #F5F5F3;
+}
+.cta-section-dark .cta-form input::placeholder,
+.cta-section-dark .cta-form textarea::placeholder { color: rgba(245,245,243,0.6); }
+.cta-section-dark .cta-form button {
+  background: #C8BA9A;
+  border-color: #C8BA9A;
+  color: #2F2F2F;
+}
+.cta-section-dark .cta-form button:hover {
+  background: #8A7A55;
+  border-color: #8A7A55;
 }
 
 /* ── Contact modal ────────────────────────────────── */
