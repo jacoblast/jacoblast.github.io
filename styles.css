@@ -570,6 +570,16 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 
 /* ── Problem section ──────────────────────────────── */
+/* Original light theme (kept for reference)
+#problem { background: #FBFBF9; }
+#problem h2 { color: #2F2F2F; }
+#problem p { color: #4A4A4A; }
+*/
+
+/* Dark patina theme */
+#problem { background: #5A4844; }
+#problem h2 { color: #F5F5F3; }
+#problem p { color: #E8E4DF; }
 #problem p:first-of-type { margin-bottom: 20px; }
 
 /* ── Hero value prop paragraphs ──────────────────── */
