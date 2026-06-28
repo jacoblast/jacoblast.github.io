@@ -577,8 +577,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 */
 
 /* Dark patina theme */
-#problem { background: #5A4844 !important; }
-#problem.page-section.section-cream { background-color: #5A4844 !important; }
+#problem { background: #6D5C52 !important; }
+#problem.page-section.section-cream { background-color: #6D5C52 !important; }
 #problem h2 { color: #F5F5F3 !important; }
 #problem p { color: #E8E4DF !important; }
 #problem p:first-of-type { margin-bottom: 20px; }
