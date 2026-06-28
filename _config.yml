@@ -1,6 +1,7 @@
 title: Whole Tone Piano Works
-url: https://www.wholetonepiano.com
+url: https://wholetonepiano.com
 baseurl: ""
+permalink: /:path/
 
 collections:
   locations:
