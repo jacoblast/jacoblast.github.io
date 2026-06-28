@@ -289,12 +289,11 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 /* ── Hero ─────────────────────────────────────────── */
 .hero {
   position: relative;
-  padding: 60px 0;
+  padding: 0;
   text-align: center;
   overflow: hidden;
   background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #F0ECE4 75%, #EDE6DA 100%);
   margin-bottom: 0;
-  padding-bottom: 0;
 }
 .hero > * {
   position: relative;
