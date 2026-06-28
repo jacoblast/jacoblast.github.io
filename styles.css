@@ -1610,6 +1610,7 @@ footer {
               transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               filter 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+p.reveal + p.reveal { margin-top: 20px; }
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
