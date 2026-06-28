@@ -929,6 +929,12 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   padding: 120px 0;
   min-height: 80vh;
 }
+@media (max-width: 645px) {
+  #schedule {
+    background-size: 280%;
+    background-position: left 50%;
+  }
+}
 #schedule::before {
   content: '';
   position: absolute;
