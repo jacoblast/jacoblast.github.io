@@ -565,7 +565,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .section-cream     { background: #FBFBF9; }
 
 /* Section vignettes */
-#approach     { background: radial-gradient(ellipse 60% 60% at 50% 50%, #F4F2EC 30%, #E8E2D4 60%, #C8BFA8 100%) !important; }
+#approach     { background: radial-gradient(ellipse 85% 75% at 50% 50%, #F4F2EC 45%, #D4C8AD 70%, #8A7A5A 100%) !important; }
 #services     { background: radial-gradient(ellipse 110% 75% at 55% 45%, #F4F2EC 45%, #EFF2EC 75%, #EAF0E6 100%) !important; }
 #faq          { background: radial-gradient(ellipse 110% 75% at 45% 50%, #FBFBF9 45%, #F3F2F0 75%, #ECEAE6 100%) !important; }
 #testimonials { background: radial-gradient(ellipse 110% 75% at 55% 50%, #F4F2EC 45%, #F0ECE2 75%, #EBE3D5 100%) !important; }
