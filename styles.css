@@ -867,6 +867,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #2F2F2F;
+  text-align: right;
 }
 .testimonial-name::before {
   content: '— ';
@@ -1061,7 +1062,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   color: #F5F5F3;
 }
 .cta-section-dark .cta-form input::placeholder,
-.cta-section-dark .cta-form textarea::placeholder { color: rgba(245,245,243,0.6); }
+.cta-section-dark .cta-form textarea::placeholder { color: rgba(245,245,243,0.7); }
 .cta-section-dark .cta-form button {
   background: #C8BA9A;
   border-color: #C8BA9A;
