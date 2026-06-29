@@ -43,14 +43,17 @@
 ### File Structure
 - `index.html` — home page (Jekyll page with frontmatter)
 - `about.html` — About page (Jekyll page with frontmatter)
+- `service-area.html` — Service area landing page (`/service-area/`)
+- `blog.html` — Blog listing page (`/blog/`)
+- `_posts/` — Blog posts (Jekyll markdown, `layout: post`)
 - `styles.css` — all component and layout styles
 - `_layouts/default.html` — shared page wrapper
-- `_includes/head.html` — shared `<head>` (fonts, meta, CSS)
+- `_includes/head.html` — shared `<head>` (fonts, meta, CSS, **authoritative LocalBusiness JSON-LD**)
 - `_includes/header.html` — shared header + nav
 - `_includes/footer.html` — shared footer
 - `_includes/scripts.html` — shared JS (reveals, parallax, FAQ, header shrink)
 - `_includes/string-divider.html` — section divider SVG (edit here to update all instances)
-- `_config.yml` — Jekyll config
+- `_config.yml` — Jekyll config (`site.url: https://wholetonepiano.com`)
 - `images/` — photos and background textures (unused images archived in `images/old/`)
 - `_data/testimonials.yml` — testimonial content (name, text, date)
 - `brand_assets/` — logo files (`logo_curves_no_text.png` is primary)
@@ -79,6 +82,7 @@ Never introduce new colors. All tints should be derived from the above.
 
 - Large headings: `letter-spacing: -0.025em`, `line-height: 1.18–1.22`
 - Body: `line-height: 1.75`, `font-size: 0.95–1rem`
+- Card/quote text runs slightly larger: service card names `1.3rem`, descriptions `1.05rem`; testimonial quotes `1.1rem`
 - Eyebrows: Inter, `11px`, `letter-spacing: 0.13em`, uppercase, accent color
 
 ### Spacing Scale
@@ -112,9 +116,12 @@ To add a background illustration to any section, add a CSS rule:
 ```
 The `.section-bg` div renders at `opacity: 0.07` — this works best with high-contrast line drawings or schematic images. Photographs at this opacity lose too much detail.
 
+**Homepage section order:**
+Hero → Problem Statement → Services (`#services`) → Testimonials (`#testimonials`) → Differentiator/Approach (`#approach`) → CTA (`#schedule`) → FAQ (`#faq`)
+
 **Current section backgrounds:**
 - Hero: `images/bg-hero-string-scale.png` (parallax via `.hero-bg` div + JS)
-- My Approach (`#approach`): `images/bg-approach-grand-action.png` (patent line drawing)
+- Differentiator/Approach (`#approach`): `images/bg-approach-grand-action.png` (patent line drawing)
 - Services (`#services`): `images/bg-services-chladni.png` (scientific pattern)
 - FAQ (`#faq`): `images/bg-faq-grand-strings.jpg` (photo, opacity `0.10`, `saturate(0.3)`)
 - Testimonials (`#testimonials`): `images/bg-testimonials-hammers.jpeg` (photo, opacity `0.08`, `saturate(0.2)`)
@@ -176,12 +183,13 @@ To add a review, append an entry to `_data/testimonials.yml`:
 ### CTA Section
 Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 12, 6, 0.38)`). Text is cream (`#FBFBF9`). Background position `center 70%` to show keyboard and rainbow in `bg-cta-piano-prism.png`.
 
-Contact layout (top to bottom):
-- Two equal cream buttons: "Text to Book" (`sms:`) and "Call (971) 202-0538" (`tel:`) — class `.cta-direct`
-- "or send a message" hairline divider — class `.cta-or`
-- Formspree contact form (name, phone/email, message, submit) — class `.cta-form`
+Layout (top to bottom):
+- "Book Online" primary button — links to Gazelle scheduling (`https://gazelleapp.io/scheduling/PTzzQzkjY8c6nv3dxPmqThLn`)
+- "Over 15 five-star reviews" trust line
+- "or send a question" hairline divider — class `.cta-or`
+- Web3Forms contact form (name, phone/email, message, submit) — class `.cta-form`, `action="https://api.web3forms.com/submit"`
 
-Form inputs use semi-transparent cream borders/backgrounds over the dark overlay. Formspree action URL: `https://formspree.io/f/YOUR_FORM_ID` — replace with real ID from Formspree dashboard.
+Form inputs use semi-transparent cream borders/backgrounds over the dark overlay.
 
 ### Images
 - Photos: `filter: grayscale(15%)` for tonal consistency
@@ -190,6 +198,14 @@ Form inputs use semi-transparent cream borders/backgrounds over the dark overlay
 - HEIF images must be converted to JPEG before web use: `sips -s format jpeg -s formatOptions 85 input.heif --out output.jpeg`
 
 ---
+
+## SEO & Metadata Architecture
+
+- **Canonical URL form:** `https://wholetonepiano.com` — no `www`, no trailing slash except homepage. All JSON-LD `@id` and `url` fields must match this form.
+- **LocalBusiness JSON-LD** lives in `_includes/head.html` — this is the single authoritative source for `areaServed`, `hasOfferCatalog`, and business identity. It renders on every page. **Do not add another LocalBusiness schema to individual pages.**
+- **Page-specific schemas** stay in their pages: `FAQPage` in `index.html`, `Person` in `about.html`.
+- **`areaServed` is 27 cities** — to add/remove a city, edit the LocalBusiness block in `_includes/head.html` only.
+- **Canonical tags** are set via `canonical:` in each page's frontmatter. Pages without an explicit canonical fall back to `site.url + page.url` (usually correct, but explicit is preferred).
 
 ## Brand Assets
 - Always check the `brand_assets/` folder before designing. It may contain logos, color guides, style guides, or images.
