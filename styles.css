@@ -687,7 +687,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .package-right .package-desc { margin-top: 0; }
 .package-name {
   font-family: 'Goudy Bookletter 1911', serif;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   color: #2F2F2F;
   font-weight: 400;
   margin: 0;
@@ -701,7 +701,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   margin-top: 6px;
 }
 .package-desc {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: #6F6F6F;
   line-height: 1.65;
   margin-top: 20px;
@@ -866,7 +866,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .testimonial-quote {
   font-family: 'Spectral', serif;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #4A4A4A;
   line-height: 1.75;
   margin-top: 32px;
