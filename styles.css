@@ -937,6 +937,15 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   flex-shrink: 0;
 }
 
+.testimonial-credential {
+  text-align: center;
+  margin-top: 32px;
+}
+.testimonial-credential img {
+  width: 250px;
+  height: 250px;
+}
+
 /* ── CTA section ──────────────────────────────────── */
 #schedule {
   position: relative;
