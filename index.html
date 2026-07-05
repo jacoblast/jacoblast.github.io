@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Whole Tone Piano Works — Tuning, Service & Repair, Portland OR"
-description: "Portland piano tuner offering tuning and full-service care in Portland, OR and Vancouver, WA. Serving families, studios, churches, and venues. Schedule your appointment today."
+description: "Portland piano tuner offering tuning and full-service care in Portland, OR & Vancouver, WA. Trusted by families, studios & churches. Book online today."
 canonical: "https://wholetonepiano.com/"
 ---
 
@@ -10,13 +10,14 @@ canonical: "https://wholetonepiano.com/"
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap-wide">
       <div class="hero-value-prop hero-seq">
+        <h1 id="hero-heading" class="hero-kicker">Piano Tuning &amp; Full-Service Care in Portland, OR &amp; Vancouver, WA</h1>
         <p class="hero-headline">Your piano is capable<br>of more than you realize.</p>
         <p class="hero-statement">With the right care, your instrument can feel more responsive, more expressive, and more inspiring to play.</p>
       </div>
 
       <div class="hero-signature hero-seq">
         <img src="/images/logo-mark-new.svg" alt="Whole Tone Piano Works" class="hero-logo-bottom">
-        <h1 id="hero-heading" class="hero-h1-bottom">Whole Tone Piano Works</h1>
+        <p class="hero-h1-bottom">Whole Tone Piano Works</p>
       </div>
 
       <a href="https://maps.app.goo.gl/fvygv8ZUsNpw4kKD9" target="_blank" rel="noopener" class="hero-reviews hero-seq" aria-label="Rated 5.0 on Google">
@@ -53,13 +54,6 @@ canonical: "https://wholetonepiano.com/"
     <span>Flexible appointments available</span>
   </div>
 
-<!-- ── SECTION SPACER ───────────────────────────────── -->
-<!--   <div class="section-spacer" aria-hidden="true">
-    <span class="spacer-rule"></span>
-    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
-    <span class="spacer-rule"></span>
-  </div> -->
-
   <!-- ── SECTION: Problem Statement ────────────────── -->
   <section class="page-section section-cream" id="problem" aria-labelledby="problem-heading">
     <div class="section-bg" aria-hidden="true"></div>
@@ -72,13 +66,6 @@ canonical: "https://wholetonepiano.com/"
       <p class="reveal">A comprehensive service can transform how your piano responds to your touch—you'll feel the difference right away.</p>
     </div>
   </section>
-
-<!--  ── SECTION SPACER ───────────────────────────────── -->
-<!--   <div class="section-spacer" aria-hidden="true">
-    <span class="spacer-rule"></span>
-    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
-    <span class="spacer-rule"></span>
-  </div> -->
 
   <!-- ── SECTION: Services ──────────────────────────── -->
   <section class="page-section section-parchment" id="services" aria-labelledby="services-heading">
@@ -127,12 +114,32 @@ canonical: "https://wholetonepiano.com/"
     </div>
   </section>
 
-    <!-- ── SECTION SPACER ───────────────────────────────── -->
-  <div class="section-spacer" aria-hidden="true">
-    <span class="spacer-rule"></span>
-    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
-    <span class="spacer-rule"></span>
-  </div>
+  <!-- ── SECTION: What a visit looks like ─────────────── -->
+  <section class="page-section section-cream" id="visit" aria-labelledby="visit-heading">
+    <div class="section-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      {% include string-divider.html %}
+      <span class="eyebrow reveal">What to expect</span>
+      <h2 id="visit-heading" class="reveal">What a visit looks like.</h2>
+      <div class="visit-steps">
+        <div class="visit-step reveal">
+          <span class="visit-step-num" aria-hidden="true">1</span>
+          <h3 class="visit-step-title">Book online or call</h3>
+          <p class="visit-step-text">Pick a time that works — I come to you.</p>
+        </div>
+        <div class="visit-step reveal" data-delay="120">
+          <span class="visit-step-num" aria-hidden="true">2</span>
+          <h3 class="visit-step-title">I service your piano at home</h3>
+          <p class="visit-step-text">Most visits run 1½–2 hours.</p>
+        </div>
+        <div class="visit-step reveal" data-delay="240">
+          <span class="visit-step-num" aria-hidden="true">3</span>
+          <h3 class="visit-step-title">Play the difference</h3>
+          <p class="visit-step-text">Backed by a 30-day satisfaction guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── SECTION: Testimonials ──────────────────────────── -->
   <section class="page-section section-cream" id="testimonials" aria-labelledby="testimonials-heading">
@@ -199,13 +206,6 @@ canonical: "https://wholetonepiano.com/"
     </div>
   </section>
 
-  <!-- ── SECTION SPACER ───────────────────────────────── -->
-  <div class="section-spacer" aria-hidden="true">
-    <span class="spacer-rule"></span>
-    <img src="/images/logo-mark-new.svg" alt="" class="spacer-logo">
-    <span class="spacer-rule"></span>
-  </div>
-
   <!-- ── CTA ────────────────────────────────────────── -->
   <section class="page-section cta-section cta-section-dark" id="schedule" aria-labelledby="cta-heading">
     <div class="wrap">
@@ -243,59 +243,22 @@ canonical: "https://wholetonepiano.com/"
   </div>
 
   <!-- ── SECTION: FAQ ───────────────────────────────── -->
+  <!-- FAQ content + FAQPage schema both generated from _data/faqs.yml (single source) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {%- for faq in site.data.faqs %}
       {
         "@type": "Question",
-        "name": "How often should a piano be tuned?",
+        "name": {{ faq.question | jsonify }},
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In general, once or twice per year. Instruments that are played frequently, used for lessons, or that experience greater seasonal humidity changes may benefit from tuning twice a year or more."
+          "text": {{ faq.answer | jsonify }}
         }
-      },
-      {
-        "@type": "Question",
-        "name": "My piano hasn't been tuned in years. Is that okay?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — your piano may need a pitch correction or pitch raise to bring it back to standard pitch and restore its intended voice. I include this at no extra charge, though it does draw from the time available for other improvements."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "My piano is very old. Is it worth tuning?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In most cases, yes. Old pianos can still sound and play beautifully. Occasionally one has deteriorated to the point where it won't hold a tune or needs more work than it's worth — in that case, I'll tell you honestly, and I'm happy to help point you toward something better."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "My piano has a sticky key or buzzing sound — can you fix that?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Often, yes. Minor issues — a sticking key, a buzzing string — I'll address on the spot as part of the visit. If it's something more involved, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my piano go out of tune if it hasn't been played much?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It's not the playing itself that causes a piano to go out of tune, but rather changes in temperature and humidity, and the settling of the instrument over time. How much a piano is played rarely has a significant impact on its tuning stability."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long is an appointment?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Between 1½ and 2 hours, typically. I like to take my time to make sure everything is just right."
-        }
-      }
+      }{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
     ]
   }
   </script>
@@ -306,60 +269,17 @@ canonical: "https://wholetonepiano.com/"
       {% include string-divider.html %}
       <h2 id="faq-heading" class="reveal">Common questions.</h2>
       <div class="faq-list reveal">
+        {%- for faq in site.data.faqs %}
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">How often should a piano be tuned?</span>
+            <span class="faq-question">{{ faq.question }}</span>
             <span class="faq-arrow" aria-hidden="true"></span>
           </button>
           <div class="faq-body" role="region">
-            <p>In general, once or twice per year. Instruments that are played frequently, used for lessons, or that experience greater seasonal humidity changes may benefit from tuning twice a year or more. For an in-depth answer, see my post <a href="/blog/how-often-should-you-tune-your-piano/">How Often Should You Tune Your Piano?</a></p>
+            <p>{{ faq.answer }}{{ faq.more_html }}</p>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">My piano hasn't been tuned in years. Is that okay?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>Yes — your piano may need a pitch correction or pitch raise to bring it back to standard pitch and restore its intended voice. I include this at no extra charge, though it does draw from the time available for other improvements.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">My piano is very old. Is it worth tuning?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>In most cases, yes. Old pianos can still sound and play beautifully. Occasionally one has deteriorated to the point where it won't hold a tune or needs more work than it's worth — in that case, I'll tell you honestly, and I'm happy to help point you toward something better.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">My piano has a sticky key or buzzing sound — can you fix that?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>Often, yes. Minor issues — a sticking key, a buzzing string — I'll address on the spot as part of the visit. If it's something more involved, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">Will my piano go out of tune if it hasn't been played much?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>It's not the playing itself that causes a piano to go out of tune, but rather changes in temperature and humidity, and the settling of the instrument over time. How much a piano is played rarely has a significant impact on its tuning stability.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-question">How long is an appointment?</span>
-            <span class="faq-arrow" aria-hidden="true"></span>
-          </button>
-          <div class="faq-body" role="region">
-            <p>Between 1½ and 2 hours, typically. I like to take my time to make sure everything is just right.</p>
-          </div>
-        </div>
+        {%- endfor %}
       </div>
     </div>
   </section>

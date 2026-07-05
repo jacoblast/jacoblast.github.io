@@ -1,0 +1,27 @@
+# Homepage FAQ — single source of truth.
+# Renders BOTH the visible FAQ accordion and the FAQPage JSON-LD in index.html.
+# `answer` is plain text (used in schema + visible). `more_html` is optional extra
+# markup (e.g. links) appended only in the visible accordion, kept out of schema.
+
+- question: "How often should a piano be tuned?"
+  answer: "In general, once or twice per year. Instruments that are played frequently, used for lessons, or that experience greater seasonal humidity changes may benefit from tuning twice a year or more."
+  more_html: ' For an in-depth answer, see my post <a href="/blog/how-often-should-you-tune-your-piano/">How Often Should You Tune Your Piano?</a>'
+
+- question: "My piano hasn't been tuned in years. Is that okay?"
+  answer: "Yes — your piano may need a pitch correction or pitch raise to bring it back to standard pitch and restore its intended voice. I include this at no extra charge, though it does draw from the time available for other improvements."
+
+- question: "My piano is very old. Is it worth tuning?"
+  answer: "In most cases, yes. Old pianos can still sound and play beautifully. Occasionally one has deteriorated to the point where it won't hold a tune or needs more work than it's worth — in that case, I'll tell you honestly, and I'm happy to help point you toward something better."
+
+- question: "My piano has a sticky key or buzzing sound — can you fix that?"
+  answer: "Often, yes. Minor issues — a sticking key, a buzzing string — I'll address on the spot as part of the visit. If it's something more involved, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up."
+
+- question: "Will my piano go out of tune if it hasn't been played much?"
+  answer: "It's not the playing itself that causes a piano to go out of tune, but rather changes in temperature and humidity, and the settling of the instrument over time. How much a piano is played rarely has a significant impact on its tuning stability."
+
+- question: "How long is an appointment?"
+  answer: "Between 1½ and 2 hours, typically. I like to take my time to make sure everything is just right."
+
+- question: "Do you charge a travel fee?"
+  answer: "There's no travel fee within about 25 miles of Portland, which covers most of the metro. For locations beyond that, a travel supplement of $1 per mile round trip applies."
+  more_html: ' See my <a href="/service-area/">full service area</a> for details.'

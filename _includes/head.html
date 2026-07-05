@@ -6,13 +6,18 @@
   {% if page.url == '/' %}<link rel="preload" as="image" href="/images/bg-hero-string-scale.png">{% endif %}
   <title>{% if page.layout == 'post' %}{{ page.title }} — Whole Tone Piano Works{% else %}{{ page.title }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
-  <link rel="canonical" href="{{ page.canonical | default: site.url | append: page.url }}">
+  {%- if page.canonical -%}
+    {%- assign canonical_url = page.canonical -%}
+  {%- else -%}
+    {%- capture canonical_url -%}{{ site.url }}{{ page.url }}{%- endcapture -%}
+  {%- endif -%}
+  <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" type="application/rss+xml" title="Whole Tone Piano Works — From the Bench" href="/feed.xml">
 
   <!-- Open Graph -->
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:site_name" content="Whole Tone Piano Works">
-  <meta property="og:url" content="{{ page.canonical | default: site.url | append: page.url }}">
+  <meta property="og:url" content="{{ canonical_url }}">
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
   <meta property="og:image" content="{{ site.url }}/images/hero-keys-rainbow.jpg">
