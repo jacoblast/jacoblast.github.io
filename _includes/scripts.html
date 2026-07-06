@@ -18,6 +18,20 @@
     starObs.observe(heroReviews);
   }
 
+  // ── Mobile CTA bar: reveal after scrolling past the hero ──
+  const mobileCtaBar = document.querySelector('.mobile-cta-bar');
+  const heroSection = document.querySelector('.hero');
+  if (mobileCtaBar && heroSection && 'IntersectionObserver' in window) {
+    const ctaObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        mobileCtaBar.classList.toggle('is-visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    ctaObs.observe(heroSection);
+  } else if (mobileCtaBar) {
+    mobileCtaBar.classList.add('is-visible');
+  }
+
   // ── Service card wave ───────────────────────────────
   const packageGrid = document.querySelector('.package-grid');
   if (packageGrid) {
