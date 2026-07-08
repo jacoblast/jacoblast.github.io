@@ -5,7 +5,7 @@
 - [ ] Add client-as-hero photo gallery to About page
 - [ ] Add "more services" section/pages: voicing, regulation, pitch raise, cleaning, humidity control
 - [ ] Consider dedicated SEO landing pages per service (e.g. /piano-regulation-portland/)
-- [ ] Get to 15–20 Google reviews before running ads
+- [x] Get to 15–20 Google reviews before running ads
 - [ ] Commission client-as-hero photography (someone at piano post-tuning)
 - [ ] Write first blog post (piano care, humidity, tuning frequency)
 - [ ] Blog: "Should I get a free piano?"

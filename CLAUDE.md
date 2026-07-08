@@ -185,7 +185,7 @@ Uses `::before` for background image and `::after` for dark overlay (`rgba(18, 1
 
 Layout (top to bottom):
 - "Book Online" primary button — links to Gazelle scheduling (`https://gazelleapp.io/scheduling/PTzzQzkjY8c6nv3dxPmqThLn`)
-- "Over 15 five-star reviews" trust line
+- "20 five-star reviews" trust line
 - "or send a question" hairline divider — class `.cta-or`
 - Web3Forms contact form (name, phone/email, message, submit) — class `.cta-form`, `action="https://api.web3forms.com/submit"`
 
