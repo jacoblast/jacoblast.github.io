@@ -492,6 +492,25 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 }
 .hero-reviews.stars-animate .hero-star path { animation-play-state: running; }
 
+/* Hover: stars ignite left-to-right, Google G lights up */
+.hero-star {
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transition-delay: calc(var(--i) * 70ms);
+}
+.hero-reviews:hover .hero-star,
+.hero-reviews:focus-visible .hero-star {
+  filter: brightness(1.12) drop-shadow(0 0 6px rgba(200, 160, 64, 0.6));
+  transform: translateY(-1px);
+}
+.hero-google-g {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.hero-reviews:hover .hero-google-g,
+.hero-reviews:focus-visible .hero-google-g {
+  filter: brightness(1.1) drop-shadow(0 1px 4px rgba(90, 82, 60, 0.35));
+  transform: scale(1.08);
+}
+
 /* Hero sequence animation */
 .hero-seq {
   opacity: 0;
