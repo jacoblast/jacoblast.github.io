@@ -26,6 +26,7 @@ exclude:
   - google-business-description.html
   - "*.rtf"
   - "*.bak"
+  - "*.backup"
   - CLAUDE.md
   - "images/old"
   - flyer-spring-2026.html

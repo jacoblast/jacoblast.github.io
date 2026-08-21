@@ -1832,6 +1832,17 @@ footer {
   .about-photo-full img { aspect-ratio: 4/3; }
 }
 
+/* Lead portrait on About — uncropped 1:1 source, so `cover` never trims it.
+   Declared after the 640px block so the square survives on mobile too. */
+.about-photo-lead img {
+  aspect-ratio: 1 / 1;
+  /* The width/height attrs act as a presentational hint (height: 1050px) which would
+     otherwise beat aspect-ratio, since nothing else sets height on this image. */
+  height: auto;
+  object-position: center center;
+  filter: grayscale(15%) saturate(0.8);
+}
+
 /* ── Service Area page ─────────────────────────────── */
 .service-area-intro {
   color: #4A4A4A;
@@ -1963,7 +1974,8 @@ footer {
   line-height: 1.75;
   margin-bottom: 44px;
 }
-.loc-services-heading {
+/* Rendered as an <h2> for document outline; must out-specify `.page-section h2`. */
+.page-section h2.loc-services-heading {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 500;

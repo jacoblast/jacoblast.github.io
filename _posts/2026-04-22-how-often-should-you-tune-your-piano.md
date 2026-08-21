@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How Often Should You Tune Your Piano?"
+seo_title: "How Often to Tune Your Piano — Whole Tone Piano Works"
 date: 2026-04-22
 description: "The short answer is twice a year. But humidity, unison drift, and your own ears all change the math. Here's the deeper truth."
 excerpt: "Twice a year is a reasonable baseline — but the real answer depends on your piano, your room, and your ears. And understanding why will tell you something genuinely interesting about what tuning actually is."
