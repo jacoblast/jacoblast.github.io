@@ -31,7 +31,7 @@ canonical: "https://wholetonepiano.com/"
             <svg class="hero-star" style="--i:4" viewBox="0 0 20 20" width="26" height="26" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
           </span>
         </span>
-        <span class="hero-reviews-text">Rated 5.0 &middot; 30+ reviews on Google</span>
+        <span class="hero-reviews-text">30+ five-star reviews on Google!</span>
       </a>
 
       <div class="hero-cta-buttons hero-seq">
@@ -149,24 +149,42 @@ canonical: "https://wholetonepiano.com/"
       <span class="eyebrow reveal">In their words</span>
       <h2 id="testimonials-heading" class="reveal">What people say.</h2>
     </div>
-    <div class="wrap">
-      <div class="testimonial-grid">
-        {% for t in site.data.testimonials %}
-        <div class="testimonial reveal">
-          <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
-          <div class="testimonial-stars" aria-label="5 stars" aria-hidden="true">
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-          </div>
-          <p class="testimonial-quote">{{ t.text }}</p>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">{{ t.name }}</span>
-          </div>
+    <div class="wrap-wide">
+      <div class="testimonial-carousel reveal" data-carousel>
+        <div class="testimonial-stage">
+        <div class="testimonial-viewport" data-carousel-viewport tabindex="0" role="group" aria-roledescription="carousel" aria-label="Customer reviews">
+          <ul class="testimonial-track" data-carousel-track>
+            {% for t in site.data.testimonials %}
+            <li class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Review {{ forloop.index }} of {{ forloop.length }}">
+              <div class="testimonial">
+                <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+                <div class="testimonial-stars" aria-label="5 stars" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
+                  <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
+                  <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
+                  <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
+                  <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
+                </div>
+                <p class="testimonial-quote">{{ t.text }}</p>
+                <div class="testimonial-meta">
+                  <span class="testimonial-name">{{ t.name }}</span>
+                  {% if t.date %}<span class="testimonial-date">{{ t.date }}</span>{% endif %}
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
-        {% endfor %}
+          <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous review" hidden>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 5L8 12l7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next review" hidden>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="carousel-controls" data-carousel-controls hidden>
+          <div class="carousel-dots" data-carousel-dots></div>
+        </div>
       </div>
       <div class="testimonial-google-link reveal">
         <a href="https://maps.app.goo.gl/fvygv8ZUsNpw4kKD9" target="_blank" rel="noopener" class="google-reviews-btn">
