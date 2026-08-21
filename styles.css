@@ -678,6 +678,30 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   margin: 34px 0 0;
 }
 
+/* ── Booking confirmed (Gazelle post-booking redirect) ── */
+#booking-confirmed { text-align: center; }
+#booking-confirmed .string-divider { margin-left: auto; margin-right: auto; }
+#booking-confirmed h1 {
+  font-size: 2.1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+#booking-confirmed p {
+  color: #4A4A4A;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0 auto 18px;
+  max-width: 520px;
+}
+.booking-confirmed-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 44px 0 0;
+}
+
 /* ── What a visit looks like ──────────────────────── */
 .visit-steps {
   display: grid;

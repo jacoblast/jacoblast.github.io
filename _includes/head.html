@@ -21,6 +21,7 @@
   {%- else -%}
     {%- capture canonical_url -%}{{ site.url }}{{ page.url }}{%- endcapture -%}
   {%- endif -%}
+  {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="alternate" type="application/rss+xml" title="Whole Tone Piano Works — From the Bench" href="/feed.xml">
 

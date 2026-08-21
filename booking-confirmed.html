@@ -1,0 +1,53 @@
+---
+layout: default
+title: "Booking Confirmed — Whole Tone Piano Works"
+description: "Your piano appointment with Whole Tone Piano Works is confirmed."
+permalink: /booking-confirmed/
+sitemap: false
+noindex: true
+---
+
+<section class="page-section section-parchment" id="booking-confirmed" aria-labelledby="booking-confirmed-heading">
+  <div class="section-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    {% include string-divider.html %}
+    <span class="eyebrow reveal">Booking Confirmed</span>
+    <h1 id="booking-confirmed-heading" class="reveal">You're on the books.</h1>
+    <p class="reveal">Thank you for scheduling with Whole Tone Piano Works. You'll receive a confirmation email with your appointment details shortly.</p>
+    <p class="reveal">If you need to reschedule, or you have a question about your piano before I arrive, feel free to give me a call.</p>
+    <div class="booking-confirmed-actions reveal">
+      <a href="/" class="btn btn-primary">Back to home</a>
+      <a href="tel:+19712020538" class="btn btn-secondary">(971)&nbsp;202-0538</a>
+    </div>
+  </div>
+</section>
+
+<!-- Google Ads conversion — fires once when Gazelle redirects here after a completed booking. -->
+<script>
+  (function () {
+    // TODO: replace the label after the slash with the conversion label from
+    // Google Ads → Goals → Conversions → "Book Appointment" → Tag setup.
+    var SEND_TO = 'AW-18266967746/REPLACE_WITH_CONVERSION_LABEL';
+
+    if (SEND_TO.indexOf('REPLACE_WITH') !== -1 || typeof gtag !== 'function') return;
+
+    var params = new URLSearchParams(window.location.search);
+    var orderId = params.get('id') || params.get('appointment_id') || '';
+
+    // Guard against a refresh or a bookmarked return double-counting the booking.
+    var key = 'wt_booked_' + (orderId || 'session');
+    try { if (sessionStorage.getItem(key)) return; } catch (e) {}
+
+    var payload = { send_to: SEND_TO };
+    if (orderId) payload.transaction_id = orderId;
+
+    var value = parseFloat(params.get('value'));
+    if (!isNaN(value) && value > 0) {
+      payload.value = value;
+      payload.currency = 'USD';
+    }
+
+    gtag('event', 'conversion', payload);
+    try { sessionStorage.setItem(key, '1'); } catch (e) {}
+  })();
+</script>
