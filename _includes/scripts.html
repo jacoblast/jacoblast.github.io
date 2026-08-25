@@ -109,6 +109,17 @@
         if (res.ok) {
           contactForm.reset();
           contactModal.removeAttribute('hidden');
+
+          // Fired here, not on button click, so the conversion only counts a
+          // message Web3Forms actually accepted. The page never unloads on
+          // submit, so the beacon has all the time it needs.
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              send_to: 'AW-18266967746/4n99COiY0OUcEMKdr4ZE',
+              value: 1.0,
+              currency: 'USD'
+            });
+          }
         }
       } catch (_) {}
     });
@@ -235,6 +246,28 @@
         body.style.maxHeight = body.scrollHeight + 'px';
         trigger.setAttribute('aria-expanded', 'true');
       }
+    });
+  });
+
+  // ── Click-to-call conversion ────────────────────────
+  // One delegated listener covers every tel: link on the site — nav, footer,
+  // mobile bar, location pages, privacy, booking confirmation — plus any added
+  // later. Uses closest() so clicks landing on the SVG icon inside the link
+  // still register.
+  //
+  // Note: this deliberately does NOT cancel the click. Google's
+  // gtag_report_conversion() pattern returns false and re-navigates from
+  // event_callback, which on a tel: link means the call never starts if that
+  // callback doesn't fire. Tapping a tel: link opens the dialer without
+  // unloading the page, so the beacon has time to send on its own.
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!link || typeof gtag !== 'function') return;
+
+    gtag('event', 'conversion', {
+      send_to: 'AW-18266967746/GSkZCOWY0OUcEMKdr4ZE',
+      value: 1.0,
+      currency: 'USD'
     });
   });
   </script>

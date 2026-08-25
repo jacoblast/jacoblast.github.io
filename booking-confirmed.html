@@ -25,11 +25,9 @@ noindex: true
 <!-- Google Ads conversion — fires once when Gazelle redirects here after a completed booking. -->
 <script>
   (function () {
-    // TODO: replace the label after the slash with the conversion label from
-    // Google Ads → Goals → Conversions → "Book Appointment" → Tag setup.
-    var SEND_TO = 'AW-18266967746/REPLACE_WITH_CONVERSION_LABEL';
+    var SEND_TO = 'AW-18266967746/MgAfCOKY0OUcEMKdr4ZE';
 
-    if (SEND_TO.indexOf('REPLACE_WITH') !== -1 || typeof gtag !== 'function') return;
+    if (typeof gtag !== 'function') return;
 
     var params = new URLSearchParams(window.location.search);
     var orderId = params.get('id') || params.get('appointment_id') || '';
@@ -38,14 +36,15 @@ noindex: true
     var key = 'wt_booked_' + (orderId || 'session');
     try { if (sessionStorage.getItem(key)) return; } catch (e) {}
 
-    var payload = { send_to: SEND_TO };
-    if (orderId) payload.transaction_id = orderId;
-
+    // Google's snippet sends a flat 1.0. If Gazelle can be made to pass the real
+    // service price as ?value=, that overrides it.
     var value = parseFloat(params.get('value'));
-    if (!isNaN(value) && value > 0) {
-      payload.value = value;
-      payload.currency = 'USD';
-    }
+    var payload = {
+      send_to: SEND_TO,
+      value: (!isNaN(value) && value > 0) ? value : 1.0,
+      currency: 'USD'
+    };
+    if (orderId) payload.transaction_id = orderId;
 
     gtag('event', 'conversion', payload);
     try { sessionStorage.setItem(key, '1'); } catch (e) {}
