@@ -124,20 +124,16 @@
           "@type": "OfferCatalog",
           "name": "Piano Services",
           "itemListElement": [
+            {%- assign priced_services = site.data.services | where_exp: "s", "s.schema_price" %}
+            {%- for service in priced_services %}
             {
               "@type": "Offer",
-              "name": "Basic Tune",
-              "description": "Piano tuning with minor pitch correction and light touch and tone adjustments. The maintenance visit for pianos already on a regular schedule.",
-              "price": "175",
+              "name": {{ service.name | jsonify }},
+              "description": {{ service.schema_desc | jsonify }},
+              "price": {{ service.schema_price | jsonify }},
               "priceCurrency": "USD"
-            },
-            {
-              "@type": "Offer",
-              "name": "Full Service",
-              "description": "Comprehensive piano service including tuning, action assessment, regulation, voicing, and minor repairs. Recommended for most pianos and the best starting point for a piano that hasn't been serviced recently.",
-              "price": "250",
-              "priceCurrency": "USD"
-            }
+            }{% unless forloop.last %},{% endunless %}
+            {%- endfor %}
           ]
         }
       }

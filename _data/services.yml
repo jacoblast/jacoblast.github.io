@@ -1,0 +1,44 @@
+# Single source of truth for the three service tiers — consumed by the homepage
+# card grid, the location-page cards (all 27 cities via _layouts/location.html),
+# and both JSON-LD offer listings (_includes/head.html, _layouts/location.html).
+#
+# Order here is display order on every page that renders this list.
+#
+# schema_price / schema_desc: present only on tiers that appear in JSON-LD offer
+# catalogs. Omit both (as Beyond Tuning does) to exclude a tier from structured
+# data — e.g. an unpriced tier shouldn't be listed as a priceless schema.org Offer.
+#
+# price_grid / price_compact: the price string shown on the homepage cards vs.
+# the location-page cards, respectively. Identical for the two priced tiers;
+# intentionally different wording for Beyond Tuning ("after a visit" vs.
+# "individually") — that split predates this file and was preserved as-is.
+
+- name: "Full Service"
+  featured: true
+  badge: "Recommended"
+  price_grid: "$250"
+  price_compact: "$250"
+  desc_grid: "The right choice for almost every piano, and the best place to start if I haven't seen yours before. Tuning plus whatever else it needs that day — touch, tone, lubrication, minor repairs."
+  desc_compact: "For most pianos, this is the best choice — and the right starting point if your piano hasn't been seen in a while. I'll spend extra time improving touch and tone, lubricating, making repairs, whatever your piano needs. Full service is what lets us keep making incremental improvements on every visit."
+  schema_price: "250"
+  schema_desc: "Comprehensive piano service including tuning, action assessment, regulation, voicing, and minor repairs. Recommended for most pianos and the best starting point for a piano that hasn't been serviced recently."
+
+- name: "Basic Tune"
+  featured: false
+  badge:
+  price_grid: "$175"
+  price_compact: "$175"
+  desc_grid: "Best as a return visit, once your piano is on a regular tuning schedule and holding well. A straightforward tuning — nothing more needed."
+  desc_compact: "The maintenance visit for pianos already on a regular schedule. Tuning, plus quick repairs or a few touch and tone tweaks as time allows."
+  schema_price: "175"
+  schema_desc: "Piano tuning with minor pitch correction and light touch and tone adjustments. The maintenance visit for pianos already on a regular schedule."
+
+- name: "Beyond Tuning"
+  featured: false
+  badge:
+  price_grid: "Quoted after a visit"
+  price_compact: "Quoted individually"
+  desc_grid: "Regulation, voicing, action work, and larger repairs — each quoted on its own. Start with a visit; once I've seen your piano I'll tell you what it needs and what it would cost."
+  desc_compact: "Some pianos need more than one appointment can cover — significant regulation, a voicing overhaul, or repairs that deserve dedicated time. We start with a visit, and I'll quote anything further once I've seen the instrument."
+  schema_price:
+  schema_desc:

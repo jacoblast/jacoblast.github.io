@@ -1922,6 +1922,84 @@ footer {
   text-underline-offset: 2px;
 }
 
+/* ── Piano-type pages (grand / upright / repair) ─────── */
+.piano-type-intro {
+  font-size: 1rem;
+  color: #4A4A4A;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.piano-type-photo {
+  max-width: 460px;
+  /* Top margin does the real work of clearing the intro paragraphs — the
+     paragraph's own 20px bottom margin collapses into whichever is larger. */
+  margin: 44px auto 44px;
+}
+/* The grand's angled lid reads as crowding the text above more than the
+   upright's boxier silhouette does at the same gap — a bit more clearance
+   here only. */
+#grand-piano .piano-type-photo {
+  margin-top: 64px;
+}
+.piano-type-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* drop-shadow (not box-shadow) so the shadow follows the piano's silhouette,
+     not the transparent image's rectangular bounding box. */
+  filter: grayscale(15%) drop-shadow(0 2px 6px rgba(47,47,47,0.10)) drop-shadow(0 14px 26px rgba(47,47,47,0.14));
+}
+.capability-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.capability-list li {
+  position: relative;
+  padding-left: 22px;
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4A4A4A;
+}
+.capability-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8A7A55;
+}
+.capability-list strong {
+  color: #2F2F2F;
+  font-weight: 600;
+}
+.capability-closing {
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4A4A4A;
+  margin: 0 0 36px;
+}
+.piano-type-note {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #6F6F6F;
+  text-align: center;
+  margin-top: 28px;
+}
+.piano-type-note a {
+  color: #8A7A55;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ── Legal / Privacy page ────────────────────────────– */
 .legal .legal-meta {
   font-family: 'Inter', sans-serif;

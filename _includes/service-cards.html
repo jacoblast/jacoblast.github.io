@@ -1,0 +1,16 @@
+<div class="package-grid">
+  {%- for service in site.data.services %}
+  <div class="package{% if service.featured %} package-featured{% endif %} card-wave">
+    <div class="package-left">
+      <h3 class="package-name">{{ service.name }}</h3>
+      <div class="package-price">{{ service.price_grid }}</div>
+      {%- if service.badge %}
+      <span class="package-badge">{{ service.badge }}</span>
+      {%- endif %}
+    </div>
+    <div class="package-right">
+      <p class="package-desc">{{ service.desc_grid }}</p>
+    </div>
+  </div>
+  {%- endfor %}
+</div>

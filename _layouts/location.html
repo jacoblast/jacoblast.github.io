@@ -12,8 +12,10 @@ layout: default
   "areaServed": { "@type": "City", "name": "{{ page.city }}", "containedInPlace": { "@type": "State", "name": "{{ page.state }}" } },
   "url": "{{ page.url | absolute_url }}",
   "offers": [
-    { "@type": "Offer", "name": "Basic Tune", "price": "175", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Full Service", "price": "250", "priceCurrency": "USD" }
+    {%- assign priced_services = site.data.services | where_exp: "s", "s.schema_price" %}
+    {%- for service in priced_services %}
+    { "@type": "Offer", "name": {{ service.name | jsonify }}, "price": {{ service.schema_price | jsonify }}, "priceCurrency": "USD" }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
   ]
 }
 </script>
@@ -29,28 +31,18 @@ layout: default
 
     <h2 class="loc-services-heading reveal">Services &amp; Pricing</h2>
     <div class="loc-services reveal">
-      <div class="loc-service loc-service--featured">
+      {%- for service in site.data.services %}
+      <div class="loc-service{% if service.featured %} loc-service--featured{% endif %}">
         <div class="loc-service-top">
-          <span class="loc-service-name">Full Service</span>
-          <span class="loc-service-badge">Recommended</span>
-          <span class="loc-service-price">$250</span>
+          <span class="loc-service-name">{{ service.name }}</span>
+          {%- if service.badge %}
+          <span class="loc-service-badge">{{ service.badge }}</span>
+          {%- endif %}
+          <span class="loc-service-price">{{ service.price_compact }}</span>
         </div>
-        <p class="loc-service-desc">For most pianos, this is the best choice — and the right starting point if your piano hasn't been seen in a while. I'll spend extra time improving touch and tone, lubricating, making repairs, whatever your piano needs. Full service is what lets us keep making incremental improvements on every visit.</p>
+        <p class="loc-service-desc">{{ service.desc_compact }}</p>
       </div>
-      <div class="loc-service">
-        <div class="loc-service-top">
-          <span class="loc-service-name">Basic Tune</span>
-          <span class="loc-service-price">$175</span>
-        </div>
-        <p class="loc-service-desc">The maintenance visit for pianos already on a regular schedule. Tuning, plus quick repairs or a few touch and tone tweaks as time allows.</p>
-      </div>
-      <div class="loc-service">
-        <div class="loc-service-top">
-          <span class="loc-service-name">Beyond Tuning</span>
-          <span class="loc-service-price">Quoted individually</span>
-        </div>
-        <p class="loc-service-desc">Some pianos need more than one appointment can cover — significant regulation, a voicing overhaul, or repairs that deserve dedicated time. We start with a visit, and I'll quote anything further once I've seen the instrument.</p>
-      </div>
+      {%- endfor %}
     </div>
     <p class="loc-guarantee reveal">Not satisfied with your tuning? I'll return within 30 days at no charge.</p>
 
@@ -66,28 +58,10 @@ layout: default
     </p>
     {%- endif %}
 
-    <div class="loc-trust-strip reveal">
-      <div class="loc-trust-strip-top">
-        <svg class="loc-trust-strip-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        <div class="loc-trust-strip-stars" aria-hidden="true">
-          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 0L12.4 6.7L19.5 6.9L13.8 11.2L15.9 18.1L10 14L4.1 18.1L6.2 11.2L0.5 6.9L7.6 6.7Z" fill="#8A7A55"/></svg>
-        </div>
-      </div>
-      <p class="loc-trust-strip-text reveal">Rated 5.0 on Google — serving piano owners throughout Portland and Vancouver.</p>
-    </div>
+    {% include trust-strip.html %}
 
-    <div class="loc-cta reveal">
-      <a href="https://gazelleapp.io/scheduling/PTzzQzkjY8c6nv3dxPmqThLn" class="btn btn-primary">Book Online</a>
-      <a href="tel:+19712020538" class="loc-cta-phone">(971) 202-0538</a>
-    </div>
+    {% include piano-cta.html %}
+
+    <p class="piano-type-note reveal">Have a <a href="/grand-piano-service/">grand</a> or an <a href="/upright-piano-service/">upright</a>? See what's different about caring for each.</p>
   </div>
 </section>

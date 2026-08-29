@@ -1,0 +1,106 @@
+---
+layout: default
+title: "Grand Piano Tuning & Service — Whole Tone Piano Works"
+description: "Grand piano tuning and service in Portland, OR & Vancouver, WA — from baby grands to concert grands. Regulation, voicing, pitch raises & more."
+canonical: "https://wholetonepiano.com/grand-piano-service/"
+permalink: /grand-piano-service/
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Grand Piano Tuning & Service",
+  "serviceType": ["Piano Tuning", "Piano Regulation", "Piano Voicing", "Piano Repair"],
+  "provider": { "@type": "LocalBusiness", "@id": "https://wholetonepiano.com/#business", "name": "Whole Tone Piano Works" },
+  "areaServed": [
+    {"@type": "City", "name": "Portland", "containedInPlace": {"@type": "State", "name": "Oregon"}},
+    {"@type": "City", "name": "Vancouver", "containedInPlace": {"@type": "State", "name": "Washington"}}
+  ],
+  "url": "{{ page.url | absolute_url }}",
+  "offers": [
+    {%- assign priced_services = site.data.services | where_exp: "s", "s.schema_price" %}
+    {%- for service in priced_services %}
+    { "@type": "Offer", "name": {{ service.name | jsonify }}, "price": {{ service.schema_price | jsonify }}, "priceCurrency": "USD" }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens on my first visit to a grand I haven't serviced before?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I thoroughly evaluate the piano first — inspecting the soundboard, strings, keys, and mechanical components. After tuning it, I'll show you what I found and walk you through your options for deeper care, at whatever level of detail you're interested in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is servicing a grand more expensive than an upright?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — pricing is the same across piano types. What can differ is the tools involved and the time a visit takes, since a grand's action is more complex than an upright's."
+      }
+    }
+  ]
+}
+</script>
+
+<section class="page-section section-parchment" id="grand-piano" aria-labelledby="grand-piano-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <span class="eyebrow reveal">Grand Piano Care</span>
+    <h1 id="grand-piano-heading" class="reveal">Grand Piano Tuning &amp; Service in Portland, OR &amp; Vancouver, WA</h1>
+    <p class="piano-type-intro reveal">Grand pianos range in size from a 5' baby grand that easily tucks into the corner of your living room, all the way up to 9' (or longer) concert grands. The grand piano action is more sophisticated than that of an upright, which means faster response and repetition, more precise touch, and more room for the kind of fine regulation and voicing that makes a piano feel truly delicious to play. That's why I love working on grands.</p>
+    <p class="piano-type-intro reveal">Tuning is the first step. On my first visit, I'll thoroughly evaluate your piano by inspecting the soundboard, strings, keys, and mechanical components. After I tune it, I'll show you what I found and give you a range of options for deeper care of your instrument — I love sharing and educating if you're interested in understanding your piano more deeply.</p>
+
+    <div class="piano-type-photo reveal">
+      <img src="/images/grand-yamaha-c7x.webp" alt="Yamaha grand piano" width="950" height="886" loading="lazy">
+    </div>
+
+    <h2 class="reveal">What I do.</h2>
+    {% include piano-capabilities.html %}
+
+    <h2 class="reveal">Services &amp; pricing.</h2>
+    {% include service-cards.html %}
+
+    {% include trust-strip.html %}
+
+    {% include piano-cta.html %}
+
+    <p class="piano-type-note reveal">Have an upright instead? See <a href="/upright-piano-service/">upright piano tuning &amp; repair</a>.</p>
+  </div>
+</section>
+
+<section class="page-section section-cream" id="grand-piano-faq" aria-labelledby="grand-piano-faq-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <h2 id="grand-piano-faq-heading" class="reveal">Common questions.</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-question">What happens on my first visit to a grand I haven't serviced before?</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body" role="region">
+          <p>I thoroughly evaluate the piano first — inspecting the soundboard, strings, keys, and mechanical components. After tuning it, I'll show you what I found and walk you through your options for deeper care, at whatever level of detail you're interested in.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-question">Is servicing a grand more expensive than an upright?</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body" role="region">
+          <p>No — pricing is the same across piano types. What can differ is the tools involved and the time a visit takes, since a grand's action is more complex than an upright's.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

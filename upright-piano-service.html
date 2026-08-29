@@ -1,0 +1,106 @@
+---
+layout: default
+title: "Upright Piano Tuning & Repair — Whole Tone Piano Works"
+description: "Upright piano tuning and repair in Portland, OR & Vancouver, WA — spinets to upright grands. Sticking keys, pitch raises, regulation & more."
+canonical: "https://wholetonepiano.com/upright-piano-service/"
+permalink: /upright-piano-service/
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Upright Piano Tuning & Repair",
+  "serviceType": ["Piano Tuning", "Piano Repair", "Piano Regulation", "Piano Voicing"],
+  "provider": { "@type": "LocalBusiness", "@id": "https://wholetonepiano.com/#business", "name": "Whole Tone Piano Works" },
+  "areaServed": [
+    {"@type": "City", "name": "Portland", "containedInPlace": {"@type": "State", "name": "Oregon"}},
+    {"@type": "City", "name": "Vancouver", "containedInPlace": {"@type": "State", "name": "Washington"}}
+  ],
+  "url": "{{ page.url | absolute_url }}",
+  "offers": [
+    {%- assign priced_services = site.data.services | where_exp: "s", "s.schema_price" %}
+    {%- for service in priced_services %}
+    { "@type": "Offer", "name": {{ service.name | jsonify }}, "price": {{ service.schema_price | jsonify }}, "priceCurrency": "USD" }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "My upright hasn't been tuned in years — is it too far gone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not. It likely needs a pitch raise to bring it back to standard pitch before a final tuning — I include this at no extra charge, though it does draw from the time available for other improvements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair uprights as well as tune them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sticking keys, broken strings, worn action parts, and other repairs are part of most visits. For anything bigger, I'll assess it in person and give you an honest quote."
+      }
+    }
+  ]
+}
+</script>
+
+<section class="page-section section-parchment" id="upright-piano" aria-labelledby="upright-piano-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <span class="eyebrow reveal">Upright Piano Care</span>
+    <h1 id="upright-piano-heading" class="reveal">Upright Piano Tuning &amp; Repair in Portland, OR &amp; Vancouver, WA</h1>
+    <p class="piano-type-intro reveal">Whether it hasn't been touched in ten years, just moved across town, or the keys are starting to stick, I'd love to get your upright playing the way it should.</p>
+    <p class="piano-type-intro reveal">Upright pianos come in a wide range of sizes, from waist-high spinets, consoles, and studios, all the way to 60" tall upright grands. I have a special fondness for the unique character of old uprights, and with some TLC, the transformation in tone and touch can be amazing.</p>
+
+    <div class="piano-type-photo reveal">
+      <img src="/images/upright-yamaha-p22.webp" alt="Yamaha upright piano" width="1000" height="941" loading="lazy">
+    </div>
+
+    <h2 class="reveal">What I do.</h2>
+    {% include piano-capabilities.html %}
+
+    <h2 class="reveal">Services &amp; pricing.</h2>
+    {% include service-cards.html %}
+
+    {% include trust-strip.html %}
+
+    {% include piano-cta.html %}
+
+    <p class="piano-type-note reveal">Have a grand instead? See <a href="/grand-piano-service/">grand piano tuning &amp; service</a>.</p>
+  </div>
+</section>
+
+<section class="page-section section-cream" id="upright-piano-faq" aria-labelledby="upright-piano-faq-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <h2 id="upright-piano-faq-heading" class="reveal">Common questions.</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-question">My upright hasn't been tuned in years — is it too far gone?</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body" role="region">
+          <p>Usually not. It likely needs a pitch raise to bring it back to standard pitch before a final tuning — I include this at no extra charge, though it does draw from the time available for other improvements.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-question">Do you repair uprights as well as tune them?</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body" role="region">
+          <p>Yes. Sticking keys, broken strings, worn action parts, and other repairs are part of most visits. For anything bigger, I'll assess it in person and give you an honest quote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

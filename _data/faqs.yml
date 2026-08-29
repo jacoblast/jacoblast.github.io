@@ -13,8 +13,11 @@
 - question: "My piano is very old. Is it worth tuning?"
   answer: "In most cases, yes. Old pianos can still sound and play beautifully. Occasionally one has deteriorated to the point where it won't hold a tune or needs more work than it's worth — in that case, I'll tell you honestly, and I'm happy to help point you toward something better."
 
-- question: "My piano has a sticky key or buzzing sound — can you fix that?"
-  answer: "Often, yes. Minor issues — a sticking key, a buzzing string — I'll address on the spot as part of the visit. If it's something more involved, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up."
+- question: "Do you repair pianos, or only tune them?"
+  answer: "Both. Tuning is the foundation of every visit, but most visits also include repair work — sticky keys, buzzing strings, loose or broken parts, and whatever else comes up. For a bigger repair, I'll assess it in person and give you an honest quote before any work beyond the visit."
+
+- question: "My piano has a sticky key, a buzzing sound, or a broken string — can you fix that?"
+  answer: "Often, yes. Minor repairs — a sticking key, a buzzing string, a loose part — I'll usually address on the spot as part of the visit. If it's something more involved, like a broken string or a significant action issue, I'll talk you through what I'm seeing, give you a quote, and we can schedule a follow-up."
 
 - question: "Will my piano go out of tune if it hasn't been played much?"
   answer: "It's not the playing itself that causes a piano to go out of tune, but rather changes in temperature and humidity, and the settling of the instrument over time. How much a piano is played rarely has a significant impact on its tuning stability."
