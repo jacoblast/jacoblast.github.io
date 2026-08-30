@@ -1,0 +1,114 @@
+---
+layout: default
+title: "Piano Repair — Whole Tone Piano Works"
+description: "Piano repair in Portland, OR & Vancouver, WA — sticking keys, broken strings, worn parts & more. Also known as your local piano repairman."
+canonical: "https://wholetonepiano.com/piano-repair/"
+permalink: /piano-repair/
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Piano Repair",
+  "serviceType": ["Piano Repair", "Piano Tuning", "Piano Regulation"],
+  "provider": { "@type": "LocalBusiness", "@id": "https://wholetonepiano.com/#business", "name": "Whole Tone Piano Works" },
+  "areaServed": [
+    {"@type": "City", "name": "Portland", "containedInPlace": {"@type": "State", "name": "Oregon"}},
+    {"@type": "City", "name": "Vancouver", "containedInPlace": {"@type": "State", "name": "Washington"}}
+  ],
+  "url": "{{ page.url | absolute_url }}",
+  "offers": [
+    {%- assign priced_services = site.data.services | where_exp: "s", "s.schema_price" %}
+    {%- for service in priced_services %}
+    { "@type": "Offer", "name": {{ service.name | jsonify }}, "price": {{ service.schema_price | jsonify }}, "priceCurrency": "USD" }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a piano tuner the same as a piano repairman?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not exactly, but most tuners — including me — handle both. Tuning keeps your piano in pitch; repair addresses everything else, from a sticking key to a broken string. I do all of it in a single visit whenever possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to know what's wrong before I book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Tell me generally what you're noticing, and I'll take a look during the visit. If it's something I can fix on the spot, I will; if it needs more time, I'll give you a quote before doing any additional work."
+      }
+    }
+  ]
+}
+</script>
+
+<section class="page-section section-parchment" id="piano-repair" aria-labelledby="piano-repair-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <span class="eyebrow reveal">Piano Repair</span>
+    <h1 id="piano-repair-heading" class="reveal">Piano Repair in Portland, OR &amp; Vancouver, WA</h1>
+    <p class="piano-type-intro reveal">Sticking keys, broken strings, a buzzing note, a pedal that doesn't feel right — I fix all of it. Whether you're searching for a piano tuner or an old-fashioned piano repairman, you've landed in the right place. Most repairs happen on the spot, during a regular visit.</p>
+    <p class="piano-type-intro reveal">I don't upsell repairs you don't need. Most minor issues — a sticking key, a buzzing string, a loose part — are handled right there during your visit. Anything bigger gets an honest, upfront quote before I touch it.</p>
+
+    <div class="piano-type-photo reveal">
+      <img src="/images/toolkit.webp" alt="Jacob's piano technician toolkit" width="950" height="950" loading="lazy">
+    </div>
+
+    <h2 class="reveal">What I fix.</h2>
+    <ul class="capability-list reveal">
+      <li><strong>Sticking or sluggish keys</strong> — often a quick on-the-spot fix, and a common sign of humidity changes or general wear.</li>
+      <li><strong>Broken or buzzing strings</strong> — replaced or repaired, then tuned to match the rest of the piano.</li>
+      <li><strong>Worn or broken hammers</strong> — addressed as part of regulation and voicing, or replaced if needed.</li>
+      <li><strong>Malfunctioning pedals and dampers</strong> — sustain, soft, and sostenuto pedals all checked and adjusted.</li>
+      <li><strong>Worn or broken action parts</strong> — the mechanism between key and hammer, repaired or replaced.</li>
+      <li><strong>Evaluation and diagnosis</strong> — if something just feels or sounds off and you're not sure why.</li>
+    </ul>
+    <p class="capability-closing reveal">Whatever's going on with your piano — old or new, a simple fix or something more involved — I'm happy to take a look and set it right.</p>
+
+    <h2 class="reveal">Services &amp; pricing.</h2>
+    {% include service-cards.html %}
+
+    {% include trust-strip.html %}
+
+    {% include piano-cta.html %}
+
+    <p class="piano-type-note reveal">Have a <a href="/grand-piano-service/">grand</a> or an <a href="/upright-piano-service/">upright</a> needing more than a repair? See what full service includes for each.</p>
+  </div>
+</section>
+
+<section class="page-section section-cream" id="piano-repair-faq" aria-labelledby="piano-repair-faq-heading">
+  <div class="wrap">
+    {% include string-divider.html %}
+    <h2 id="piano-repair-faq-heading" class="reveal">Common questions.</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-question">Is a piano tuner the same as a piano repairman?</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body" role="region">
+          <p>Not exactly, but most tuners — including me — handle both. Tuning keeps your piano in pitch; repair addresses everything else, from a sticking key to a broken string. I do all of it in a single visit whenever possible.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          <span class="faq-question">Do I need to know what's wrong before I book?</span>
+          <span class="faq-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="faq-body" role="region">
+          <p>No. Tell me generally what you're noticing, and I'll take a look during the visit. If it's something I can fix on the spot, I will; if it needs more time, I'll give you a quote before doing any additional work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

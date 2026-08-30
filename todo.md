@@ -2,28 +2,10 @@
 
 ## Pending
 
-### `/piano-repair/` landing page — scoped 2026-08-28, not yet built
-- **Why:** audit found "piano repair" present sitewide only as a secondary item inside service-card bullet
-  lists and JSON-LD arrays — never in an H1, meta description, or URL. "Piano repairman" doesn't appear
-  anywhere. Several Ads terms are repair-flavored with real volume (`piano repairman` 1K–10K,
-  `piano repair and tuning near me`, `fix piano near me`, `broken keys`, `sticky key`, `stuck keys`,
-  `upright piano repair near me`) and all currently land on the homepage or a location page — weak message
-  match, which hurts Quality Score as much as organic ranking.
-- Same build pattern as Grand/Upright, reusing what's already in place: `_includes/service-cards.html`,
-  `trust-strip.html`, `piano-cta.html`, `piano-capabilities.html` (or a repair-specific equivalent — the
-  "What I do" list may not fit a repair-only page as-is), and the `.piano-type-intro` / `.piano-type-photo`
-  / `.piano-type-note` CSS. No new conversion wiring needed — click-to-call and the contact-form conversion
-  are already delegated sitewide in `_includes/scripts.html`.
-- Content must be repair-specific and NOT invented: sticky/broken keys, buzzing, action issues, broken
-  strings, phrased the way people actually search — not the generic "minor repairs" bullet already used
-  elsewhere. A photo needs a real transparent-background source like grand/upright had (genuine alpha,
-  verified by sampling pixel values, not just a format that supports it — see how those two were checked).
-- Internal linking, matching how grand/upright were wired in: add a third item to the footer's
-  "Grand Pianos · Upright Pianos" line, a note in the homepage services section, and the location-page
-  cross-link line (all 27, via `_layouts/location.html`).
-- Once live, point the Ads ad groups carrying the repair-flavored terms above at this page instead of the
-  homepage/location pages they currently use.
-
+- [ ] Point the Ads ad groups for repair-flavored terms (`piano repairman`, `piano repair and tuning near
+      me`, `fix piano near me`, `broken keys`, `sticky key`, `stuck keys`, `upright piano repair near me`)
+      at `/piano-repair/` instead of the homepage/location pages they currently use — Ads-UI task, not a
+      site change. Same still-open reminder applies to the grand/upright ad groups (see Done below).
 - [ ] Fix `_drafts/how-much-does-piano-tuning-cost-portland.md` before publishing — still built entirely
       around the old three-tier "Deep Dive $450+" pricing (title, description, excerpt, and a whole section).
       Needs a real rewrite to match the new "Beyond the Tuning, quoted after a visit" structure, not a
@@ -52,6 +34,14 @@
 - [ ] Blog: "How to prepare for a piano tuner visit"
 
 ## Done
+- [x] Build `/piano-repair/` (2026-08-29) — landing page for repair-flavored Ads terms and the
+      "piano repairman" search term specifically. Own repair-specific bullet list rather than reusing the
+      generic capabilities include (didn't fit a repair-only page), a real photo (Jacob's own tool kit,
+      grayscale + box-shadow — a normal opaque photo, not a cutout, so it reuses the site's standard photo
+      treatment rather than grand/upright's drop-shadow silhouette trick), reused pricing cards, trust
+      strip, FAQ with a "tuner vs. repairman" question. Linked from the footer (now 3 items), the homepage
+      services note, and the location-page cross-link line (all 27) alongside grand/upright.
+      STILL OPEN: point the Ads ad groups for the repair-flavored terms at this URL — see Pending above.
 - [x] Build `/grand-piano-service/` and `/upright-piano-service/` (2026-08-29) — landing pages for the
       "grand piano service" / "upright piano service" Ads terms. Real photos with genuine transparent
       backgrounds (drop-shadow follows the actual silhouette, not a boxed rectangle), capabilities list,
