@@ -895,7 +895,8 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
 .services-contact p + p { margin-top: 6px; }
 .services-contact a {
   color: #8A7A55;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   transition: color 0.18s ease;
 }
 .services-contact a:hover { color: #2F2F2F; }
