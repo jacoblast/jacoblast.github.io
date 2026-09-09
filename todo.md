@@ -2,10 +2,6 @@
 
 ## Pending
 
-- [ ] Point the Ads ad groups for repair-flavored terms (`piano repairman`, `piano repair and tuning near
-      me`, `fix piano near me`, `broken keys`, `sticky key`, `stuck keys`, `upright piano repair near me`)
-      at `/piano-repair/` instead of the homepage/location pages they currently use — Ads-UI task, not a
-      site change. Same still-open reminder applies to the grand/upright ad groups (see Done below).
 - [ ] Fix `_drafts/how-much-does-piano-tuning-cost-portland.md` before publishing — still built entirely
       around the old three-tier "Deep Dive $450+" pricing (title, description, excerpt, and a whole section).
       Needs a real rewrite to match the new "Beyond the Tuning, quoted after a visit" structure, not a
@@ -34,6 +30,9 @@
 - [ ] Blog: "How to prepare for a piano tuner visit"
 
 ## Done
+- [x] Point Ads keywords/ad groups at the specific landing pages instead of the homepage (2026-08-30) —
+      covers grand, upright, and repair-flavored terms landing on `/grand-piano-service/`,
+      `/upright-piano-service/`, and `/piano-repair/` respectively.
 - [x] Build `/piano-repair/` (2026-08-29) — landing page for repair-flavored Ads terms and the
       "piano repairman" search term specifically. Own repair-specific bullet list rather than reusing the
       generic capabilities include (didn't fit a repair-only page), a real photo (Jacob's own tool kit,

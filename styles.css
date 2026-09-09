@@ -448,7 +448,10 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   height: 120px;
   margin: 0 auto 16px;
   display: block;
-  filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
+  padding: 2px;
+  background-color: #FBFBF9;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,1)) drop-shadow(0 0 14px rgba(255,255,255,0.9)) drop-shadow(0 0 30px rgba(255,255,255,0.6));
 }
 .hero-h1-bottom {
   font-size: 2.2rem;
@@ -457,6 +460,7 @@ header.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) ro
   margin: 0;
   color: #2F2F2F;
   font-family: 'Goudy Bookletter 1911', serif;
+  text-shadow: 0 0 4px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,1), 0 0 50px rgba(255,255,255,0.9), 0 0 80px rgba(255,255,255,0.8);
 }
 
 .hero-reviews {
